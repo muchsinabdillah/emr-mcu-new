@@ -1,0 +1,168 @@
+<div class="container-fluid">
+    <div class="row page-title-div">
+        <div class="col-md-6">
+            <h2 class="title">Bootstrap - Alerts</h2>
+            <p class="sub-title">We have styled all Bootstrap elements just as you want!</p>
+        </div>
+        <!-- /.col-md-6 -->
+        <div class="col-md-6 right-side">
+            <a class="btn bg-black toggle-code-handle" role="button">Toggle Code!</a>
+        </div>
+        <!-- /.col-md-6 text-right -->
+    </div>
+    <!-- /.row -->
+    <div class="row breadcrumb-div">
+        <div class="col-md-6">
+            <ul class="breadcrumb">
+				<li><a [routerLink]="'dashboard'"><i class="fa fa-home"></i> Home</a></li>
+				<li><a href="#">Bootstrap</a></li>
+				<li class="active">Alerts</li>
+			</ul>
+        </div>
+        <!-- /.col-md-6 -->
+        <div class="col-md-6 text-right">
+            <a href="#"><i class="fa fa-comments"></i> Talk to us</a>
+            <a href="#" class="pl-20"><i class="fa fa-cog"></i> Settings</a>
+        </div>
+        <!-- /.col-md-6 -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+
+<section class="section">
+    <div class="container">
+
+        <div class="row mt-40">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h4 class="title underline">Basic Alerts</h4>
+                    <p class="sub-title">Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages. Wrap any text and an optional dismiss button in <code class="language-html">.alert</code> and one of the four contextual classes (e.g., <code class="language-html">.alert-success</code>) for basic alert messages.</p>
+                    <p class="sub-title">Alerts don't have default classes, only base and modifier classes. A default gray alert doesn't make too much sense, so you're required to specify a type via contextual class. Choose from success, info, warning, or danger.</p>
+                </div>
+                <!-- /.section-title -->
+            </div>
+            <!-- /.col-md-12 -->
+
+            <div class="col-md-12 mb-15">
+            	<div class="alert alert-success" role="alert"> <strong>Well done!</strong> You successfully read this important alert message. </div>
+            	<div class="alert alert-info" role="alert"> <strong>Heads up!</strong> This alert needs your attention, but it's not super important. </div>
+            	<div class="alert alert-warning" role="alert"> <strong>Warning!</strong> Better check yourself, you're not looking too good. </div>
+                <div class="alert alert-danger" role="alert"> <strong>Oh snap!</strong> Change a few things up and try submitting again. </div>
+            </div>
+            <!-- /.col-md-12 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row mt-40">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h4 class="title underline">Dismissible Alerts</h4>
+                    <p class="sub-title">Build on any alert by adding an optional <code class="language-html">.alert-dismissible</code> and close button.</p>
+                </div>
+                <!-- /.section-title -->
+            </div>
+            <!-- /.col-md-12 -->
+
+            <div class="col-md-12 mb-15">
+                <div class="alert alert-warning alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                </div>
+                <div class="alert alert-success" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong>Well done!</strong> You successfully read this important alert message.
+                </div>
+            	<div class="alert alert-info" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+                </div>
+                <div class="alert alert-danger" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong>Oh snap!</strong> Change a few things up and try submitting again.
+                </div>
+            </div>
+            <!-- /.col-md-12 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row mt-40">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h4 class="title underline">Modified Alerts</h4>
+                    <p class="sub-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <!-- /.section-title -->
+            </div>
+            <!-- /.col-md-12 -->
+
+            <div class="col-md-12 mb-15">
+                <div class="alert alert-success left-icon-alert" role="alert">
+                    <strong>Well done!</strong> You successfully read this important alert message.
+                </div>
+                <div class="alert alert-info left-icon-alert" role="alert">
+                    <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+                </div>
+                <div class="alert alert-warning left-icon-alert" role="alert">
+                    <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                </div>
+                <div class="alert alert-danger left-icon-alert" role="alert">
+                    <strong>Oh snap!</strong> Change a few things up and try submitting again.
+                </div>
+            </div>
+            <!-- /.col-md-12 -->
+
+            <div class="col-md-12 mb-15">
+                <div class="alert alert-success right-icon-alert" role="alert">
+                    <strong>Well done!</strong> You successfully read this important alert message.
+                </div>
+                <div class="alert alert-info right-icon-alert" role="alert">
+                    <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+                </div>
+                <div class="alert alert-warning right-icon-alert" role="alert">
+                    <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                </div>
+                <div class="alert alert-danger right-icon-alert" role="alert">
+                    <strong>Oh snap!</strong> Change a few things up and try submitting again.
+                </div>
+            </div>
+            <!-- /.col-md-12 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row mt-40">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h4 class="title underline">Links in Alerts</h4>
+                    <p class="sub-title">Use the <code class="language-html">.alert-link</code> utility class to quickly provide matching colored links within any alert.</p>
+                </div>
+                <!-- /.section-title -->
+            </div>
+            <!-- /.col-md-12 -->
+
+            <div class="col-md-12 mb-15">
+                <div class="alert alert-success" role="alert">
+                    <strong>Well done!</strong> You successfully read
+                    <a href="#" class="alert-link">this important alert message</a>.
+                </div>
+                <div class="alert alert-info" role="alert">
+                    <strong>Heads up!</strong> This
+                    <a href="#" class="alert-link">alert needs your attention</a>, but it's not super important.
+                </div>
+                <div class="alert alert-warning" role="alert">
+                    <strong>Warning!</strong> Better check yourself, you're
+                    <a href="#" class="alert-link">not looking too good</a>.
+                </div>
+                <div class="alert alert-danger" role="alert">
+                    <strong>Oh snap!</strong>
+                    <a href="#" class="alert-link">Change a few things up</a>and try submitting again.
+                </div>
+            </div>
+            <!-- /.col-md-12 -->
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+</section>
+<!-- /.section -->

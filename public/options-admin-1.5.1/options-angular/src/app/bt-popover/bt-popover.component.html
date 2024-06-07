@@ -1,0 +1,163 @@
+<div class="container-fluid">
+    <div class="row page-title-div">
+        <div class="col-md-6">
+            <h2 class="title">Bootstrap - Popover</h2>
+            <p class="sub-title">We have styled all Bootstrap elements just as you want!</p>
+        </div>
+        <!-- /.col-md-6 -->
+        <div class="col-md-6 right-side">
+            <a class="btn bg-black toggle-code-handle" role="button">Toggle Code!</a>
+        </div>
+        <!-- /.col-md-6 text-right -->
+    </div>
+    <!-- /.row -->
+    <div class="row breadcrumb-div">
+        <div class="col-md-6">
+            <ul class="breadcrumb">
+				<li><a [routerLink]="'dashboard'"><i class="fa fa-home"></i> Home</a></li>
+				<li><a href="#">Bootstrap</a></li>
+				<li class="active">Popover</li>
+			</ul>
+        </div>
+        <!-- /.col-md-6 -->
+        <div class="col-md-6 text-right">
+            <a href="#"><i class="fa fa-comments"></i> Talk to us</a>
+            <a href="#" class="pl-20"><i class="fa fa-cog"></i> Settings</a>
+        </div>
+        <!-- /.col-md-6 -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+
+<section class="section">
+    <div class="container">
+
+        <div class="row mt-40">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h4 class="title underline">Basic Popover</h4>
+                    <p class="sub-title">Add small overlays of content, like those on the iPad, to any element for housing secondary information.</p>
+                </div>
+                <!-- /.section-title -->
+            </div>
+            <!-- /.col-md-12 -->
+
+            <div class="col-md-12 mb-15">
+                <button type="button" class="btn btn-default"
+                        popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+                        placement="left">
+                  Popover on left
+                </button>
+                <button type="button" class="btn btn-default"
+                        popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+                        placement="right">
+                  Popover on right
+                </button>
+                <button type="button" class="btn btn-default"
+                        popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+                        placement="bottom">
+                  Popover on bottom
+                </button>
+                <button type="button" class="btn btn-default"
+                        popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+                        placement="top">
+                  Popover on top
+                </button>
+
+            </div>
+            <!-- /.col-md-12 -->
+
+        </div>
+        <!-- /.row -->
+
+        <div class="row mt-40">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h4 class="title underline">Popover with Header</h4>
+                    <p class="sub-title">Add <code class="language-html">popoverTitle</code> attribute to show header on popover.</p>
+                </div>
+                <!-- /.section-title -->
+            </div>
+            <!-- /.col-md-12 -->
+
+            <div class="col-md-12 mb-15">
+                <button type="button" class="btn btn-default"
+                        popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+                        popoverTitle="Popover on left"
+                        placement="left">
+                  Popover on left
+                </button>
+                <button type="button" class="btn btn-default"
+                        popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+                        popoverTitle="Popover on right"
+                        placement="right">
+                  Popover on right
+                </button>
+                <button type="button" class="btn btn-default"
+                        popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+                        popoverTitle="Popover on bottom"
+                        placement="bottom">
+                  Popover on bottom
+                </button>
+                <button type="button" class="btn btn-default"
+                        popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+                        popoverTitle="Popover on top"
+                        placement="top">
+                  Popover on top
+                </button>
+            </div>
+            <!-- /.col-md-12 -->
+
+        </div>
+        <!-- /.row -->
+
+        <div class="row mt-40">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h4 class="title underline">Dismiss on next click</h4>
+                    <p class="sub-title">Use the <code class="language-html">triggers="focus"</code> trigger to dismiss popovers on the next click that the user makes.</p>
+                </div>
+                <!-- /.section-title -->
+            </div>
+            <!-- /.col-md-12 -->
+
+            <div class="col-md-12 mb-15">
+                <button type="button" class="btn btn-success"
+                        popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+                        popoverTitle="Popover on left"
+                        triggers="focus"
+                        placement="left">
+                  Dismissible Popover on left
+                </button>
+                <button type="button" class="btn btn-danger"
+                        popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+                        popoverTitle="Popover on right"
+                        triggers="focus"
+                        placement="right">
+                  Dismissible Popover on right
+                </button>
+                <button type="button" class="btn btn-warning"
+                        popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+                        popoverTitle="Popover on bottom"
+                        triggers="focus"
+                        placement="bottom">
+                  Dismissible Popover on bottom
+                </button>
+                <button type="button" class="btn btn-primary"
+                        popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+                        popoverTitle="Popover on top"
+                        triggers="focus"
+                        placement="top">
+                  Dismissible Popover on top
+                </button>
+            </div>
+            <!-- /.col-md-12 -->
+
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+</section>
+<!-- /.section -->

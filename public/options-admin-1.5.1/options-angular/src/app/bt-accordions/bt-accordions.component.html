@@ -1,0 +1,363 @@
+<div class="container-fluid">
+    <div class="row page-title-div">
+        <div class="col-md-6">
+            <h2 class="title">Accordions</h2>
+            <p class="sub-title">One of the most complete bootstrap admin templates!</p>
+        </div>
+        <!-- /.col-md-6 -->
+        <div class="col-md-6 right-side">
+            <a class="btn bg-black toggle-code-handle" role="button">Toggle Code!</a>
+        </div>
+        <!-- /.col-md-6 text-right -->
+    </div>
+    <!-- /.row -->
+    <div class="row breadcrumb-div">
+        <div class="col-md-6">
+            <ul class="breadcrumb">
+				<li><a [routerLink]="'dashboard'"><i class="fa fa-home"></i> Home</a></li>
+				<li><a href="#">UI</a></li>
+				<li class="active">Accordions</li>
+			</ul>
+        </div>
+        <!-- /.col-md-6 -->
+        <div class="col-md-6 text-right">
+            <a href="#"><i class="fa fa-comments"></i> Talk to us</a>
+            <a href="#" class="pl-20"><i class="fa fa-cog"></i> Settings</a>
+        </div>
+        <!-- /.col-md-6 -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+
+<section class="section">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-6">
+                <h5 class="underline">Default Accordion</h5>
+                <p class="sub-title">Default Bootstrap Accordion</p>
+
+                <accordion [closeOthers]="'true'">
+                	<accordion-group [isOpen]="true" #group [panelClass]="'panel-default mb-5'">
+                        <div accordion-heading >
+                			Accordion Item #1
+                			<i class="pull-right float-xs-right glyphicon" [ngClass]="{'glyphicon-chevron-down': group?.isOpen, 'glyphicon-chevron-right': !group?.isOpen}"></i>
+                		</div>
+                        <div class="panel-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                            on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                        </div>
+                	</accordion-group>
+                	<accordion-group #group2 [panelClass]="'panel-default mb-5'">
+                		<div accordion-heading >
+                			Accordion Item #2
+                			<i class="pull-right float-xs-right glyphicon" [ngClass]="{'glyphicon-chevron-down': group2?.isOpen, 'glyphicon-chevron-right': !group2?.isOpen}"></i>
+                		</div>
+                        <div class="panel-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                            on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                        </div>
+                	</accordion-group>
+                	<accordion-group #group3 >
+                        <div accordion-heading >
+                			Accordion Item #3
+                			<i class="pull-right float-xs-right glyphicon" [ngClass]="{'glyphicon-chevron-down': group3?.isOpen, 'glyphicon-chevron-right': !group3?.isOpen}"></i>
+                		</div>
+                        <div class="panel-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                            on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                        </div>
+                	</accordion-group>
+                </accordion>
+            </div>
+            <!-- /.col-md-6 -->
+
+            <div class="col-md-6">
+                <h5 class="underline">Default Collapsible</h5>
+                <p class="sub-title">Default Bootstrap Collapsible</p>
+
+                <accordion>
+                	<accordion-group [isOpen]="true" #group4 [panelClass]="'panel-default mb-5'">
+                        <div accordion-heading >
+                			Collapsible Group Item #1
+                			<i class="pull-right float-xs-right glyphicon" [ngClass]="{'glyphicon-chevron-down': group4?.isOpen, 'glyphicon-chevron-right': !group4?.isOpen}"></i>
+                		</div>
+                        <div class="panel-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                            on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                        </div>
+                	</accordion-group>
+                	<accordion-group #group5 [panelClass]="'panel-default mb-5'">
+                		<div accordion-heading >
+                			Collapsible Group Item #2
+                			<i class="pull-right float-xs-right glyphicon" [ngClass]="{'glyphicon-chevron-down': group5?.isOpen, 'glyphicon-chevron-right': !group5?.isOpen}"></i>
+                		</div>
+                        <div class="panel-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                            on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                        </div>
+                	</accordion-group>
+                	<accordion-group #group6 >
+                        <div accordion-heading >
+                			Collapsible Group Item #3
+                			<i class="pull-right float-xs-right glyphicon" [ngClass]="{'glyphicon-chevron-down': group6?.isOpen, 'glyphicon-chevron-right': !group6?.isOpen}"></i>
+                		</div>
+                        <div class="panel-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                            on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                        </div>
+                	</accordion-group>
+                </accordion>
+            </div>
+            <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row mt-30">
+            <div class="col-md-6">
+                <h5 class="underline">Plain Accordion</h5>
+                <p class="sub-title">Plain Bootstrap Accordion</p>
+
+                <accordion [closeOthers]="'true'">
+                	<accordion-group [isOpen]="true" #group [panelClass]="'bg-white mb-5'">
+                        <div accordion-heading >
+                			Accordion Item #1
+                			<i class="pull-right float-xs-right glyphicon" [ngClass]="{'glyphicon-chevron-down': group?.isOpen, 'glyphicon-chevron-right': !group?.isOpen}"></i>
+                		</div>
+                        <div class="panel-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                            on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                        </div>
+                	</accordion-group>
+                	<accordion-group #group2  [panelClass]="'bg-white mb-5'">
+                		<div accordion-heading >
+                			Accordion Item #2
+                			<i class="pull-right float-xs-right glyphicon" [ngClass]="{'glyphicon-chevron-down': group2?.isOpen, 'glyphicon-chevron-right': !group2?.isOpen}"></i>
+                		</div>
+                        <div class="panel-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                            on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                        </div>
+                	</accordion-group>
+                	<accordion-group #group3  [panelClass]="'bg-white'">
+                        <div accordion-heading >
+                			Accordion Item #3
+                			<i class="pull-right float-xs-right glyphicon" [ngClass]="{'glyphicon-chevron-down': group3?.isOpen, 'glyphicon-chevron-right': !group3?.isOpen}"></i>
+                		</div>
+                        <div class="panel-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                            on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                        </div>
+                	</accordion-group>
+                </accordion>
+            </div>
+            <!-- /.col-md-6 -->
+
+            <div class="col-md-6">
+                <h5 class="underline">Plain Collapsible</h5>
+                <p class="sub-title">Plain Bootstrap Collapsible</p>
+
+                <accordion>
+                	<accordion-group [isOpen]="true" #group4 [panelClass]="'bg-white mb-5'">
+                        <div accordion-heading >
+                			Collapsible Group Item #1
+                			<i class="pull-right float-xs-right glyphicon" [ngClass]="{'glyphicon-chevron-down': group4?.isOpen, 'glyphicon-chevron-right': !group4?.isOpen}"></i>
+                		</div>
+                        <div class="panel-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                            on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                        </div>
+                	</accordion-group>
+                	<accordion-group #group5 [panelClass]="'bg-white mb-5'">
+                		<div accordion-heading >
+                			Collapsible Group Item #2
+                			<i class="pull-right float-xs-right glyphicon" [ngClass]="{'glyphicon-chevron-down': group5?.isOpen, 'glyphicon-chevron-right': !group5?.isOpen}"></i>
+                		</div>
+                        <div class="panel-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                            on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                        </div>
+                	</accordion-group>
+                	<accordion-group #group6 [panelClass]="'bg-white'">
+                        <div accordion-heading >
+                			Collapsible Group Item #3
+                			<i class="pull-right float-xs-right glyphicon" [ngClass]="{'glyphicon-chevron-down': group6?.isOpen, 'glyphicon-chevron-right': !group6?.isOpen}"></i>
+                		</div>
+                        <div class="panel-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                            on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                        </div>
+                	</accordion-group>
+                </accordion>
+            </div>
+            <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row mt-30">
+            <div class="col-md-6">
+                <h5 class="underline">Colored Header Accordion</h5>
+                <p class="sub-title">Colored Panel Header</p>
+
+                <accordion [closeOthers]="'true'">
+                	<accordion-group [isOpen]="true" #group [panelClass]="'bg-primary mb-5'">
+                        <div accordion-heading >
+                			Accordion Item #1
+                			<i class="pull-right float-xs-right glyphicon" [ngClass]="{'glyphicon-chevron-down': group?.isOpen, 'glyphicon-chevron-right': !group?.isOpen}"></i>
+                		</div>
+                        <div class="panel-body bg-white">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                            on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                        </div>
+                	</accordion-group>
+                	<accordion-group #group2  [panelClass]="'bg-primary mb-5'">
+                		<div accordion-heading >
+                			Accordion Item #2
+                			<i class="pull-right float-xs-right glyphicon" [ngClass]="{'glyphicon-chevron-down': group2?.isOpen, 'glyphicon-chevron-right': !group2?.isOpen}"></i>
+                		</div>
+                        <div class="panel-body bg-white">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                            on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                        </div>
+                	</accordion-group>
+                	<accordion-group #group3  [panelClass]="'bg-primary'">
+                        <div accordion-heading >
+                			Accordion Item #3
+                			<i class="pull-right float-xs-right glyphicon" [ngClass]="{'glyphicon-chevron-down': group3?.isOpen, 'glyphicon-chevron-right': !group3?.isOpen}"></i>
+                		</div>
+                        <div class="panel-body bg-white">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                            on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                        </div>
+                	</accordion-group>
+                </accordion>
+            </div>
+            <!-- /.col-md-6 -->
+
+            <div class="col-md-6">
+                <h5 class="underline">Colored Header Collapsible</h5>
+                <p class="sub-title">Colored Panel Headers</p>
+
+                <accordion>
+                	<accordion-group [isOpen]="true" #group4 [panelClass]="'bg-danger mb-5'">
+                        <div accordion-heading >
+                			Collapsible Group Item #1
+                			<i class="pull-right float-xs-right glyphicon" [ngClass]="{'glyphicon-chevron-down': group4?.isOpen, 'glyphicon-chevron-right': !group4?.isOpen}"></i>
+                		</div>
+                        <div class="panel-body bg-white">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                            on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                        </div>
+                	</accordion-group>
+                	<accordion-group #group5 [panelClass]="'bg-danger mb-5'">
+                		<div accordion-heading >
+                			Collapsible Group Item #2
+                			<i class="pull-right float-xs-right glyphicon" [ngClass]="{'glyphicon-chevron-down': group5?.isOpen, 'glyphicon-chevron-right': !group5?.isOpen}"></i>
+                		</div>
+                        <div class="panel-body bg-white">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                            on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                        </div>
+                	</accordion-group>
+                	<accordion-group #group6 [panelClass]="'bg-danger'">
+                        <div accordion-heading >
+                			Collapsible Group Item #3
+                			<i class="pull-right float-xs-right glyphicon" [ngClass]="{'glyphicon-chevron-down': group6?.isOpen, 'glyphicon-chevron-right': !group6?.isOpen}"></i>
+                		</div>
+                        <div class="panel-body bg-white">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                            on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                        </div>
+                	</accordion-group>
+                </accordion>
+            </div>
+            <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row mt-30">
+            <div class="col-md-6">
+                <h5 class="underline">Colored Accordion</h5>
+                <p class="sub-title">Colored Panel</p>
+
+                <accordion [closeOthers]="'true'">
+                	<accordion-group [isOpen]="true" #group [panelClass]="'bg-warning mb-5'">
+                        <div accordion-heading >
+                			Accordion Item #1
+                			<i class="pull-right float-xs-right glyphicon" [ngClass]="{'glyphicon-chevron-down': group?.isOpen, 'glyphicon-chevron-right': !group?.isOpen}"></i>
+                		</div>
+                        <div class="panel-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                            on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                        </div>
+                	</accordion-group>
+                	<accordion-group #group2  [panelClass]="'bg-warning mb-5'">
+                		<div accordion-heading >
+                			Accordion Item #2
+                			<i class="pull-right float-xs-right glyphicon" [ngClass]="{'glyphicon-chevron-down': group2?.isOpen, 'glyphicon-chevron-right': !group2?.isOpen}"></i>
+                		</div>
+                        <div class="panel-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                            on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                        </div>
+                	</accordion-group>
+                	<accordion-group #group3  [panelClass]="'bg-warning'">
+                        <div accordion-heading >
+                			Accordion Item #3
+                			<i class="pull-right float-xs-right glyphicon" [ngClass]="{'glyphicon-chevron-down': group3?.isOpen, 'glyphicon-chevron-right': !group3?.isOpen}"></i>
+                		</div>
+                        <div class="panel-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                            on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                        </div>
+                	</accordion-group>
+                </accordion>
+            </div>
+            <!-- /.col-md-6 -->
+
+            <div class="col-md-6">
+                <h5 class="underline">Colored Header Collapsible</h5>
+                <p class="sub-title">Colored Panel Headers</p>
+
+                <accordion>
+                	<accordion-group [isOpen]="true" #group4 [panelClass]="'bg-success mb-5'">
+                        <div accordion-heading >
+                			Collapsible Group Item #1
+                			<i class="pull-right float-xs-right glyphicon" [ngClass]="{'glyphicon-chevron-down': group4?.isOpen, 'glyphicon-chevron-right': !group4?.isOpen}"></i>
+                		</div>
+                        <div class="panel-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                            on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                        </div>
+                	</accordion-group>
+                	<accordion-group #group5 [panelClass]="'bg-success mb-5'">
+                		<div accordion-heading >
+                			Collapsible Group Item #2
+                			<i class="pull-right float-xs-right glyphicon" [ngClass]="{'glyphicon-chevron-down': group5?.isOpen, 'glyphicon-chevron-right': !group5?.isOpen}"></i>
+                		</div>
+                        <div class="panel-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                            on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                        </div>
+                	</accordion-group>
+                	<accordion-group #group6 [panelClass]="'bg-success'">
+                        <div accordion-heading >
+                			Collapsible Group Item #3
+                			<i class="pull-right float-xs-right glyphicon" [ngClass]="{'glyphicon-chevron-down': group6?.isOpen, 'glyphicon-chevron-right': !group6?.isOpen}"></i>
+                		</div>
+                        <div class="panel-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                            on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                        </div>
+                	</accordion-group>
+                </accordion>
+            </div>
+            <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container-fluid -->
+</section>
+<!-- /.section -->

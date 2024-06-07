@@ -1,0 +1,144 @@
+<div class="container-fluid">
+    <div class="row page-title-div">
+        <div class="col-md-6">
+            <h2 class="title">Form - Validations</h2>
+            <p class="sub-title">One stop solution for perfect admin dashboard!</p>
+        </div>
+        <!-- /.col-md-6 -->
+        <div class="col-md-6 right-side">
+            <a class="btn bg-black toggle-code-handle" role="button">Toggle Code!</a>
+        </div>
+        <!-- /.col-md-6 text-right -->
+    </div>
+    <!-- /.row -->
+    <div class="row breadcrumb-div">
+        <div class="col-md-6">
+            <ul class="breadcrumb">
+				<li><a [routerLink]="'dashboard'"><i class="fa fa-home"></i> Home</a></li>
+				<li class="active">Form - Validations</li>
+			</ul>
+        </div>
+        <!-- /.col-md-6 -->
+        <div class="col-md-6 text-right">
+            <a href="#"><i class="fa fa-comments"></i> Talk to us</a>
+            <a href="#" class="pl-20"><i class="fa fa-cog"></i> Settings</a>
+        </div>
+        <!-- /.col-md-6 -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+
+<section class="section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Two Column Form</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+                        <form class="p-20" id="two-column">
+                            <h5 class="underline mt-n">Account Info</h5>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group" [class.has-error]="name.errors && (name.dirty || name.touched)">
+                                		<label for="name">Full Name <sup class="color-danger">*</sup></label>
+                                		<input type="text" class="form-control" id="name" placeholder="Enter Your Full Name" name="name" [(ngModel)]="account.name" #name="ngModel" required [rangeLength]="[5, 12]">
+                                        <span class="help-block" *ngIf="name.errors?.required && (name.dirty || name.touched)">Name is required.</span>
+                                        <span class="help-block" *ngIf="name.errors?.rangeLength && (name.dirty || name.touched)">Full name should be minimum 5 & maximum 12 characters.</span>
+                                	</div>
+                                </div>
+                                <!-- /.col-md-6 -->
+
+                                <div class="col-md-6">
+                                    <div class="form-group" [class.has-error]="username.errors && (username.dirty || username.touched)">
+                                		<label for="username">Username <sup class="color-danger">*</sup></label>
+                                		<input type="text" class="form-control" id="username" placeholder="Enter Desired Username" name="username" [(ngModel)]="account.username" #username="ngModel" required [rangeLength]="[5, 8]">
+                                        <span class="help-block" *ngIf="username.errors?.required && (username.dirty || username.touched)">Username is required.</span>
+                                        <span class="help-block" *ngIf="username.errors?.rangeLength && (username.dirty || username.touched)">Username should be minimum 5 & maximum 8 characters.</span>
+                                	</div>
+                                </div>
+                                <!-- /.col-md-6 -->
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group" [class.has-error]="email.errors && (email.dirty || email.touched)">
+                                		<label for="email">Email address <sup class="color-danger">*</sup></label>
+                                		<input type="email" class="form-control" id="email" placeholder="Enter Your Email Id" name="email" [(ngModel)]="account.email" #email="ngModel" email>
+                                        <span class="help-block" *ngIf="email.errors?.required && (email.dirty || email.touched)">Email is required.</span>
+                                        <span class="help-block" *ngIf="email.errors?.email && (email.dirty || email.touched)">Enter valid email address.</span>
+                                	</div>
+                            	</div>
+                            	<!-- /.col-md-6 -->
+
+                                <div class="col-md-6">
+                                    <div class="form-group" [class.has-error]="contact.errors && (contact.dirty || contact.touched)">
+                                		<label for="contact">Contact Number</label>
+                                		<input type="text" class="form-control" id="contact" placeholder="Enter Your Mobile Phone Number" name="contact" [(ngModel)]="account.contact" #contact="ngModel" number>
+                                        <span class="help-block" *ngIf="contact.errors?.number && (contact.dirty || contact.touched)">Enter valid number.</span>
+                                	</div>
+                            	</div>
+                            	<!-- /.col-md-6 -->
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group" [class.has-error]="password.errors && (password.dirty || password.touched)">
+                                		<label for="password">Password <sup class="color-danger">*</sup></label>
+                                		<input type="password" class="form-control" id="password" name="pass" placeholder="Enter Strong Password" [(ngModel)]="account.password" #password="ngModel" required [rangeLength]="[5, 12]">
+                                        <span class="help-block" *ngIf="password.errors?.required && (password.dirty || password.touched)">Password is required.</span>
+                                        <span class="help-block" *ngIf="password.errors?.rangeLength && (password.dirty || password.touched)">Password should be minimum 5 & maximum 12 characters.</span>
+                                	</div>
+                            	</div>
+                            	<!-- /.col-md-6 -->
+
+                                <div class="col-md-6">
+                                    <div class="form-group" [class.has-error]="confirm.errors && (confirm.dirty || confirm.touched)">
+                                		<label for="confirm">Confirm Password <sup class="color-danger">*</sup></label>
+                                		<input type="password" class="form-control" id="confirm" name="confirm" placeholder="Confirm your password" [(ngModel)]="account.confirm" #confirm="ngModel" required [equalTo]="password">
+                                        <span class="help-block" *ngIf="confirm.errors?.equalTo && (confirm.dirty || confirm.touched)">Passwords don't match.</span>
+                                	</div>
+                            	</div>
+                            	<!-- /.col-md-6 -->
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group checkbox" [class.has-error]="accept.errors && (accept.dirty || accept.touched)">
+                                		<label>
+                                			<input type="checkbox" required name="accept" [(ngModel)]="account.accept" #accept="ngModel" > I accept <a href="#" class="color-primary">terms & conditions</a>
+                                            <span class="help-block" *ngIf="accept.errors?.required && (accept.dirty || accept.touched)">Accept terms & conditions.</span>
+                                		</label>
+                                	</div>
+                                </div>
+                                <!-- /.col-md-12 -->
+
+                                <div class="col-md-12">
+                                    <div class="btn-group pull-right mt-10" role="group">
+                                        <button type="reset" class="btn btn-gray btn-wide"><i class="fa fa-times"></i>Cancel</button>
+                                        <button type="submit" class="btn bg-black btn-wide" [disabled]="name.errors || username.errors || email.errors || contact.errors || password.errors || confirm.errors || accept.errors">
+                                            <i class="fa fa-arrow-right"></i>Submit
+                                        </button>
+                                    </div>
+                                    <!-- /.btn-group -->
+                                </div>
+                                <!-- /.col-md-12 -->
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-12 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</section>
+<!-- /.section -->

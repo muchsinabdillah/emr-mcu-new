@@ -1,0 +1,135 @@
+<div class="container-fluid">
+    <div class="row page-title-div">
+        <div class="col-md-6">
+            <h2 class="title">Confirmation Popovers</h2>
+            <p class="sub-title">One of the most complete bootstrap admin templates!</p>
+        </div>
+        <!-- /.col-md-6 -->
+        <div class="col-md-6 right-side">
+            <a class="btn bg-black toggle-code-handle" role="button">Toggle Code!</a>
+        </div>
+        <!-- /.col-md-6 text-right -->
+    </div>
+    <!-- /.row -->
+    <div class="row breadcrumb-div">
+        <div class="col-md-6">
+            <ul class="breadcrumb">
+				<li><a [routerLink]="'dashboard'"><i class="fa fa-home"></i> Home</a></li>
+				<li><a href="#">UI</a></li>
+				<li class="active">Confirmation Popovers</li>
+			</ul>
+        </div>
+        <!-- /.col-md-6 -->
+        <div class="col-md-6 text-right">
+            <a href="#"><i class="fa fa-comments"></i> Talk to us</a>
+            <a href="#" class="pl-20"><i class="fa fa-cog"></i> Settings</a>
+        </div>
+        <!-- /.col-md-6 -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+
+<section class="section">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Basic Demo</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <p>Add small overlays with "Yes" and "No" buttons, like those on the iPad, to any element. Click the button to trigger the confirmation. Just add <code class="language-html"> data-toggle="confirmation"</code> attribute to button and initialize with js like Bootstrap popovers.</p>
+                        <div class="text-center">
+                            <button type="button" class="btn btn-primary btn-wide" mwlConfirmationPopover
+                                [title]="'Are you sure?'"
+                                [message]="'Are you really <b>sure</b> you want to do this?'"
+                                placement="top"
+                                (confirm)="confirmClicked = true"
+                                (cancel)="cancelClicked = true">Confirmation</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>On Bottom</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+                        <p>Confirmation also works natively with links. You can customize the title with <code class="language-html">data-title</code> attribute on link. If you click 'yes', link will be followed. If you click 'No', you will stay on same page.</p>
+                        <div class="text-center">
+                            <button type="button" class="btn btn-primary btn-wide" mwlConfirmationPopover
+                                [title]="'Are you sure?'"
+                                [message]="'Are you really <b>sure</b> you want to do this?'"
+                                placement="bottom"
+                                (confirm)="confirmClicked = true"
+                                (cancel)="cancelClicked = true">Confirmation</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>On Left</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <p>Has personalized description, labels, icons and colors.</p>
+                        <div class="text-center">
+                            <button type="button" class="btn btn-primary btn-wide" mwlConfirmationPopover
+                                [title]="'Are you sure?'"
+                                [message]="'Are you really <b>sure</b> you want to do this?'"
+                                placement="left"
+                                (confirm)="confirmClicked = true"
+                                (cancel)="cancelClicked = true">Confirmation</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>On Right</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+                        <p>Completely overwrite the default positive/negative buttons.</p>
+                        <div class="text-center">
+                            <button type="button" class="btn btn-primary btn-wide" mwlConfirmationPopover
+                                [title]="'Are you sure?'"
+                                [message]="'Are you really <b>sure</b> you want to do this?'"
+                                placement="right"
+                                (confirm)="confirmClicked = true"
+                                (cancel)="cancelClicked = true">Confirmation</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+
+
+
+    </div>
+    <!-- /.container-fluid -->

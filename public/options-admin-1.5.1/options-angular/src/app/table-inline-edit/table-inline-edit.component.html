@@ -1,0 +1,97 @@
+<div class="container-fluid">
+    <div class="row page-title-div">
+        <div class="col-md-6">
+            <h2 class="title">Tables - Inline Edit</h2>
+            <p class="sub-title">One stop solution for perfect admin dashboard!</p>
+        </div>
+        <!-- /.col-md-6 -->
+        <div class="col-md-6 right-side">
+            <a class="btn bg-black toggle-code-handle" role="button">Toggle Code!</a>
+        </div>
+        <!-- /.col-md-6 text-right -->
+    </div>
+    <!-- /.row -->
+    <div class="row breadcrumb-div">
+        <div class="col-md-6">
+            <ul class="breadcrumb">
+				<li><a [routerLink]="'dashboard'"><i class="fa fa-home"></i> Home</a></li>
+				<li class="active">Tables - Inline Edit</li>
+			</ul>
+        </div>
+        <!-- /.col-md-6 -->
+        <div class="col-md-6 text-right">
+            <a href="#"><i class="fa fa-comments"></i> Talk to us</a>
+            <a href="#" class="pl-20"><i class="fa fa-cog"></i> Settings</a>
+        </div>
+        <!-- /.col-md-6 -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+
+<section class="section">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+
+                <p></p>
+
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Inline Editing</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body p-20">
+
+                        <p>Double click to edit values. First two columns are made editable.</p>
+
+                        <ngx-datatable
+                            #mydatatable
+                            class="material"
+                            [headerHeight]="50"
+                            [limit]="10"
+                            [columnMode]="'force'"
+                            [footerHeight]="50"
+                            [rowHeight]="'auto'"
+                            [loadingIndicator]="loadingInd"
+                            [rows]="rows">
+                            <ngx-datatable-column name="Name">
+                            	<ng-template ngx-datatable-cell-template let-value="value" let-row="row">
+                            		<span title="Double click to edit" (dblclick)="editing[row.$$index + '-name'] = true" *ngIf="!editing[row.$$index + '-name']">
+                                                              {{value}}
+                                                            </span>
+                            		<input autofocus (blur)="updateValue($event, 'name', value, row)" *ngIf="editing[row.$$index + '-name']" type="text" [value]="value" />
+                            	</ng-template>
+                            </ngx-datatable-column>
+                            <ngx-datatable-column name="Gender">
+                            	<ng-template ngx-datatable-cell-template let-row="row" let-value="value">
+                            		<span title="Double click to edit" (dblclick)="editing[row.$$index + '-gender'] = true" *ngIf="!editing[row.$$index + '-gender']">
+                                                              {{value}}
+                                                            </span>
+                            		<select *ngIf="editing[row.$$index + '-gender']" (change)="updateValue($event, 'gender', value, row)" [value]="value">
+                                                              <option value="male">Male</option>
+                                                              <option value="female">Female</option>
+                                                            </select>
+                            	</ng-template>
+                            </ngx-datatable-column>
+                            <ngx-datatable-column name="Age">
+                            	<ng-template ngx-datatable-cell-template let-value="value">
+                            		{{value}}
+                            	</ng-template>
+                            </ngx-datatable-column>
+                        </ngx-datatable>
+
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-8 -->
+
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container-fluid -->
+</section>
+<!-- /.section -->

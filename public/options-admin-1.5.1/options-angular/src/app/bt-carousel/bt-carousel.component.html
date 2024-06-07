@@ -1,0 +1,112 @@
+<div class="container-fluid">
+    <div class="row page-title-div">
+        <div class="col-md-6">
+            <h2 class="title">Bootstrap - Carousel</h2>
+            <p class="sub-title">We have styled all Bootstrap elements just as you want!</p>
+        </div>
+        <!-- /.col-md-6 -->
+        <div class="col-md-6 right-side">
+            <a class="btn bg-black toggle-code-handle" role="button">Toggle Code!</a>
+        </div>
+        <!-- /.col-md-6 text-right -->
+    </div>
+    <!-- /.row -->
+    <div class="row breadcrumb-div">
+        <div class="col-md-6">
+            <ul class="breadcrumb">
+				<li><a [routerLink]="'dashboard'"><i class="fa fa-home"></i> Home</a></li>
+				<li><a href="#">Bootstrap</a></li>
+				<li class="active">Carousel</li>
+			</ul>
+        </div>
+        <!-- /.col-md-6 -->
+        <div class="col-md-6 text-right">
+            <a href="#"><i class="fa fa-comments"></i> Talk to us</a>
+            <a href="#" class="pl-20"><i class="fa fa-cog"></i> Settings</a>
+        </div>
+        <!-- /.col-md-6 -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+
+<section class="section">
+    <div class="container">
+
+        <div class="row mt-40">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h4 class="title underline">Basic Carousel</h4>
+                    <p class="sub-title">A slideshow component for cycling through elements, like a carousel.</p>
+                </div>
+                <!-- /.section-title -->
+            </div>
+            <!-- /.col-md-12 -->
+
+            <div class="col-md-12 mb-15">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <carousel>
+                    	<slide>
+                    		<img src="http://placehold.it/1600x550?text=First+Slide" alt="First Slide" class="img-responsive">
+                    	</slide>
+                    	<slide>
+                    		<img src="http://placehold.it/1600x550?text=Second+Slide" alt="Second Slide" class="img-responsive">
+                    	</slide>
+                    	<slide>
+                    		<img src="http://placehold.it/1600x550?text=Third+Slide" alt="Third Slide" class="img-responsive">
+                    	</slide>
+                    </carousel>
+                </div>
+            </div>
+            <!-- /.col-md-12 -->
+
+        </div>
+        <!-- /.row -->
+
+        <div class="row mt-40">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h4 class="title underline">With Captions</h4>
+                    <p class="sub-title">Add captions to your slides easily with the <code class="language-html">.carousel-caption</code> element within any <code class="language-html">.item</code>. Place just about any optional HTML within there and it will be automatically aligned and formatted.</p>
+                </div>
+                <!-- /.section-title -->
+            </div>
+            <!-- /.col-md-12 -->
+
+            <div class="col-md-12 mb-15">
+                <div id="carousel-example-caption" class="carousel slide" data-ride="carousel">
+                    <carousel>
+                    	<slide>
+                    		<img src="http://placehold.it/1600x550?text=First+Slide" alt="First Slide" class="img-responsive">
+                            <div class="carousel-caption">
+                            	<h3>First Slide</h3>
+                            	<p>And something about first slide</p>
+                            </div>
+                    	</slide>
+                    	<slide>
+                    		<img src="http://placehold.it/1600x550?text=Second+Slide" alt="Second Slide" class="img-responsive">
+                            <div class="carousel-caption">
+                            	<h3>Second Slide</h3>
+                            	<p>And something about second slide</p>
+                            </div>
+                    	</slide>
+                        <slide>
+                    		<img src="http://placehold.it/1600x550?text=Third+Slide" alt="Third Slide" class="img-responsive">
+                            <div class="carousel-caption">
+                            	<h3>Third Slide</h3>
+                            	<p>And something about third slide</p>
+                            </div>
+                    	</slide>
+                    </carousel>
+                </div>
+            </div>
+            <!-- /.col-md-12 -->
+
+        </div>
+        <!-- /.row -->
+
+
+    </div>
+    <!-- /.container -->
+</section>
+<!-- /.section -->

@@ -1,0 +1,88 @@
+<div class="container-fluid">
+    <div class="row page-title-div">
+        <div class="col-md-6">
+            <h2 class="title">Tables - Filtering</h2>
+            <p class="sub-title">One stop solution for perfect admin dashboard!</p>
+        </div>
+        <!-- /.col-md-6 -->
+        <div class="col-md-6 right-side">
+            <a class="btn bg-black toggle-code-handle" role="button">Toggle Code!</a>
+        </div>
+        <!-- /.col-md-6 text-right -->
+    </div>
+    <!-- /.row -->
+    <div class="row breadcrumb-div">
+        <div class="col-md-6">
+            <ul class="breadcrumb">
+				<li><a [routerLink]="'dashboard'"><i class="fa fa-home"></i> Home</a></li>
+				<li class="active">Tables - Filtering</li>
+			</ul>
+        </div>
+        <!-- /.col-md-6 -->
+        <div class="col-md-6 text-right">
+            <a href="#"><i class="fa fa-comments"></i> Talk to us</a>
+            <a href="#" class="pl-20"><i class="fa fa-cog"></i> Settings</a>
+        </div>
+        <!-- /.col-md-6 -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+
+<section class="section">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+
+                <p></p>
+
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Filter</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body p-20">
+
+                        <input
+                            type='text'
+                            style='padding:8px;margin:15px auto;width:30%;'
+                            placeholder='Type to filter the name column...'
+                            (keyup)='updateFilter($event)'
+                          />
+
+                        <ngx-datatable class='table' [rows]='rows' [columnMode]="'force'" [headerHeight]="50"
+                                        [footerHeight]="50"
+                                        [rowHeight]="60"
+                                        [scrollbarV]="true"
+                                        [loadingIndicator]="loadingInd"
+                                        (page)="onPage($event)" >
+
+                        	<ngx-datatable-column name="Name" width="300">
+                        		<ng-template let-value="value" ngx-datatable-cell-template>
+                        			<strong>{{value}}</strong>
+                        		</ng-template>
+                        	</ngx-datatable-column>
+
+                        	<ngx-datatable-column name="Gender" width="300">
+                        		<ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+                        			<i [innerHTML]="row['name']"></i> and <i>{{value}}</i>
+                        		</ng-template>
+                        	</ngx-datatable-column>
+
+                        	<ngx-datatable-column name="Row Height" prop="height" width="80"></ngx-datatable-column>
+                        </ngx-datatable>
+
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-8 -->
+
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container-fluid -->
+</section>
+<!-- /.section -->

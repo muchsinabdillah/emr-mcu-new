@@ -1,0 +1,235 @@
+<div class="container-fluid">
+    <div class="row page-title-div">
+        <div class="col-md-6">
+            <h4 class="title">John Doe <small class="ml-10">My Profile</small></h4>
+            <p class="sub-title">One stop solution for perfect admin dashboard!</p>
+        </div>
+        <!-- /.col-md-6 -->
+        <div class="col-md-6 right-side">
+            <div class="dropdown pull-right" dropdown>
+            	<button dropdownToggle class="btn btn-default dropdown-toggle" type="button" id="menu14" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            		<i class="fa fa-bars"></i> Dropdown
+            		<span class="caret"></span>
+            	</button>
+            	<ul *dropdownMenu class="dropdown-menu bg-gray" aria-labelledby="menu14">
+                    <li><a href="#">Action  <span class="label label-danger icon-right">Hot</span></a></li>
+            		<li><a href="#">Some Link</a></li>
+            		<li><a href="#">More here  <span class="label label-primary icon-right">New</span></a></li>
+                    <li><a href="#">Something more here </a></li>
+            	</ul>
+            </div>
+        </div>
+        <!-- /.col-md-6 text-right -->
+    </div>
+    <!-- /.row -->
+    <div class="row breadcrumb-div">
+        <div class="col-md-6">
+            <ul class="breadcrumb">
+				<li><a [routerLink]="'dashboard'"><i class="fa fa-home"></i> Home</a></li>
+				<li class="active">My Profile</li>
+			</ul>
+        </div>
+        <!-- /.col-md-6 -->
+        <div class="col-md-6 text-right">
+            <a href="#"><i class="fa fa-comments"></i> Talk to us</a>
+            <a href="#" class="pl-20"><i class="fa fa-cog"></i> Settings</a>
+        </div>
+        <!-- /.col-md-6 -->
+    </div>
+    <!-- /.row -->
+
+    <div class="row mt-30">
+        <div class="col-md-3">
+            <div class="panel border-primary no-border border-3-top">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <h5>Profile Picture</h5>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                            <img src="/assets/images/avatar-1.svg" alt="User Avatar" class="img-responsive">
+                            <div class="text-center">
+                                <button type="button" class="btn btn-primary btn-xs btn-labeled mt-10">Edit Picture<span class="btn-label btn-label-right"><i class="fa fa-pencil"></i></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.panel -->
+
+            <div class="panel border-primary no-border border-3-top">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <h5>User Stats</h5>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <table class="table table-striped">
+                        	<tbody>
+                        		<tr>
+                        			<th>Posts</th>
+                        			<td>
+                                        100<br>
+                                        <small class="color-success"><i class="fa fa-arrow-up"></i> 4% increase</small>
+                                    </td>
+                        		</tr>
+                        		<tr>
+                        			<th>Comments</th>
+                        			<td>
+                                        511<br>
+                                        <small class="color-danger"><i class="fa fa-arrow-down"></i> 15% decrease</small>
+                                    </td>
+                        		</tr>
+                        		<tr>
+                        			<th>Last Login</th>
+                        			<td>
+                                        12-Mar-2017<br>
+                                        <small class="color-warning">40 days ago</small>
+                                    </td>
+                        		</tr>
+                        	</tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- /.panel -->
+
+            <div class="panel border-primary no-border border-3-top">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <h5>User Tags</h5>
+                    </div>
+                </div>
+                <div class="panel-body p-20">
+                    <span class="label label-success label-rounded label-bordered">Premium</span>
+                    <span class="label label-danger label-rounded label-bordered">Inactive</span>
+                    <span class="label label-warning label-rounded label-bordered">Sleeping</span>
+                </div>
+            </div>
+            <!-- /.panel -->
+        </div>
+        <!-- /.col-md-3 -->
+
+        <div class="col-md-9">
+
+            <div class="row mb-30">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <a class="dashboard-stat-2 bg-primary" href="#">
+                        <div class="stat-content">
+                            <span class="number counter">1,411</span>
+                            <span class="name">Comments</span>
+                        </div>
+                        <span class="stat-footer"><i class="fa fa-arrow-up color-success"></i> 5% growth in 3 hours</span>
+                    </a>
+                    <!-- /.dashboard-stat-2 -->
+                </div>
+                <!-- /.col-lg-3 col-md-3 col-sm-6 col-xs-12 -->
+
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <a class="dashboard-stat-2 bg-danger" href="#">
+                        <div class="stat-content">
+                            <span class="number counter">322</span>
+                            <span class="name">Total Tickets</span>
+                        </div>
+                        <span class="stat-footer"><i class="fa fa-arrow-down color-success"></i> 3% decrease in 3 hours</span>
+                    </a>
+                    <!-- /.dashboard-stat-2 -->
+                </div>
+                <!-- /.col-lg-3 col-md-3 col-sm-6 col-xs-12 -->
+
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <a class="dashboard-stat-2 bg-warning" href="#">
+                        <div class="stat-content">
+                            <span class="number counter">5,551</span>
+                            <span class="name">Bank Credits</span>
+                        </div>
+                        <span class="stat-footer"><i class="fa fa-arrow-up color-success"></i> 7% increase in 3 hours</span>
+                    </a>
+                    <!-- /.dashboard-stat-2 -->
+                </div>
+                <!-- /.col-lg-3 col-md-3 col-sm-6 col-xs-12 -->
+
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <a class="dashboard-stat-2 bg-success" href="#">
+                        <div class="stat-content">
+                            <span class="number counter">16,710</span>
+                            <span class="name">Bank Credits</span>
+                        </div>
+                        <span class="stat-footer"><i class="fa fa-arrow-down color-danger"></i> 2% decrese in 3 hours</span>
+                    </a>
+                    <!-- /.dashboard-stat-2 -->
+                </div>
+                <!-- /.col-lg-3 col-md-3 col-sm-6 col-xs-12 -->
+
+            </div>
+            <!-- /.row -->
+
+            <div class="panel">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <h5>User Details</h5>
+                    </div>
+                </div>
+                <div class="panel-body">
+
+                    <tabset [justified]="true">
+                        <tab heading="Home">
+                            <div class="p-15">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                            <carousel>
+                                <slide>
+                                    <img src="/assets/images/img-1.jpg" alt="First Slide" class="img-responsive">
+                                </slide>
+                                <slide>
+                                    <img src="/assets/images/img-2.jpg" alt="Second Slide" class="img-responsive">
+                                </slide>
+                                <slide>
+                                    <img src="/assets/images/img-1.jpg" alt="Third Slide" class="img-responsive">
+                                </slide>
+                            </carousel>
+                        </tab>
+                        <tab heading="Profile">
+                            <div class="p-15">
+                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                <blockquote class="blockquote-reverse mt-20">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                                    <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                                </blockquote>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                        </tab>
+                        <tab heading="Messages">
+                            <div class="p-15">
+                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                            <div class="section-title">
+                                <h4 class="title underline">Headings</h4>
+                                <p class="sub-title">All HTML headings, <code class=" language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span></code> through <code class=" language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h6</span><span class="token punctuation">&gt;</span></span></code>, are available. <code class=" language-html">.h1</code> through <code class=" language-html">.h6</code> classes are also available, for when you want to match the font styling of a heading but still want your text to be displayed inline.</p>
+                            </div>
+                            <!-- /.section-title -->
+                        </tab>
+                        <tab heading="Settings">
+                            <div class="p-15">
+                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            </div>
+                            <div class="section-title">
+                                <h4 class="title underline">Headings</h4>
+                                <p class="sub-title">All HTML headings, <code class=" language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span></code> through <code class=" language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h6</span><span class="token punctuation">&gt;</span></span></code>, are available. <code class=" language-html">.h1</code> through <code class=" language-html">.h6</code> classes are also available, for when you want to match the font styling of a heading but still want your text to be displayed inline.</p>
+                            </div>
+                            <!-- /.section-title -->
+                        </tab>
+                    </tabset>
+
+                </div>
+            </div>
+
+        </div>
+        <!-- /.col-md-9 -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container-fluid -->

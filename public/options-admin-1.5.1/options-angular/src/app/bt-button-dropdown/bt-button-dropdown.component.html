@@ -1,0 +1,424 @@
+<div class="container-fluid">
+    <div class="row page-title-div">
+        <div class="col-md-6">
+            <h2 class="title">Bootstrap - Button Dropdown</h2>
+            <p class="sub-title">We have styled all Bootstrap elements just as you want!</p>
+        </div>
+        <!-- /.col-md-6 -->
+        <div class="col-md-6 right-side">
+            <a class="btn bg-black toggle-code-handle" role="button">Toggle Code!</a>
+        </div>
+        <!-- /.col-md-6 text-right -->
+    </div>
+    <!-- /.row -->
+    <div class="row breadcrumb-div">
+        <div class="col-md-6 mt-5">
+            <ul class="breadcrumb">
+				<li><a [routerLink]="'dashboard'"><i class="fa fa-home"></i> Home</a></li>
+				<li><a href="#">Bootstrap</a></li>
+				<li class="active">Button Groups</li>
+			</ul>
+        </div>
+        <!-- /.col-md-6 -->
+        <div class="col-md-6 text-right">
+            <!-- Single button -->
+            <div class="btn-group" dropdown>
+            	<button dropdownToggle type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            		Action <span class="caret"></span>
+            	</button>
+            	<ul *dropdownMenu class="dropdown-menu dropdown-menu-right">
+            		<li><a href="#">Action</a></li>
+            		<li><a href="#">Another action</a></li>
+            		<li><a href="#">Something else here</a></li>
+            		<li role="separator" class="divider"></li>
+            		<li><a href="#">Separated link</a></li>
+            	</ul>
+            </div>
+        </div>
+        <!-- /.col-md-6 -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+
+<section class="section">
+    <div class="container">
+
+        <div class="row mt-40">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h4 class="title underline">Single Button Dropdown</h4>
+                    <p class="sub-title">Turn a button into a dropdown toggle with some basic markup changes.</p>
+                </div>
+                <!-- /.section-title -->
+            </div>
+            <!-- /.col-md-12 -->
+
+            <div class="col-md-12 mb-15">
+                <!-- Single button -->
+                <div class="btn-group" dropdown>
+                	<button dropdownToggle type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                		Default <span class="caret"></span>
+                	</button>
+                	<ul *dropdownMenu  class="dropdown-menu">
+                		<li><a href="#">Action</a></li>
+                		<li><a href="#">Another action</a></li>
+                		<li><a href="#">Something else here</a></li>
+                		<li role="separator" class="divider"></li>
+                		<li><a href="#">Separated link</a></li>
+                	</ul>
+                </div>
+
+                <!-- Single button -->
+                <div class="btn-group" dropdown>
+                	<button dropdownToggle type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                		Primary <span class="caret"></span>
+                	</button>
+                	<ul *dropdownMenu  class="dropdown-menu">
+                		<li><a href="#">Action</a></li>
+                		<li><a href="#">Another action</a></li>
+                		<li><a href="#">Something else here</a></li>
+                		<li role="separator" class="divider"></li>
+                		<li><a href="#">Separated link</a></li>
+                	</ul>
+                </div>
+
+                <!-- Single button -->
+                <div class="btn-group" dropdown>
+                	<button dropdownToggle type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                		Danger <span class="caret"></span>
+                	</button>
+                	<ul *dropdownMenu  class="dropdown-menu">
+                		<li><a href="#">Action</a></li>
+                		<li><a href="#">Another action</a></li>
+                		<li><a href="#">Something else here</a></li>
+                		<li role="separator" class="divider"></li>
+                		<li><a href="#">Separated link</a></li>
+                	</ul>
+                </div>
+
+                <!-- Single button -->
+                <div class="btn-group" dropdown>
+                	<button dropdownToggle type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                		Warning <span class="caret"></span>
+                	</button>
+                	<ul *dropdownMenu  class="dropdown-menu">
+                		<li><a href="#">Action</a></li>
+                		<li><a href="#">Another action</a></li>
+                		<li><a href="#">Something else here</a></li>
+                		<li role="separator" class="divider"></li>
+                		<li><a href="#">Separated link</a></li>
+                	</ul>
+                </div>
+
+                <!-- Single button -->
+                <div class="btn-group" dropdown>
+                	<button dropdownToggle type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                		Info <span class="caret"></span>
+                	</button>
+                	<ul *dropdownMenu  class="dropdown-menu">
+                		<li><a href="#">Action</a></li>
+                		<li><a href="#">Another action</a></li>
+                		<li><a href="#">Something else here</a></li>
+                		<li role="separator" class="divider"></li>
+                		<li><a href="#">Separated link</a></li>
+                	</ul>
+                </div>
+
+                <!-- Single button -->
+                <div class="btn-group" dropdown>
+                	<button dropdownToggle type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                		Success <span class="caret"></span>
+                	</button>
+                	<ul *dropdownMenu  class="dropdown-menu">
+                		<li><a href="#">Action</a></li>
+                		<li><a href="#">Another action</a></li>
+                		<li><a href="#">Something else here</a></li>
+                		<li role="separator" class="divider"></li>
+                		<li><a href="#">Separated link</a></li>
+                	</ul>
+                </div>
+
+                <!-- Single button -->
+                <div class="btn-group" dropdown>
+                	<button dropdownToggle type="button" class="btn btn-gray dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                		Gray <span class="caret"></span>
+                	</button>
+                	<ul *dropdownMenu  class="dropdown-menu">
+                		<li><a href="#">Action</a></li>
+                		<li><a href="#">Another action</a></li>
+                		<li><a href="#">Something else here</a></li>
+                		<li role="separator" class="divider"></li>
+                		<li><a href="#">Separated link</a></li>
+                	</ul>
+                </div>
+
+                <!-- Single button -->
+                <div class="btn-group" dropdown>
+                	<button dropdownToggle type="button" class="btn bg-black dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                		Black <span class="caret"></span>
+                	</button>
+                	<ul *dropdownMenu  class="dropdown-menu">
+                		<li><a href="#">Action</a></li>
+                		<li><a href="#">Another action</a></li>
+                		<li><a href="#">Something else here</a></li>
+                		<li role="separator" class="divider"></li>
+                		<li><a href="#">Separated link</a></li>
+                	</ul>
+                </div>
+            </div>
+            <!-- /.col-md-12 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row mt-40">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h4 class="title underline">Split Button Dropdowns</h4>
+                    <p class="sub-title">Similarly, create split button dropdowns with the same markup changes, only with a separate button.</p>
+                </div>
+                <!-- /.section-title -->
+            </div>
+            <!-- /.col-md-12 -->
+
+            <div class="col-md-12 mb-15">
+                <!-- Split button -->
+                <div class="btn-group" dropdown>
+                	<button type="button" class="btn btn-default">Default</button>
+                	<button dropdownToggle type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                		<span class="caret"></span>
+                		<span class="sr-only">Toggle Dropdown</span>
+                	</button>
+                	<ul *dropdownMenu  class="dropdown-menu">
+                		<li><a href="#">Action</a></li>
+                		<li><a href="#">Another action</a></li>
+                		<li><a href="#">Something else here</a></li>
+                		<li role="separator" class="divider"></li>
+                		<li><a href="#">Separated link</a></li>
+                	</ul>
+                </div>
+
+                <!-- Split button -->
+                <div class="btn-group" dropdown>
+                	<button type="button" class="btn btn-primary">Primary</button>
+                	<button dropdownToggle type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                		<span class="caret"></span>
+                		<span class="sr-only">Toggle Dropdown</span>
+                	</button>
+                	<ul *dropdownMenu  class="dropdown-menu">
+                		<li><a href="#">Action</a></li>
+                		<li><a href="#">Another action</a></li>
+                		<li><a href="#">Something else here</a></li>
+                		<li role="separator" class="divider"></li>
+                		<li><a href="#">Separated link</a></li>
+                	</ul>
+                </div>
+
+                <!-- Split button -->
+                <div class="btn-group" dropdown>
+                	<button type="button" class="btn btn-danger">Action</button>
+                	<button dropdownToggle type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                		<span class="caret"></span>
+                		<span class="sr-only">Toggle Dropdown</span>
+                	</button>
+                	<ul *dropdownMenu  class="dropdown-menu">
+                		<li><a href="#">Action</a></li>
+                		<li><a href="#">Another action</a></li>
+                		<li><a href="#">Something else here</a></li>
+                		<li role="separator" class="divider"></li>
+                		<li><a href="#">Separated link</a></li>
+                	</ul>
+                </div>
+
+                <!-- Split button -->
+                <div class="btn-group" dropdown>
+                	<button type="button" class="btn btn-warning">Warning</button>
+                	<button dropdownToggle type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                		<span class="caret"></span>
+                		<span class="sr-only">Toggle Dropdown</span>
+                	</button>
+                	<ul *dropdownMenu  class="dropdown-menu">
+                		<li><a href="#">Action</a></li>
+                		<li><a href="#">Another action</a></li>
+                		<li><a href="#">Something else here</a></li>
+                		<li role="separator" class="divider"></li>
+                		<li><a href="#">Separated link</a></li>
+                	</ul>
+                </div>
+
+                <!-- Split button -->
+                <div class="btn-group" dropdown>
+                	<button type="button" class="btn btn-info">Info</button>
+                	<button dropdownToggle type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                		<span class="caret"></span>
+                		<span class="sr-only">Toggle Dropdown</span>
+                	</button>
+                	<ul *dropdownMenu  class="dropdown-menu">
+                		<li><a href="#">Action</a></li>
+                		<li><a href="#">Another action</a></li>
+                		<li><a href="#">Something else here</a></li>
+                		<li role="separator" class="divider"></li>
+                		<li><a href="#">Separated link</a></li>
+                	</ul>
+                </div>
+
+                <!-- Split button -->
+                <div class="btn-group" dropdown>
+                	<button type="button" class="btn btn-success">Success</button>
+                	<button dropdownToggle type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                		<span class="caret"></span>
+                		<span class="sr-only">Toggle Dropdown</span>
+                	</button>
+                	<ul *dropdownMenu  class="dropdown-menu">
+                		<li><a href="#">Action</a></li>
+                		<li><a href="#">Another action</a></li>
+                		<li><a href="#">Something else here</a></li>
+                		<li role="separator" class="divider"></li>
+                		<li><a href="#">Separated link</a></li>
+                	</ul>
+                </div>
+
+                <!-- Split button -->
+                <div class="btn-group" dropdown>
+                	<button type="button" class="btn bg-black">Black</button>
+                	<button dropdownToggle type="button" class="btn bg-black dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                		<span class="caret"></span>
+                		<span class="sr-only">Toggle Dropdown</span>
+                	</button>
+                	<ul *dropdownMenu  class="dropdown-menu">
+                		<li><a href="#">Action</a></li>
+                		<li><a href="#">Another action</a></li>
+                		<li><a href="#">Something else here</a></li>
+                		<li role="separator" class="divider"></li>
+                		<li><a href="#">Separated link</a></li>
+                	</ul>
+                </div>
+
+                <!-- Split button -->
+                <div class="btn-group" dropdown>
+                	<button type="button" class="btn btn-gray">Gray</button>
+                	<button dropdownToggle type="button" class="btn btn-gray dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                		<span class="caret"></span>
+                		<span class="sr-only">Toggle Dropdown</span>
+                	</button>
+                	<ul *dropdownMenu  class="dropdown-menu">
+                		<li><a href="#">Action</a></li>
+                		<li><a href="#">Another action</a></li>
+                		<li><a href="#">Something else here</a></li>
+                		<li role="separator" class="divider"></li>
+                		<li><a href="#">Separated link</a></li>
+                	</ul>
+                </div>
+            </div>
+            <!-- /.col-md-12 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row mt-40">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h4 class="title underline">Sizing</h4>
+                    <p class="sub-title">Button dropdowns work with buttons of all sizes.</p>
+                </div>
+                <!-- /.section-title -->
+            </div>
+            <!-- /.col-md-12 -->
+
+            <div class="col-md-12 mb-15">
+                <!-- Large button group -->
+                <div class="btn-group" dropdown>
+                	<button dropdownToggle class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                		Large button <span class="caret"></span>
+                	</button>
+                    <ul *dropdownMenu  class="dropdown-menu">
+                		<li><a href="#">Action</a></li>
+                		<li><a href="#">Another action</a></li>
+                		<li><a href="#">Something else here</a></li>
+                		<li role="separator" class="divider"></li>
+                		<li><a href="#">Separated link</a></li>
+                	</ul>
+                </div>
+
+                <!-- Small button group -->
+                <div class="btn-group" dropdown>
+                	<button dropdownToggle class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                		Small button <span class="caret"></span>
+                	</button>
+                    <ul *dropdownMenu  class="dropdown-menu">
+                		<li><a href="#">Action</a></li>
+                		<li><a href="#">Another action</a></li>
+                		<li><a href="#">Something else here</a></li>
+                		<li role="separator" class="divider"></li>
+                		<li><a href="#">Separated link</a></li>
+                	</ul>
+                </div>
+
+                <!-- Extra small button group -->
+                <div class="btn-group" dropdown>
+                	<button dropdownToggle class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                		Extra small button <span class="caret"></span>
+                	</button>
+                    <ul *dropdownMenu  class="dropdown-menu">
+                		<li><a href="#">Action</a></li>
+                		<li><a href="#">Another action</a></li>
+                		<li><a href="#">Something else here</a></li>
+                		<li role="separator" class="divider"></li>
+                		<li><a href="#">Separated link</a></li>
+                	</ul>
+                </div>
+            </div>
+            <!-- /.col-md-12 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row mt-40">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h4 class="title underline">Dropup</h4>
+                    <p class="sub-title">Trigger dropdown menus above elements by adding <code class="language-html">.dropup</code> to the parent.</p>
+                </div>
+                <!-- /.section-title -->
+            </div>
+            <!-- /.col-md-12 -->
+
+            <div class="col-md-12 mb-15">
+                <div class="btn-group dropup" dropdown [dropup]="'true'">
+                    <button type="button" class="btn btn-default">Dropup</button>
+                    <button dropdownToggle type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    	<span class="caret"></span>
+                    	<span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul *dropdownMenu  class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                		<li><a href="#">Another action</a></li>
+                		<li><a href="#">Something else here</a></li>
+                		<li role="separator" class="divider"></li>
+                		<li><a href="#">Separated link</a></li>
+                    </ul>
+                </div>
+
+                <div class="btn-group dropup" dropdown [dropup]="'true'">
+                    <button type="button" class="btn btn-danger">Dropup</button>
+                    <button dropdownToggle type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    	<span class="caret"></span>
+                    	<span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul *dropdownMenu  class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                		<li><a href="#">Another action</a></li>
+                		<li><a href="#">Something else here</a></li>
+                		<li role="separator" class="divider"></li>
+                		<li><a href="#">Separated link</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <!-- /.col-md-12 -->
+
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+</section>
+<!-- /.section -->

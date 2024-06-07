@@ -1,0 +1,584 @@
+<div class="container-fluid">
+    <div class="row page-title-div">
+        <div class="col-md-6">
+            <h2 class="title">Form - Basic Inputs</h2>
+            <p class="sub-title">One of the most complete bootstrap admin templates!</p>
+        </div>
+        <!-- /.col-md-6 -->
+        <div class="col-md-6 right-side">
+            <a class="btn bg-black toggle-code-handle" role="button">Toggle Code!</a>
+        </div>
+        <!-- /.col-md-6 text-right -->
+    </div>
+    <!-- /.row -->
+    <div class="row breadcrumb-div">
+        <div class="col-md-6">
+            <ul class="breadcrumb">
+				<li><a [routerLink]="'dashboard'"><i class="fa fa-home"></i> Home</a></li>
+				<li><a href="#">Forms</a></li>
+				<li class="active">Basic Inputs</li>
+			</ul>
+        </div>
+        <!-- /.col-md-6 -->
+        <div class="col-md-6 text-right">
+            <a href="#"><i class="fa fa-comments"></i> Talk to us</a>
+            <a href="#" class="pl-20"><i class="fa fa-cog"></i> Settings</a>
+        </div>
+        <!-- /.col-md-6 -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+
+
+<section class="section">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-12">
+                <p>Individual form controls automatically receive some global styling. All textual <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code> elements with <code>.form-control</code> are set to <code>width: 100%;</code> by default. Wrap labels and controls in <code>.form-group</code> for optimum spacing.</p>
+            </div>
+            <!-- /.col-md-12 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Vertical Form</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+                        <form>
+                        	<div class="form-group">
+                        		<label for="exampleInputEmail1">Email address</label>
+                        		<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" autofocus="">
+                        	</div>
+                        	<div class="form-group">
+                        		<label for="exampleInputPassword1">Password</label>
+                        		<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        	</div>
+                        	<div class="checkbox">
+                        		<label>
+                        			<input type="checkbox"> Check me out
+                        		</label>
+                        	</div>
+                        	<button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Horizontal Form</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+                        <form class="form-horizontal">
+                        	<div class="form-group">
+                        		<label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                        		<div class="col-sm-10">
+                        			<input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                        		</div>
+                        	</div>
+                        	<div class="form-group">
+                        		<label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                        		<div class="col-sm-10">
+                        			<input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                        		</div>
+                        	</div>
+                        	<div class="form-group">
+                        		<div class="col-sm-offset-2 col-sm-10">
+                        			<div class="checkbox">
+                        				<label>
+                        					<input type="checkbox"> Remember me
+                        				</label>
+                        			</div>
+                        		</div>
+                        	</div>
+                        	<div class="form-group">
+                        		<div class="col-sm-offset-2 col-sm-10">
+                        			<button type="submit" class="btn btn-primary">Sign in</button>
+                        		</div>
+                        	</div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Basic Input Fields</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+                        <form class="form-horizontal">
+                        	<div class="form-group">
+                        		<label for="default" class="col-sm-2 control-label">Default Input</label>
+                        		<div class="col-sm-10">
+                        			<input type="email" class="form-control" id="default" placeholder="Default Input Text">
+                        		</div>
+                        	</div>
+                        	<div class="form-group">
+                        		<label for="password" class="col-sm-2 control-label">Password</label>
+                        		<div class="col-sm-10">
+                        			<input type="password" class="form-control" id="password" placeholder="Password">
+                        		</div>
+                        	</div>
+                        	<div class="form-group">
+                        		<label for="text" class="col-sm-2 control-label">Without Placeholder</label>
+                        		<div class="col-sm-10">
+                        			<input type="text" class="form-control" id="text" >
+                        		</div>
+                        	</div>
+                            <div class="form-group">
+                        		<label for="readonly" class="col-sm-2 control-label">Read Only Field</label>
+                        		<div class="col-sm-10">
+                        			<input type="text" class="form-control" id="readonly" placeholder="Read Only Field" readonly="">
+                        		</div>
+                        	</div>
+                            <div class="form-group">
+                        		<label for="disabled" class="col-sm-2 control-label">Disabled Field</label>
+                        		<div class="col-sm-10">
+                        			<input type="text" class="form-control" id="disabled" placeholder="Disabled Field" disabled="">
+                        		</div>
+                        	</div>
+                            <div class="form-group">
+                        		<label for="predefined" class="col-sm-2 control-label">Predefined Value</label>
+                        		<div class="col-sm-10">
+                        			<input type="text" class="form-control" id="predefined" placeholder="Predefined Value" value="You can set this value">
+                        		</div>
+                        	</div>
+                            <div class="form-group">
+                        		<label for="predefined" class="col-sm-2 control-label">Default Select</label>
+                        		<div class="col-sm-10">
+                                    <select class="form-control">
+                                        <option>Default Select</option>
+                                    	<option>1</option>
+                                    	<option>2</option>
+                                    	<option>3</option>
+                                    	<option>4</option>
+                                    	<option>5</option>
+                                    </select>
+                        		</div>
+                        	</div>
+                            <div class="form-group">
+                        		<label for="maximum" class="col-sm-2 control-label">Maximum Characters</label>
+                        		<div class="col-sm-10">
+                        			<input type="text" class="form-control" id="maximum" placeholder="You can enter maximum 5 characters" maxlength="5">
+                        		</div>
+                        	</div>
+                            <div class="form-group">
+                        		<label for="autocomplete" class="col-sm-2 control-label">Autocomplete Off</label>
+                        		<div class="col-sm-10">
+                        			<input type="text" class="form-control" id="autocomplete" placeholder="Autocomplete Off" autocomplete="off">
+                        		</div>
+                        	</div>
+                            <div class="form-group">
+                        		<label class="col-sm-2 control-label">Static Text</label>
+                        		<div class="col-sm-10">
+                        			<p class="form-control-static" id="static">This is static text in form.</p>
+                        		</div>
+                        	</div>
+                            <div class="form-group">
+                        		<label for="textarea" class="col-sm-2 control-label">Textarea</label>
+                        		<div class="col-sm-10">
+                        			<textarea class="form-control" id="textarea" placeholder="Default Textarea" rows="5"></textarea>
+                        		</div>
+                        	</div>
+                        	<div class="form-group">
+                        		<div class="col-sm-offset-2 col-sm-10">
+                        			<button type="submit" class="btn btn-primary">Submit</button>
+                        		</div>
+                        	</div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-12 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Default Input Types<small>without jQuery plugins</small></h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+                        <form class="form-horizontal">
+                        	<div class="form-group">
+                        		<label for="text1" class="col-sm-2 control-label">Text</label>
+                        		<div class="col-sm-10">
+                        			<input type="text" class="form-control" id="text1" placeholder="Input type text">
+                        		</div>
+                        	</div>
+                            <div class="form-group">
+                        		<label for="email2" class="col-sm-2 control-label">Email</label>
+                        		<div class="col-sm-10">
+                        			<input type="email" class="form-control" id="email2" placeholder="Input type Email">
+                        		</div>
+                        	</div>
+                            <div class="form-group">
+                        		<label for="pass1" class="col-sm-2 control-label">Password</label>
+                        		<div class="col-sm-10">
+                        			<input type="password" class="form-control" id="pass1" placeholder="Input type password">
+                        		</div>
+                        	</div>
+                            <div class="form-group">
+                        		<label for="date" class="col-sm-2 control-label">Date</label>
+                        		<div class="col-sm-10">
+                        			<input type="date" class="form-control" id="date">
+                        		</div>
+                        	</div>
+                            <div class="form-group">
+                        		<label for="datetimelocal" class="col-sm-2 control-label">Datetime</label>
+                        		<div class="col-sm-10">
+                        			<input type="datetime-local" class="form-control" id="datetimelocal">
+                        		</div>
+                        	</div>
+                            <div class="form-group">
+                        		<label for="color" class="col-sm-2 control-label">Color</label>
+                        		<div class="col-sm-10">
+                        			<input type="color" class="form-control" id="color">
+                        		</div>
+                        	</div>
+                        	<div class="form-group">
+                        		<div class="col-sm-offset-2 col-sm-10">
+                        			<button type="submit" class="btn btn-primary">Submit</button>
+                        		</div>
+                        	</div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Default Input Types<small>without jQuery plugins</small></h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+                        <form class="form-horizontal">
+                        	<div class="form-group">
+                        		<label for="month" class="col-sm-2 control-label">Month</label>
+                        		<div class="col-sm-10">
+                        			<input type="month" class="form-control" id="month">
+                        		</div>
+                        	</div>
+                            <div class="form-group">
+                        		<label for="time" class="col-sm-2 control-label">Time</label>
+                        		<div class="col-sm-10">
+                        			<input type="time" class="form-control" id="time">
+                        		</div>
+                        	</div>
+                            <div class="form-group">
+                        		<label for="week" class="col-sm-2 control-label">Week</label>
+                        		<div class="col-sm-10">
+                        			<input type="week" class="form-control" id="week">
+                        		</div>
+                        	</div>
+                            <div class="form-group">
+                        		<label for="number" class="col-sm-2 control-label">Number</label>
+                        		<div class="col-sm-10">
+                        			<input type="number" class="form-control" id="number" placeholder="Input type number">
+                        		</div>
+                        	</div>
+                            <div class="form-group">
+                        		<label for="url" class="col-sm-2 control-label">URL</label>
+                        		<div class="col-sm-10">
+                        			<input type="url" class="form-control" id="url" placeholder="http://www.google.com">
+                        		</div>
+                        	</div>
+                            <div class="form-group">
+                        		<label for="search" class="col-sm-2 control-label">Search</label>
+                        		<div class="col-sm-10">
+                        			<input type="search" class="form-control" id="search" placeholder="Input type search">
+                        		</div>
+                        	</div>
+                        	<div class="form-group">
+                        		<div class="col-sm-offset-2 col-sm-10">
+                        			<button type="submit" class="btn btn-primary">Submit</button>
+                        		</div>
+                        	</div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Basic Select <small>without jQuery plugins</small></h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                        		<label for="predefined" class="col-sm-2 control-label">Default Select</label>
+                        		<div class="col-sm-10">
+                                    <select class="form-control">
+                                        <option>Default Select</option>
+                                    	<option>Option 1</option>
+                                    	<option>Option 2</option>
+                                    	<option>Option 3</option>
+                                    	<option>Option 4</option>
+                                    	<option>Option 5</option>
+                                    </select>
+                        		</div>
+                        	</div>
+                            <div class="form-group">
+                        		<label for="predefined" class="col-sm-2 control-label">Default Multi-Select</label>
+                        		<div class="col-sm-10">
+                                    <select multiple class="form-control" aria-describedby="helpBlock">
+                                        <option>Default Multi-Select</option>
+                                    	<option>Option 1</option>
+                                    	<option>Option 2</option>
+                                    	<option>Option 3</option>
+                                    	<option>Option 4</option>
+                                        <option>Option 5</option>
+                                        <option>Option 6</option>
+                                        <option>Option 7</option>
+                                    	<option>Option 8</option>
+                                    </select>
+                                    <span id="helpBlock" class="help-block">Use ctrl / command key on keyboard to select multiple options.</span>
+                        		</div>
+                        	</div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-12 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Validation States <small>without jQuery plugins</small></h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+                        <form class="">
+                            <div class="form-group has-success">
+                                <label for="success" class="control-label">Input with success state</label>
+                        		<div class="">
+                        			<input type="text" class="form-control" id="success">
+                                    <span class="help-block">This is help text with success state.</span>
+                        		</div>
+                        	</div>
+                            <div class="form-group has-warning">
+                                <label for="warning" class="control-label">Input with warning state</label>
+                        		<div class="">
+                        			<input type="text" class="form-control" id="warning">
+                                    <span class="help-block">This is help text with warning state.</span>
+                        		</div>
+                        	</div>
+                            <div class="form-group has-error">
+                                <label for="error" class="control-label">Input with error state</label>
+                        		<div class="">
+                        			<input type="text" class="form-control" id="error">
+                                    <span class="help-block">This is help text with error state.</span>
+                        		</div>
+                        	</div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-8 col-md-offset-2 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>With optional icons</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+                        <form class="">
+                            <div class="form-group has-success has-feedback">
+                            	<label class="control-label" for="inputSuccess2">Input with success</label>
+                            	<input type="text" class="form-control" id="inputSuccess2" aria-describedby="inputSuccess2Status">
+                            	<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                            	<span id="inputSuccess2Status" class="sr-only">(success)</span>
+                            </div>
+                            <div class="form-group has-warning has-feedback">
+                            	<label class="control-label" for="inputWarning2">Input with warning</label>
+                            	<input type="text" class="form-control" id="inputWarning2" aria-describedby="inputWarning2Status">
+                            	<span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true"></span>
+                            	<span id="inputWarning2Status" class="sr-only">(warning)</span>
+                            </div>
+                            <div class="form-group has-error has-feedback">
+                            	<label class="control-label" for="inputError2">Input with error</label>
+                            	<input type="text" class="form-control" id="inputError2" aria-describedby="inputError2Status">
+                            	<span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+                            	<span id="inputError2Status" class="sr-only">(error)</span>
+                            </div>
+                            <div class="form-group has-success has-feedback">
+                            	<label class="control-label" for="inputGroupSuccess1">Input group with success</label>
+                            	<div class="input-group">
+                            		<span class="input-group-addon">@</span>
+                            		<input type="text" class="form-control" id="inputGroupSuccess1" aria-describedby="inputGroupSuccess1Status">
+                            	</div>
+                            	<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                            	<span id="inputGroupSuccess1Status" class="sr-only">(success)</span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-8 col-md-offset-2 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Optional icons with hidden <code>.sr-only</code> labels</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+                        <form class="">
+                            <div class="form-group has-success has-feedback">
+                            	<label class="control-label sr-only" for="inputSuccess5">Hidden label</label>
+                            	<input type="text" class="form-control" id="inputSuccess5" aria-describedby="inputSuccess5Status">
+                            	<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                            	<span id="inputSuccess5Status" class="sr-only">(success)</span>
+                            </div>
+                            <div class="form-group has-success has-feedback">
+                            	<label class="control-label sr-only" for="inputGroupSuccess4">Input group with success</label>
+                            	<div class="input-group">
+                            		<span class="input-group-addon">@</span>
+                            		<input type="text" class="form-control" id="inputGroupSuccess4" aria-describedby="inputGroupSuccess4Status">
+                            	</div>
+                            	<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                            	<span id="inputGroupSuccess4Status" class="sr-only">(success)</span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-8 col-md-offset-2 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Input with icons</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+                        <form class="form-horizontal">
+                            <div class="form-group left-icon">
+                        		<label for="leftIcon" class="col-sm-2 control-label">Input icons</label>
+                        		<div class="col-sm-10">
+                                    <span class="glyphicon glyphicon-calendar form-left-icon"></span>
+                        			<input type="text" class="form-control" id="leftIcon" placeholder="Input with left icon">
+                        		</div>
+                        	</div>
+                            <div class="form-group left-icon">
+                        		<label for="leftIcon2" class="col-sm-2 control-label"></label>
+                        		<div class="col-sm-10">
+                                    <span class="glyphicon glyphicon-envelope form-left-icon icon-lg"></span>
+                        			<input type="text" class="form-control input-lg" id="leftIcon2" placeholder="Left icon + Large input">
+                        		</div>
+                        	</div>
+                            <div class="form-group left-icon">
+                        		<label for="leftIcon3" class="col-sm-2 control-label"></label>
+                        		<div class="col-sm-10">
+                                    <span class="glyphicon glyphicon-info-sign form-left-icon icon-sm"></span>
+                        			<input type="text" class="form-control input-sm" id="leftIcon3" placeholder="Left icon + Small input">
+                        		</div>
+                        	</div>
+                            <div class="form-group left-icon">
+                        		<label for="leftIcon4" class="col-sm-2 control-label"></label>
+                        		<div class="col-sm-10">
+                                    <span class="glyphicon glyphicon-comment form-left-icon"></span>
+                        			<textarea class="form-control" id="leftIcon4" placeholder="Textarea" rows="5"></textarea>
+                        		</div>
+                        	</div>
+
+                            <div class="form-group has-feedback">
+                        		<label for="rightIcon2" class="col-sm-2 control-label">Icons on Right</label>
+                        		<div class="col-sm-10">
+                        			<input type="text" class="form-control input-lg" id="rightIcon2" placeholder="Right icon + Large input">
+                                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                        		</div>
+                        	</div>
+                            <div class="form-group has-feedback">
+                        		<label for="rightIcon" class="col-sm-2 control-label"></label>
+                        		<div class="col-sm-10">
+                        			<input type="text" class="form-control" id="rightIcon" placeholder="Input with right icon">
+                                    <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
+                        		</div>
+                        	</div>
+                            <div class="form-group has-feedback">
+                        		<label for="rightIcon3" class="col-sm-2 control-label"></label>
+                        		<div class="col-sm-10">
+                        			<input type="text" class="form-control input-sm" id="rightIcon3" placeholder="Right icon + Small input">
+                                    <span class="glyphicon glyphicon-info-sign form-control-feedback"></span>
+                        		</div>
+                        	</div>
+                            <div class="form-group has-feedback">
+                        		<label for="rightIcon4" class="col-sm-2 control-label"></label>
+                        		<div class="col-sm-10">
+                        			<textarea class="form-control" id="rightIcon4" placeholder="Textarea with right icon" rows="5"></textarea>
+                                    <span class="glyphicon glyphicon-comment form-control-feedback"></span>
+                        		</div>
+                        	</div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-8 col-md-offset-2 -->
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container-fluid -->
+</section>
+<!-- /.section -->

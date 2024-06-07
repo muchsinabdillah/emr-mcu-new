@@ -1,0 +1,115 @@
+<div class="container-fluid">
+    <div class="row page-title-div">
+        <div class="col-md-6">
+            <h2 class="title">Bootstrap - Collapse</h2>
+            <p class="sub-title">We have styled all Bootstrap elements just as you want!</p>
+        </div>
+        <!-- /.col-md-6 -->
+        <div class="col-md-6 right-side">
+            <a class="btn bg-black toggle-code-handle" role="button">Toggle Code!</a>
+        </div>
+        <!-- /.col-md-6 text-right -->
+    </div>
+    <!-- /.row -->
+    <div class="row breadcrumb-div">
+        <div class="col-md-6">
+            <ul class="breadcrumb">
+				<li><a [routerLink]="'dashboard'"><i class="fa fa-home"></i> Home</a></li>
+				<li><a href="#">Bootstrap</a></li>
+				<li class="active">Collapse</li>
+			</ul>
+        </div>
+        <!-- /.col-md-6 -->
+        <div class="col-md-6 text-right">
+            <a href="#"><i class="fa fa-comments"></i> Talk to us</a>
+            <a href="#" class="pl-20"><i class="fa fa-cog"></i> Settings</a>
+        </div>
+        <!-- /.col-md-6 -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+
+<section class="section">
+    <div class="container">
+
+        <div class="row mt-40">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h4 class="title underline">Basic Collapse</h4>
+                    <p class="sub-title">You can use a link with the <code class="language-html">href</code> attribute, or a button with the <code class="language-html">data-target</code> attribute. In both cases, the <code class="language-html">data-toggle="collapse"</code> is required.</p>
+                </div>
+                <!-- /.section-title -->
+            </div>
+            <!-- /.col-md-12 -->
+
+            <div class="col-md-12 mb-15">
+                <button (click)="isCollapsed = !isCollapsed" class="btn btn-primary" type="button" >
+                	Button with data-target
+                </button>
+                <div class="collapse mt-15" id="collapseExample" (collapsed)="collapsed($event)"
+                         (expanded)="expanded($event)"
+                         [collapse]="isCollapsed">
+                	<div class="well">
+                		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                	</div>
+                </div>
+            </div>
+            <!-- /.col-md-12 -->
+
+        </div>
+        <!-- /.row -->
+
+        <div class="row mt-40">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h4 class="title underline">Accordion</h4>
+                    <p class="sub-title">Extend the default collapse behavior to create an accordion with the panel component.</p>
+                </div>
+                <!-- /.section-title -->
+            </div>
+            <!-- /.col-md-12 -->
+
+            <div class="col-md-12 mb-15">
+                <accordion>
+                	<accordion-group [isOpen]="true" #group4 [panelClass]="'panel-default mb-5'">
+                        <div accordion-heading >
+                			Collapsible Group Item #1
+                			<i class="pull-right float-xs-right glyphicon" [ngClass]="{'glyphicon-chevron-down': group4?.isOpen, 'glyphicon-chevron-right': !group4?.isOpen}"></i>
+                		</div>
+                        <div class="panel-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                            on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                        </div>
+                	</accordion-group>
+                	<accordion-group #group5 [panelClass]="'panel-default mb-5'">
+                		<div accordion-heading >
+                			Collapsible Group Item #2
+                			<i class="pull-right float-xs-right glyphicon" [ngClass]="{'glyphicon-chevron-down': group5?.isOpen, 'glyphicon-chevron-right': !group5?.isOpen}"></i>
+                		</div>
+                        <div class="panel-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                            on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                        </div>
+                	</accordion-group>
+                	<accordion-group #group6 >
+                        <div accordion-heading >
+                			Collapsible Group Item #3
+                			<i class="pull-right float-xs-right glyphicon" [ngClass]="{'glyphicon-chevron-down': group6?.isOpen, 'glyphicon-chevron-right': !group6?.isOpen}"></i>
+                		</div>
+                        <div class="panel-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                            on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                        </div>
+                	</accordion-group>
+                </accordion>
+            </div>
+            <!-- /.col-md-12 -->
+
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+</section>
+<!-- /.section -->

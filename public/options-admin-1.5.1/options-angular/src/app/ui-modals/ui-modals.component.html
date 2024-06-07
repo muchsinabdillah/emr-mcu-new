@@ -1,0 +1,514 @@
+<div class="container-fluid">
+    <div class="row page-title-div">
+        <div class="col-md-6">
+            <h2 class="title">Modals</h2>
+            <p class="sub-title">We have styled all Bootstrap elements just as you want!</p>
+        </div>
+        <!-- /.col-md-6 -->
+        <div class="col-md-6 right-side">
+            <a class="btn bg-black toggle-code-handle" role="button">Toggle Code!</a>
+        </div>
+        <!-- /.col-md-6 text-right -->
+    </div>
+    <!-- /.row -->
+    <div class="row breadcrumb-div">
+        <div class="col-md-6">
+            <ul class="breadcrumb">
+				<li><a [routerLink]="'dashboard'"><i class="fa fa-home"></i> Home</a></li>
+				<li><a href="#">UI</a></li>
+				<li class="active">Modals</li>
+			</ul>
+        </div>
+        <!-- /.col-md-6 -->
+        <div class="col-md-6 text-right">
+            <a href="#"><i class="fa fa-comments"></i> Talk to us</a>
+            <a href="#" class="pl-20"><i class="fa fa-cog"></i> Settings</a>
+        </div>
+        <!-- /.col-md-6 -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+
+<section class="section">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Default Bootstrap Modal</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <p>Toggle a modal via JavaScript by clicking the button below. It will slide down and fade in from the top of the page.</p>
+                        <div class="text-center">
+                            <button type="button" class="btn btn-primary btn-animated btn-wide" (click)="defaultModal.show()">
+                                <span class="visible-content">Launch Modal</span>
+                                <span class="hidden-content"><i class="fa fa-arrow-right"></i></span>
+                            </button>
+                        </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade" bsModal id="myModal" tabindex="-1" role="dialog" #defaultModal="bs-modal">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" id="myModalLabel">Modal title <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="defaultModal.hide()"><span aria-hidden="true">×</span></button></h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div class="btn-group" role="group">
+                                            <button type="button" class="btn btn-gray btn-wide btn-rounded" (click)="defaultModal.hide()"><i class="fa fa-times"></i>Close</button>
+                                            <button type="button" class="btn bg-success btn-wide btn-rounded"><i class="fa fa-check"></i>Save</button>
+                                        </div>
+                                        <!-- /.btn-group -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Static Modals</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+                        <p>Click below button to see example of static modal. It will not be closed by clicking on backdrop. </p>
+                        <div class="text-center">
+                            <button type="button" class="btn btn-primary btn-animated btn-wide" (click)="staticModal.show()">
+                                <span class="visible-content">Launch Modal</span>
+                                <span class="hidden-content"><i class="fa fa-arrow-right"></i></span>
+                            </button>
+                        </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade " bsModal id="modal2" tabindex="-1" role="dialog" #staticModal="bs-modal" [config]="{backdrop: 'static'}">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header draggable-handle">
+                                        <h4 class="modal-title" id="modal2Label"><i class="fa fa-arrows"></i> Draggable Modal <small>Grab it here</small> <button type="button" class="close" (click)="staticModal.hide()" aria-label="Close"><span aria-hidden="true">×</span></button></h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div class="btn-group" role="group">
+                                            <button type="button" class="btn btn-gray btn-wide btn-rounded" (click)="staticModal.hide()"><i class="fa fa-times"></i>Close</button>
+                                            <button type="button" class="btn bg-success btn-wide btn-rounded"><i class="fa fa-check"></i>Save</button>
+                                        </div>
+                                        <!-- /.btn-group -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Modal Without backdrop</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <p>You can disable backdrop by adding <code class="language-html">data-backdrop="false"</code> to the modal. By disabling backdrop, modal can not be closed by clicking anywhere else.</p>
+                        <div class="text-center">
+                            <button type="button" class="btn btn-primary btn-animated btn-wide" (click)="noBDModal.show()" data-backdrop="false">
+                                <span class="visible-content">Launch Modal</span>
+                                <span class="hidden-content"><i class="fa fa-arrow-right"></i></span>
+                            </button>
+                        </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="modal3" tabindex="-1" role="dialog" bsModal #noBDModal="bs-modal" [config]="{backdrop: false}">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" id="modal3Label">Modal title <button type="button" class="close" (click)="noBDModal.hide()" aria-label="Close"><span aria-hidden="true">×</span></button></h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div class="btn-group" role="group">
+                                            <button type="button" class="btn btn-gray btn-wide btn-rounded" (click)="noBDModal.hide()"><i class="fa fa-times"></i>Close</button>
+                                            <button type="button" class="btn bg-success btn-wide btn-rounded"><i class="fa fa-check"></i>Save</button>
+                                        </div>
+                                        <!-- /.btn-group -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+
+
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Colored Modals</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <p>Just add <code class="language-html">bg-primary</code> for primary colored modal. You can use other color classes like bg-black, bg-success, bg-warning etc.</p>
+                        <div class="text-center">
+                            <button type="button" class="btn btn-primary btn-animated btn-wide" (click)="primaryModal.show()">
+                                <span class="visible-content">Launch Modal</span>
+                                <span class="hidden-content"><i class="fa fa-arrow-right"></i></span>
+                            </button>
+                        </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="modal5" tabindex="-1" role="dialog" bsModal #primaryModal="bs-modal" >
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content bg-warning">
+                                    <div class="modal-body">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    </div>
+                                    <div class="modal-footer no-border">
+                                        <div class="btn-group" role="group">
+                                            <button type="button" class="btn bg-white btn-wide btn-rounded" (click)="primaryModal.hide()"><i class="fa fa-times"></i>Close</button>
+                                            <button type="button" class="btn bg-black btn-wide btn-rounded" (click)="primaryModal.hide()"><i class="fa fa-check"></i>Accept</button>
+                                        </div>
+                                        <!-- /.btn-group -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Transparent Modal</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+                        <p>You can customize backdrop color by simply adding <code class="language-html">data-backdrop-color</code> attribute to <code class="language-html">.modal</code>. You can use primary, white, danger, black, success etc colors.</p>
+                        <div class="text-center">
+                            <button type="button" class="btn btn-primary btn-animated btn-wide" (click)="transModal.show()" >
+                                <span class="visible-content">Launch Modal</span>
+                                <span class="hidden-content"><i class="fa fa-arrow-right"></i></span>
+                            </button>
+                        </div>
+
+                        <!-- Modal -->
+                        <div class="modal vert-center fade trans-modal" id="modal6" tabindex="-1" role="dialog" bsModal #transModal="bs-modal" >
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" id="modal6Label"><i class="fa fa-bars"></i> Modal title <button type="button" class="close" (click)="transModal.hide()" aria-label="Close"><span aria-hidden="true">×</span></button></h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    </div>
+                                    <div class="modal-footer text-center">
+                                        <div class="btn-group" role="group">
+                                            <button type="button" class="btn btn-gray btn-wide btn-rounded" (click)="transModal.hide()"><i class="fa fa-times"></i>Close</button>
+                                            <button type="button" class="btn bg-success btn-wide btn-rounded" (click)="transModal.hide()"><i class="fa fa-check"></i>Accept</button>
+                                        </div>
+                                        <!-- /.btn-group -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Top Aligned</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <p>Toggle a modal via JavaScript by clicking the button below. It will slide down and fade in from the top of the page.</p>
+                        <div class="text-center">
+                            <button type="button" class="btn btn-primary btn-animated btn-wide" (click)="topModal.show()">
+                                <span class="visible-content">Launch Modal</span>
+                                <span class="hidden-content"><i class="fa fa-arrow-right"></i></span>
+                            </button>
+                        </div>
+
+                        <!-- Modal -->
+                        <div class="modal vert-top fade" id="modal7" tabindex="-1" role="dialog" bsModal #topModal="bs-modal" >
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" id="modal7Label">Modal title <button type="button" class="close" (click)="topModal.hide()" aria-label="Close"><span aria-hidden="true">×</span></button></h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div class="btn-group" role="group">
+                                            <button type="button" class="btn btn-gray btn-wide btn-rounded" (click)="topModal.hide()"><i class="fa fa-times"></i>Close</button>
+                                            <button type="button" class="btn bg-success btn-wide btn-rounded"><i class="fa fa-check"></i>Save</button>
+                                        </div>
+                                        <!-- /.btn-group -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Bottom Aligned</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <p>Toggle a modal via JavaScript by clicking the button below. It will slide down and fade in from the top of the page.</p>
+                        <div class="text-center">
+                            <button type="button" class="btn btn-primary btn-animated btn-wide" (click)="bottomModal.show()">
+                                <span class="visible-content">Launch Modal</span>
+                                <span class="hidden-content"><i class="fa fa-arrow-right"></i></span>
+                            </button>
+                        </div>
+
+                        <!-- Modal -->
+                        <div class="modal vert-bottom fade" id="modal8" tabindex="-1" role="dialog" bsModal #bottomModal="bs-modal" >
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" id="modal8Label">Modal title <button type="button" class="close" (click)="bottomModal.hide()" aria-label="Close"><span aria-hidden="true">×</span></button></h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div class="btn-group" role="group">
+                                            <button type="button" class="btn btn-gray btn-wide btn-rounded" (click)="bottomModal.hide()"><i class="fa fa-times"></i>Close</button>
+                                            <button type="button" class="btn bg-success btn-wide btn-rounded"><i class="fa fa-check"></i>Save</button>
+                                        </div>
+                                        <!-- /.btn-group -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Full Screen Modal</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <p>Toggle a modal via JavaScript by clicking the button below. It will slide down and fade in from the top of the page.</p>
+                        <div class="text-center">
+                            <button type="button" class="btn btn-primary btn-animated btn-wide" (click)="fullModal.show()">
+                                <span class="visible-content">Launch Modal</span>
+                                <span class="hidden-content"><i class="fa fa-arrow-right"></i></span>
+                            </button>
+                        </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade modal-full-screen" id="modal9" tabindex="-1" role="dialog" bsModal #fullModal="bs-modal" >
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" id="modal9Label">Modal title <button type="button" class="close" (click)="fullModal.hide()" aria-label="Close"><span aria-hidden="true">×</span></button></h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div class="btn-group" role="group">
+                                            <button type="button" class="btn btn-gray btn-wide btn-rounded" (click)="fullModal.hide()"><i class="fa fa-times"></i>Close</button>
+                                            <button type="button" class="btn bg-success btn-wide btn-rounded"><i class="fa fa-check"></i>Save</button>
+                                        </div>
+                                        <!-- /.btn-group -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Small Modal</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <p>Toggle a modal via JavaScript by clicking the button below. It will slide down and fade in from the top of the page.</p>
+                        <div class="text-center">
+                            <button type="button" class="btn btn-primary btn-animated btn-wide" (click)="smallModal.show()">
+                                <span class="visible-content">Launch Modal</span>
+                                <span class="hidden-content"><i class="fa fa-arrow-right"></i></span>
+                            </button>
+                        </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="modal10" tabindex="-1" role="dialog"  bsModal #smallModal="bs-modal" >
+                            <div class="modal-dialog modal-sm" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" id="modal10Label">Modal title <button type="button" class="close" (click)="smallModal.hide()" aria-label="Close"><span aria-hidden="true">×</span></button></h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div class="btn-group" role="group">
+                                            <button type="button" class="btn btn-gray btn-wide btn-rounded" (click)="smallModal.hide()"><i class="fa fa-times"></i>Close</button>
+                                            <button type="button" class="btn bg-success btn-wide btn-rounded"><i class="fa fa-check"></i>Save</button>
+                                        </div>
+                                        <!-- /.btn-group -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Large Modal</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <p>Toggle a modal via JavaScript by clicking the button below. It will slide down and fade in from the top of the page.</p>
+                        <div class="text-center">
+                            <button type="button" class="btn btn-primary btn-animated btn-wide" (click)="largeModal.show()">
+                                <span class="visible-content">Launch Modal</span>
+                                <span class="hidden-content"><i class="fa fa-arrow-right"></i></span>
+                            </button>
+                        </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="modal10" tabindex="-1" role="dialog"  bsModal #largeModal="bs-modal" >
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" id="modal10Label">Modal title <button type="button" class="close" (click)="largeModal.hide()" aria-label="Close"><span aria-hidden="true">×</span></button></h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div class="btn-group" role="group">
+                                            <button type="button" class="btn btn-gray btn-wide btn-rounded" (click)="largeModal.hide()"><i class="fa fa-times"></i>Close</button>
+                                            <button type="button" class="btn bg-success btn-wide btn-rounded"><i class="fa fa-check"></i>Save</button>
+                                        </div>
+                                        <!-- /.btn-group -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container-fluid -->
+</section>
+<!-- /.section -->
+
+
+
+<section class="section">
+    <div class="section-title text-center">
+        <h4 class="title underline">Sweet Alert</h4>
+        <p class="sub-title">A beautiful replacement for JavaScript alert.</p>
+    </div>
+    <!-- /.section-title -->
+    <div class="container-fluid">
+        <div class="row mt-15">
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Success Message <small>with animation</small></h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <p>Toggle a modal via JavaScript by clicking the button below. It will slide down and fade in from the top of the page.</p>
+                        <div class="text-center">
+                            <a class="btn btn-success btn-animated btn-wide " role="button" [swal]="['Good job!', 'You clicked the button!', 'success']">
+                                <span class="visible-content">Success Message</span>
+                                <span class="hidden-content"><i class="fa fa-arrow-right"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Warning Modal <small>with confirm & cancel buttons</small></h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <p>Toggle a modal via JavaScript by clicking the button below. It will slide down and fade in from the top of the page.</p>
+                        <div class="text-center">
+                            <button type="button" class="btn btn-danger btn-animated btn-wide" [swal]="['Are you sure?', 'This cannot be undone.', 'warning']" (confirm)="deleteFile()">
+                                <span class="visible-content">Delete Alert</span>
+                                <span class="hidden-content"><i class="fa fa-times"></i></span>
+                            </button>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container-fluid -->
+</section>
+<!-- /.section -->

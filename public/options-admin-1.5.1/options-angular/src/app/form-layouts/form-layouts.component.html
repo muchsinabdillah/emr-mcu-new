@@ -1,0 +1,802 @@
+<div class="container-fluid">
+    <div class="row page-title-div">
+        <div class="col-md-6">
+            <h2 class="title">Form - Layouts</h2>
+            <p class="sub-title">One of the most complete bootstrap admin templates!</p>
+        </div>
+        <!-- /.col-md-6 -->
+        <div class="col-md-6 right-side">
+            <a class="btn bg-black toggle-code-handle" role="button">Toggle Code!</a>
+        </div>
+        <!-- /.col-md-6 text-right -->
+    </div>
+    <!-- /.row -->
+    <div class="row breadcrumb-div">
+        <div class="col-md-6">
+            <ul class="breadcrumb">
+				<li><a [routerLink]="'dashboard'"><i class="fa fa-home"></i> Home</a></li>
+				<li><a href="#">Forms</a></li>
+				<li class="active">Layouts</li>
+			</ul>
+        </div>
+        <!-- /.col-md-6 -->
+        <div class="col-md-6 text-right">
+            <a href="#"><i class="fa fa-comments"></i> Talk to us</a>
+            <a href="#" class="pl-20"><i class="fa fa-cog"></i> Settings</a>
+        </div>
+        <!-- /.col-md-6 -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+
+<section class="section">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Basic Vertical Form</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+                        <form class="col-md-10 col-md-offset-1">
+                            <div class="form-group">
+                        		<label for="name">Full Name</label>
+                        		<input type="text" class="form-control" id="name" placeholder="Enter Your Full Name">
+                        	</div>
+                            <div class="form-group">
+                        		<label for="username">Username</label>
+                        		<input type="text" class="form-control" id="username" placeholder="Enter Desired Username">
+                        	</div>
+                        	<div class="form-group">
+                        		<label for="exampleInputEmail1">Email address</label>
+                        		<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Your Email Id">
+                        	</div>
+                        	<div class="form-group">
+                        		<label for="exampleInputPassword1">Password</label>
+                        		<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Strong Password">
+                        	</div>
+                        	<div class="checkbox">
+                        		<label>
+                        			<input type="checkbox"> I accept <a href="#" class="color-primary">terms & conditions</a>
+                        		</label>
+                        	</div>
+                        	<button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Vertical form with icons</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+                        <form class="col-md-10 col-md-offset-1">
+                            <div class="form-group left-icon">
+                        		<label for="name2">Full Name</label>
+                                <span class="fa fa-pencil form-left-icon"></span>
+                        		<input type="text" class="form-control" id="name2" placeholder="Enter Your Full Name">
+                        	</div>
+                            <div class="form-group left-icon">
+                        		<label for="username2">Username</label>
+                                <span class="fa fa-user form-left-icon"></span>
+                        		<input type="text" class="form-control" id="username2" placeholder="Enter Desired Username">
+                        	</div>
+                        	<div class="form-group left-icon">
+                        		<label for="exampleInputEmail2">Email address</label>
+                                <span class="fa fa-envelope form-left-icon"></span>
+                        		<input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter Your Email Id">
+                        	</div>
+                        	<div class="form-group left-icon">
+                        		<label for="exampleInputPassword2">Password</label>
+                                <span class="fa fa-key form-left-icon"></span>
+                        		<input type="password" class="form-control" id="exampleInputPassword2" placeholder="Enter Strong Password">
+                        	</div>
+                        	<div class="checkbox">
+                        		<label>
+                        			<input type="checkbox"> I accept <a href="#" class="color-primary">terms & conditions</a>
+                        		</label>
+                        	</div>
+                        	<button type="button" class="btn btn-success btn-rounded btn-wide pull-right"><i class="fa fa-check"></i>Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Icons on right</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+                        <form class="col-md-10 col-md-offset-1">
+                            <div class="form-group has-feedback">
+                        		<label for="name3">Full Name</label>
+                        		<input type="text" class="form-control" id="name3" placeholder="Enter Your Full Name">
+                                <span class="fa fa-pencil form-control-feedback"></span>
+                        	</div>
+                            <div class="form-group has-feedback">
+                        		<label for="username3">Username</label>
+                        		<input type="text" class="form-control" id="username3" placeholder="Enter Desired Username">
+                                <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
+                        	</div>
+                        	<div class="form-group has-feedback">
+                        		<label for="exampleInputEmail3">Email address</label>
+                        		<input type="email" class="form-control" id="exampleInputEmail3" placeholder="Enter Your Email Id">
+                                <span class="fa fa-envelope-o form-control-feedback"></span>
+                        	</div>
+                        	<div class="form-group has-feedback">
+                        		<label for="exampleInputPassword3">Password</label>
+                        		<input type="password" class="form-control" id="exampleInputPassword3" placeholder="Enter Strong Password">
+                                <span class="fa fa-key form-control-feedback"></span>
+                        	</div>
+                        	<div class="checkbox">
+                        		<label>
+                        			<input type="checkbox"> I accept <a href="#" class="color-primary">terms & conditions</a>
+                        		</label>
+                        	</div>
+                        	<button type="button" class="btn btn-success btn-labeled pull-right">Submit<span class="btn-label btn-label-right"><i class="fa fa-check"></i></span></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Vertical Form with Input Group</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+                        <form class="col-md-10 col-md-offset-1">
+                            <div class="form-group">
+                        		<label for="name4">Full Name</label>
+                                <div class="input-group">
+                            		<span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+                            		<input type="text" class="form-control" id="name4">
+                            	</div>
+                        	</div>
+                            <div class="form-group">
+                        		<label for="username4">Username</label>
+                                <div class="input-group">
+                            		<span class="input-group-addon"><i class="fa fa-user"></i></span>
+                            		<input type="text" class="form-control" id="username4">
+                            	</div>
+                        	</div>
+                        	<div class="form-group">
+                        		<label for="exampleInputEmail4">Email address</label>
+                                <div class="input-group">
+                            		<span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+                            		<input type="email" class="form-control" id="exampleInputEmail4">
+                            	</div>
+                        	</div>
+                        	<div class="form-group">
+                        		<label for="exampleInputPassword4">Password</label>
+                                <div class="input-group">
+                            		<span class="input-group-addon"><i class="fa fa-key"></i></span>
+                            		<input type="text" class="form-control" id="exampleInputPassword4">
+                            	</div>
+                        	</div>
+                        	<div class="checkbox">
+                        		<label>
+                        			<input type="checkbox"> I accept <a href="#" class="color-primary">terms & conditions</a>
+                        		</label>
+                        	</div>
+                            <div class="btn-group pull-right" role="group">
+                                <button type="reset" class="btn btn-gray btn-wide"><i class="fa fa-times"></i>Cancel</button>
+                                <button type="button" class="btn bg-black btn-wide"><i class="fa fa-arrow-right"></i>Submit</button>
+                            </div>
+                            <!-- /.btn-group -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Icons on right <small>with help text</small></h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+                        <form class="col-md-10 col-md-offset-1">
+                            <div class="form-group has-feedback">
+                        		<label for="name5">Full Name</label>
+                        		<input type="text" class="form-control" id="name5">
+                                <span class="fa fa-pencil form-control-feedback"></span>
+                                <span class="help-block">Enter name that you want to print on invoice.</span>
+                        	</div>
+                            <div class="form-group has-feedback">
+                        		<label for="username5">Username</label>
+                        		<input type="text" class="form-control" id="username5">
+                                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                                <span class="help-block">Enter your desired unique name for the application.</span>
+                        	</div>
+                        	<div class="form-group has-feedback">
+                        		<label for="exampleInputEmail5">Email address</label>
+                        		<input type="email" class="form-control" id="exampleInputEmail5">
+                                <span class="fa fa-envelope-o form-control-feedback"></span>
+                                <span class="help-block">Enter email address where you want to receive communication.</span>
+                        	</div>
+                        	<div class="form-group has-feedback">
+                        		<label for="exampleInputPassword5">Password</label>
+                        		<input type="password" class="form-control" id="exampleInputPassword5">
+                                <span class="fa fa-key form-control-feedback"></span>
+                                <span class="help-block">Enter strong password with at-least 6 characters.</span>
+                        	</div>
+                        	<div class="checkbox">
+                        		<label>
+                        			<input type="checkbox"> I accept <a href="#" class="color-primary">terms & conditions</a>
+                        		</label>
+                        	</div>
+                        	<button type="button" class="btn btn-success btn-labeled pull-right">Submit<span class="btn-label btn-label-right"><i class="fa fa-check"></i></span></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Vertical Form with Input Group <small>with help text</small></h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+                        <form class="col-md-10 col-md-offset-1">
+                            <div class="form-group">
+                        		<label for="name6">Full Name*</label>
+                                <div class="input-group">
+                            		<span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+                            		<input type="text" class="form-control" id="name6">
+                            	</div>
+                                <span class="help-block text-right">To be printed on invoice.</span>
+                        	</div>
+                            <div class="form-group">
+                        		<label for="username6">Username*</label>
+                                <div class="input-group">
+                            		<span class="input-group-addon"><i class="fa fa-user"></i></span>
+                            		<input type="text" class="form-control" id="username6">
+                            	</div>
+                                <span class="help-block text-right">Desired username for application.</span>
+                        	</div>
+                        	<div class="form-group">
+                        		<label for="exampleInputEmail6">Email address</label>
+                                <div class="input-group">
+                            		<span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+                            		<input type="email" class="form-control" id="exampleInputEmail6">
+                            	</div>
+                                <span class="help-block text-right">To receive communication.</span>
+                        	</div>
+                        	<div class="form-group">
+                        		<label for="exampleInputPassword6">Password</label>
+                                <div class="input-group">
+                            		<span class="input-group-addon"><i class="fa fa-key"></i></span>
+                            		<input type="text" class="form-control" id="exampleInputPassword6">
+                            	</div>
+                                <span class="help-block text-right">At-least 6 characters.</span>
+                        	</div>
+                        	<div class="checkbox">
+                        		<label>
+                        			<input type="checkbox"> I accept <a href="#" class="color-primary">terms & conditions</a>
+                        		</label>
+                        	</div>
+                            <div class="btn-group pull-right" role="group">
+                                <button type="reset" class="btn btn-gray btn-wide"><i class="fa fa-times"></i>Cancel</button>
+                                <button type="button" class="btn bg-black btn-wide"><i class="fa fa-arrow-right"></i>Submit</button>
+                            </div>
+                            <!-- /.btn-group -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Basic Horizontal Form</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                        		<label for="name7" class="col-sm-3 control-label">Full Name</label>
+                                <div class="col-sm-9">
+                        		    <input type="text" class="form-control" id="name7" placeholder="Enter Your Full Name">
+                                </div>
+                        	</div>
+                            <div class="form-group">
+                        		<label for="username7" class="col-sm-3 control-label">Username</label>
+                                <div class="col-sm-9">
+                        		    <input type="text" class="form-control" id="username7" placeholder="Enter Desired Username">
+                                </div>
+                        	</div>
+                        	<div class="form-group">
+                        		<label for="exampleInputEmail7" class="col-sm-3 control-label">Email address</label>
+                                <div class="col-sm-9">
+                        		    <input type="email" class="form-control" id="exampleInputEmail7" placeholder="Enter Your Email Id">
+                                </div>
+                        	</div>
+                        	<div class="form-group">
+                        		<label for="exampleInputPassword7" class="col-sm-3 control-label">Password</label>
+                                <div class="col-sm-9">
+                        		    <input type="password" class="form-control" id="exampleInputPassword7" placeholder="Enter Strong Password">
+                                </div>
+                        	</div>
+                        	<div class="checkbox text-right">
+                        		<label>
+                        			<input type="checkbox"> I accept <a href="#" class="color-primary">terms & conditions</a>
+                        		</label>
+                        	</div>
+                        	<button type="submit" class="btn btn-primary pull-right mt-10">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Horizontal form with icons <small>left aligned labels</small></h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+                        <form class="form-horizontal">
+                            <div class="form-group left-icon">
+                        		<label for="name8" class="col-sm-3 control-label text-left">Full Name</label>
+                                <div class="col-sm-9">
+                                    <span class="fa fa-pencil form-left-icon"></span>
+                            		<input type="text" class="form-control" id="name8" placeholder="Enter Your Full Name">
+                                </div>
+                        	</div>
+                            <div class="form-group left-icon">
+                        		<label for="username8" class="col-sm-3 control-label text-left">Username</label>
+                                <div class="col-sm-9">
+                                    <span class="fa fa-user form-left-icon"></span>
+                            		<input type="text" class="form-control" id="username8" placeholder="Enter Desired Username">
+                                </div>
+                        	</div>
+                        	<div class="form-group left-icon">
+                        		<label for="exampleInputEmail8" class="col-sm-3 control-label text-left">Email address</label>
+                                <div class="col-sm-9">
+                                    <span class="fa fa-envelope form-left-icon"></span>
+                            		<input type="email" class="form-control" id="exampleInputEmail8" placeholder="Enter Your Email Id">
+                                </div>
+                        	</div>
+                        	<div class="form-group left-icon">
+                        		<label for="exampleInputPassword8" class="col-sm-3 control-label text-left">Password</label>
+                                <div class="col-sm-9">
+                                    <span class="fa fa-key form-left-icon"></span>
+                            		<input type="password" class="form-control" id="exampleInputPassword8" placeholder="Enter Strong Password">
+                                </div>
+                        	</div>
+                        	<div class="checkbox text-right">
+                        		<label>
+                        			<input type="checkbox"> I accept <a href="#" class="color-primary">terms & conditions</a>
+                        		</label>
+                        	</div>
+                        	<button type="button" class="btn btn-success btn-rounded btn-wide pull-right mt-10"><i class="fa fa-check"></i>Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Icons on right</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+                        <form class="form-horizontal">
+                            <div class="form-group has-feedback">
+                        		<label for="name9" class="col-sm-3 control-label">Full Name</label>
+                                <div class="col-sm-9">
+                            		<input type="text" class="form-control" id="name9" placeholder="Enter Your Full Name">
+                                    <span class="fa fa-pencil form-control-feedback"></span>
+                                </div>
+                        	</div>
+                            <div class="form-group has-feedback">
+                        		<label for="username9" class="col-sm-3 control-label">Username</label>
+                                <div class="col-sm-9">
+                            		<input type="text" class="form-control" id="username9" placeholder="Enter Desired Username">
+                                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                                </div>
+                        	</div>
+                        	<div class="form-group has-feedback">
+                        		<label for="exampleInputEmail9" class="col-sm-3 control-label">Email address</label>
+                                <div class="col-sm-9">
+                            		<input type="email" class="form-control" id="exampleInputEmail9" placeholder="Enter Your Email Id">
+                                    <span class="fa fa-envelope-o form-control-feedback"></span>
+                                </div>
+                        	</div>
+                        	<div class="form-group has-feedback">
+                        		<label for="exampleInputPassword9" class="col-sm-3 control-label">Password</label>
+                                <div class="col-sm-9">
+                            		<input type="password" class="form-control" id="exampleInputPassword9" placeholder="Enter Strong Password">
+                                    <span class="fa fa-key form-control-feedback"></span>
+                                </div>
+                        	</div>
+                        	<div class="checkbox text-right">
+                        		<label>
+                        			<input type="checkbox"> I accept <a href="#" class="color-primary">terms & conditions</a>
+                        		</label>
+                        	</div>
+                        	<button type="button" class="btn btn-success btn-labeled pull-right mt-10">Submit<span class="btn-label btn-label-right"><i class="fa fa-check"></i></span></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Horizontal Form with Input Group</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+                        <form class="form-horizontal pr-15">
+                            <div class="form-group">
+                        		<label for="name10" class="col-sm-3 control-label">Full Name</label>
+                                <div class="input-group col-sm-9">
+                            		<span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+                            		<input type="text" class="form-control" id="name10">
+                            	</div>
+                        	</div>
+                            <div class="form-group">
+                        		<label for="username10" class="col-sm-3 control-label">Username</label>
+                                <div class="input-group col-sm-9">
+                            		<span class="input-group-addon"><i class="fa fa-user"></i></span>
+                            		<input type="text" class="form-control" id="username10">
+                            	</div>
+                        	</div>
+                        	<div class="form-group">
+                        		<label for="exampleInputEmail10" class="col-sm-3 control-label">Email address</label>
+                                <div class="input-group col-sm-9">
+                            		<span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+                            		<input type="email" class="form-control" id="exampleInputEmail10">
+                            	</div>
+                        	</div>
+                        	<div class="form-group">
+                        		<label for="exampleInputPassword10" class="col-sm-3 control-label">Password</label>
+                                <div class="input-group col-sm-9">
+                            		<span class="input-group-addon"><i class="fa fa-key"></i></span>
+                            		<input type="text" class="form-control" id="exampleInputPassword10">
+                            	</div>
+                        	</div>
+                        	<div class="checkbox text-right">
+                        		<label>
+                        			<input type="checkbox"> I accept <a href="#" class="color-primary">terms & conditions</a>
+                        		</label>
+                        	</div>
+                            <div class="btn-group pull-right mt-10" role="group">
+                                <button type="reset" class="btn btn-gray btn-wide"><i class="fa fa-times"></i>Cancel</button>
+                                <button type="button" class="btn bg-black btn-wide"><i class="fa fa-arrow-right"></i>Submit</button>
+                            </div>
+                            <!-- /.btn-group -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Icons on right <small>with help text</small></h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+                        <form class="form-horizontal">
+                            <div class="form-group has-feedback">
+                        		<label for="name11" class="col-sm-3 control-label">Full Name</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="name11">
+                                    <span class="fa fa-pencil form-control-feedback"></span>
+                                    <span class="help-block">Enter name that you want to print on invoice.</span>
+                                </div>
+                        	</div>
+                            <div class="form-group has-feedback">
+                        		<label for="username11" class="col-sm-3 control-label">Username</label>
+                                <div class="col-sm-9">
+                            		<input type="text" class="form-control" id="username11">
+                                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                                    <span class="help-block">Enter your desired unique name for the application.</span>
+                                </div>
+                        	</div>
+                        	<div class="form-group has-feedback">
+                        		<label for="exampleInputEmail11" class="col-sm-3 control-label">Email address</label>
+                                <div class="col-sm-9">
+                            		<input type="email" class="form-control" id="exampleInputEmail11">
+                                    <span class="fa fa-envelope-o form-control-feedback"></span>
+                                    <span class="help-block">Enter email address to receive communication.</span>
+                                </div>
+                        	</div>
+                        	<div class="form-group has-feedback">
+                        		<label for="exampleInputPassword11" class="col-sm-3 control-label">Password</label>
+                                <div class="col-sm-9">
+                            		<input type="password" class="form-control" id="exampleInputPassword11">
+                                    <span class="fa fa-key form-control-feedback"></span>
+                                    <span class="help-block">Enter strong password with at-least 6 characters.</span>
+                                </div>
+                        	</div>
+                        	<div class="checkbox text-right">
+                        		<label>
+                        			<input type="checkbox"> I accept <a href="#" class="color-primary">terms & conditions</a>
+                        		</label>
+                        	</div>
+                        	<button type="button" class="btn btn-success btn-labeled pull-right mt-10">Submit<span class="btn-label btn-label-right"><i class="fa fa-check"></i></span></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Vertical Form with Input Group <small>with help text</small></h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                        		<label for="name12" class="col-sm-3 control-label">Full Name*</label>
+                                <div class="col-sm-9">
+                                    <div class="input-group">
+                                		<span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+                                		<input type="text" class="form-control" id="name12">
+                                	</div>
+                                    <span class="help-block text-right">To be printed on invoice.</span>
+                                </div>
+                        	</div>
+                            <div class="form-group">
+                        		<label for="username12" class="col-sm-3 control-label">Username*</label>
+                                <div class="col-sm-9">
+                                    <div class="input-group">
+                                		<span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                		<input type="text" class="form-control" id="username12">
+                                	</div>
+                                    <span class="help-block text-right">Desired username for application.</span>
+                                </div>
+                        	</div>
+                        	<div class="form-group">
+                        		<label for="exampleInputEmail12" class="col-sm-3 control-label">Email address</label>
+                                <div class="col-sm-9">
+                                    <div class="input-group">
+                                		<span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+                                		<input type="email" class="form-control" id="exampleInputEmail12">
+                                	</div>
+                                    <span class="help-block text-right">To receive communication.</span>
+                                </div>
+                        	</div>
+                        	<div class="form-group">
+                        		<label for="exampleInputPassword12" class="col-sm-3 control-label">Password</label>
+                                <div class="col-sm-9">
+                                    <div class="input-group">
+                                		<span class="input-group-addon"><i class="fa fa-key"></i></span>
+                                		<input type="text" class="form-control" id="exampleInputPassword12">
+                                	</div>
+                                    <span class="help-block text-right">At-least 6 characters.</span>
+                                </div>
+                        	</div>
+                        	<div class="checkbox text-right">
+                        		<label>
+                        			<input type="checkbox"> I accept <a href="#" class="color-primary">terms & conditions</a>
+                        		</label>
+                        	</div>
+                            <div class="btn-group pull-right mt-10" role="group">
+                                <button type="reset" class="btn btn-gray btn-wide"><i class="fa fa-times"></i>Cancel</button>
+                                <button type="button" class="btn bg-black btn-wide"><i class="fa fa-arrow-right"></i>Submit</button>
+                            </div>
+                            <!-- /.btn-group -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Two Column Form</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+                        <form class="p-20">
+                            <h5 class="underline mt-n">Account Info</h5>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                		<label for="name13">Full Name</label>
+                                		<input type="text" class="form-control" id="name13" placeholder="Enter Your Full Name">
+                                	</div>
+                                </div>
+                                <!-- /.col-md-6 -->
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                		<label for="username13">Username</label>
+                                		<input type="text" class="form-control" id="username13" placeholder="Enter Desired Username">
+                                	</div>
+                                </div>
+                                <!-- /.col-md-6 -->
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                		<label for="exampleInputEmail13">Email address</label>
+                                		<input type="email" class="form-control" id="exampleInputEmail13" placeholder="Enter Your Email Id">
+                                	</div>
+                            	</div>
+                            	<!-- /.col-md-6 -->
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                		<label for="contact13">Contact Number</label>
+                                		<input type="text" class="form-control" id="contact13" placeholder="Enter Your Mobile Phone Number">
+                                	</div>
+                            	</div>
+                            	<!-- /.col-md-6 -->
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                		<label for="exampleInputPassword13">Password</label>
+                                		<input type="password" class="form-control" id="exampleInputPassword13" placeholder="Enter Strong Password">
+                                	</div>
+                            	</div>
+                            	<!-- /.col-md-6 -->
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                		<label for="exampleInputPassword14">Confirm Password</label>
+                                		<input type="password" class="form-control" id="exampleInputPassword14" placeholder="Confirm your password">
+                                	</div>
+                            	</div>
+                            	<!-- /.col-md-6 -->
+                            </div>
+
+
+                            <h5 class="underline mt-30">Address Details</h5>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                		<label for="addr">Street Address</label>
+                                		<input type="text" class="form-control" id="addr" placeholder="Enter Your Street Address">
+                                	</div>
+                                </div>
+                                <!-- /.col-md-12 -->
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                		<label for="city">City</label>
+                                		<input type="text" class="form-control" id="city" placeholder="Enter Your City">
+                                	</div>
+                            	</div>
+                            	<!-- /.col-md-6 -->
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                		<label for="state">State</label>
+                                		<input type="text" class="form-control" id="state" placeholder="Enter Your State">
+                                	</div>
+                            	</div>
+                            	<!-- /.col-md-6 -->
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                		<label for="country">Country</label>
+                                		<input type="text" class="form-control" id="country" placeholder="Enter Your Country">
+                                	</div>
+                            	</div>
+                            	<!-- /.col-md-6 -->
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                		<label for="zip">Zip Code</label>
+                                		<input type="text" class="form-control" id="zip" placeholder="Enter Your Zip Code">
+                                	</div>
+                            	</div>
+                            	<!-- /.col-md-6 -->
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="checkbox">
+                                		<label>
+                                			<input type="checkbox"> I accept <a href="#" class="color-primary">terms & conditions</a>
+                                		</label>
+                                	</div>
+                                </div>
+                                <!-- /.col-md-12 -->
+
+                                <div class="col-md-12">
+                                    <div class="btn-group pull-right mt-10" role="group">
+                                        <button type="reset" class="btn btn-gray btn-wide"><i class="fa fa-times"></i>Cancel</button>
+                                        <button type="button" class="btn bg-black btn-wide"><i class="fa fa-arrow-right"></i>Submit</button>
+                                    </div>
+                                    <!-- /.btn-group -->
+                                </div>
+                                <!-- /.col-md-12 -->
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-12 -->
+        </div>
+        <!-- /.row -->
+
+
+    </div>
+    <!-- /.container-fluid -->
+</section>
+<!-- /.section -->

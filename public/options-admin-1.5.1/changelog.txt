@@ -1,0 +1,41 @@
+Version 1.5.1 | 05-Jun-2017
+    HTML Version:
+        Added: Animations
+        Added: Icons
+        Added: More Color Options
+
+Version 1.5 | 12-May-2017
+    HTML Version:
+        Added: Chart.js charts
+        Added: Highcharts
+        Added: Timeline Variations
+        Added: Table Options
+
+Version 1.4 | 08-May-2017
+    HTML Version:
+        Added: Bootstrap Tour
+        Added: Progress Bars
+
+Version 1.3 | 04-May-2017
+    Angular Version:
+        Added: Form Validations
+        Modified: User Profile page
+
+    HTML Version:
+        Added: E-commerce dashboard
+        Added: E-commerce order pages (2)
+        Added: E-commerce products page
+
+Version 1.2 | 02-May-2017
+    Angular Version:
+        Added: Carousel on dashboard
+        Added: Scroll to top on router nagivate event
+
+    HTML Version:
+        Modified: Custom Scrollbar on sidebar
+
+Version 1.1 | 01-May-2017
+    Added:  Angular version
+
+Version 1.0.0 | 30-Apr-2017
+    Initial Release

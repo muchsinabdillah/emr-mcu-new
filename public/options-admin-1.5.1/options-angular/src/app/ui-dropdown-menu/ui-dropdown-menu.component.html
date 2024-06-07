@@ -1,0 +1,571 @@
+<div class="container-fluid">
+    <div class="row page-title-div">
+        <div class="col-md-6">
+            <h2 class="title">Dropdown Menu</h2>
+            <p class="sub-title">One of the most complete bootstrap admin templates!</p>
+        </div>
+        <!-- /.col-md-6 -->
+        <div class="col-md-6 right-side">
+            <a class="btn bg-black toggle-code-handle" role="button">Toggle Code!</a>
+        </div>
+        <!-- /.col-md-6 text-right -->
+    </div>
+    <!-- /.row -->
+    <div class="row breadcrumb-div">
+        <div class="col-md-6">
+            <ul class="breadcrumb">
+				<li><a [routerLink]="'dashboard'"><i class="fa fa-home"></i> Home</a></li>
+				<li><a href="#">UI</a></li>
+				<li class="active">Dropdown Menu</li>
+			</ul>
+        </div>
+        <!-- /.col-md-6 -->
+        <div class="col-md-6 text-right">
+            <a href="#"><i class="fa fa-comments"></i> Talk to us</a>
+            <a href="#" class="pl-20"><i class="fa fa-cog"></i> Settings</a>
+        </div>
+        <!-- /.col-md-6 -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+
+<section class="section">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Default Dropdown Menu</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <p>Wrap the dropdown's trigger and the dropdown menu within <code class="language-html">.dropdown</code>, or another element that declares <code class="language-html">position: relative;</code>. Then add the menu's HTML.</p>
+                        <div class="dropdown" dropdown>
+                        	<button dropdownToggle class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        		Dropdown
+                        		<span class="caret"></span>
+                        	</button>
+                        	<ul *dropdownMenu class="dropdown-menu" aria-labelledby="menu1">
+                        		<li><a href="#">Action</a></li>
+                        		<li><a href="#">Another action</a></li>
+                        		<li><a href="#">Something else here</a></li>
+                        	</ul>
+                        </div>
+                        <!-- /.dropdown -->
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Right Aligned Dropdown Menu</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <p>Wrap the dropdown's trigger and the dropdown menu within <code class="language-html">.dropdown</code>, or another element that declares <code class="language-html">position: relative;</code>. Then add the menu's HTML.</p>
+                        <div class="dropdown pull-right" dropdown>
+                        	<button dropdownToggle class="btn btn-default dropdown-toggle" type="button" id="menu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        		Dropdown
+                        		<span class="caret"></span>
+                        	</button>
+                        	<ul *dropdownMenu class="dropdown-menu" aria-labelledby="menu2">
+                        		<li><a href="#">Action</a></li>
+                        		<li><a href="#">Another action</a></li>
+                        		<li><a href="#">Something else here</a></li>
+                        	</ul>
+                        </div>
+                        <!-- /.dropdown -->
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Disabled Links in Menu</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <p>Wrap the dropdown's trigger and the dropdown menu within <code class="language-html">.dropdown</code>, or another element that declares <code class="language-html">position: relative;</code>. Then add the menu's HTML.</p>
+                        <div class="dropdown" dropdown>
+                        	<button dropdownToggle class="btn btn-default dropdown-toggle" type="button" id="menu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        		Dropdown
+                        		<span class="caret"></span>
+                        	</button>
+                        	<ul *dropdownMenu class="dropdown-menu" aria-labelledby="menu3">
+                        		<li><a href="#">Action</a></li>
+                        		<li class="disabled"><a href="#">Disabled Link</a></li>
+                        		<li><a href="#">Something else here</a></li>
+                        	</ul>
+                        </div>
+                        <!-- /.dropdown -->
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Active Link in Menu</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <p>Wrap the dropdown's trigger and the dropdown menu within <code class="language-html">.dropdown</code>, or another element that declares <code class="language-html">position: relative;</code>. Then add the menu's HTML.</p>
+                        <div class="dropdown" dropdown>
+                        	<button dropdownToggle class="btn btn-default dropdown-toggle" type="button" id="menu4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        		Dropdown
+                        		<span class="caret"></span>
+                        	</button>
+                        	<ul  *dropdownMenu class="dropdown-menu" aria-labelledby="menu4">
+                        		<li><a href="#">Action</a></li>
+                        		<li class="active bg-primary"><a href="#">Active Link</a></li>
+                        		<li><a href="#">Something else here</a></li>
+                        	</ul>
+                        </div>
+                        <!-- /.dropdown -->
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>With Separator</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <p>Wrap the dropdown's trigger and the dropdown menu within <code class="language-html">.dropdown</code>, or another element that declares <code class="language-html">position: relative;</code>. Then add the menu's HTML.</p>
+                        <div class="dropdown" dropdown>
+                        	<button dropdownToggle class="btn btn-default dropdown-toggle" type="button" id="menu5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        		Dropdown
+                        		<span class="caret"></span>
+                        	</button>
+                        	<ul  *dropdownMenu class="dropdown-menu" aria-labelledby="menu5">
+                        		<li><a href="#">Action</a></li>
+                        		<li class="disabled"><a href="#">Disabled Link</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="separator" class="divider"></li>
+                        		<li><a href="#">More Link Here</a></li>
+                        	</ul>
+                        </div>
+                        <!-- /.dropdown -->
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>With Headers</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <p>Wrap the dropdown's trigger and the dropdown menu within <code class="language-html">.dropdown</code>, or another element that declares <code class="language-html">position: relative;</code>. Then add the menu's HTML.</p>
+                        <div class="dropdown" dropdown>
+                        	<button dropdownToggle class="btn btn-default dropdown-toggle" type="button" id="menu6" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        		Dropdown
+                        		<span class="caret"></span>
+                        	</button>
+                        	<ul  *dropdownMenu class="dropdown-menu" aria-labelledby="menu6">
+                                <li class="dropdown-header">Basic Actions</li>
+                        		<li><a href="#">Action</a></li>
+                        		<li><a href="#">Some Link</a></li>
+                        		<li><a href="#">Something else here</a></li>
+                                <li class="dropdown-header">More Actions</li>
+                                <li><a href="#">Something more here</a></li>
+                        	</ul>
+                        </div>
+                        <!-- /.dropdown -->
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Highlighted Headers</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <p>Wrap the dropdown's trigger and the dropdown menu within <code class="language-html">.dropdown</code>, or another element that declares <code class="language-html">position: relative;</code>. Then add the menu's HTML.</p>
+                        <div class="dropdown" dropdown>
+                        	<button dropdownToggle class="btn btn-default dropdown-toggle" type="button" id="menu7" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        		Dropdown
+                        		<span class="caret"></span>
+                        	</button>
+                        	<ul  *dropdownMenu class="dropdown-menu" aria-labelledby="menu7">
+                                <li class="dropdown-header bg-gray">Basic Actions</li>
+                        		<li><a href="#">Action</a></li>
+                        		<li><a href="#">Some Link</a></li>
+                        		<li><a href="#">Something else here</a></li>
+                                <li class="dropdown-header bg-gray">More Actions</li>
+                                <li><a href="#">Something more here</a></li>
+                        	</ul>
+                        </div>
+                        <!-- /.dropdown -->
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>With Icons</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <p>Wrap the dropdown's trigger and the dropdown menu within <code class="language-html">.dropdown</code>, or another element that declares <code class="language-html">position: relative;</code>. Then add the menu's HTML.</p>
+                        <div class="dropdown" dropdown>
+                        	<button dropdownToggle class="btn btn-default dropdown-toggle" type="button" id="menu8" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        		<i class="fa fa-bars"></i> Dropdown
+                        		<span class="caret"></span>
+                        	</button>
+                        	<ul  *dropdownMenu class="dropdown-menu" aria-labelledby="menu8">
+                                <li class="dropdown-header">Basic Actions</li>
+                        		<li><a href="#"><i class="fa fa-bell-o"></i> Action</a></li>
+                        		<li><a href="#"><i class="fa fa-comment-o"></i> Some Link</a></li>
+                        		<li><a href="#"><i class="fa fa-clock-o"></i> Something else here</a></li>
+                                <li class="dropdown-header">More Actions</li>
+                                <li><a href="#"><i class="fa fa-diamond"></i> Something more here</a></li>
+                        	</ul>
+                        </div>
+                        <!-- /.dropdown -->
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Primary Background</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <p>Wrap the dropdown's trigger and the dropdown menu within <code class="language-html">.dropdown</code>, or another element that declares <code class="language-html">position: relative;</code>. Then add the menu's HTML.</p>
+                        <div class="dropdown" dropdown>
+                        	<button dropdownToggle class="btn btn-default dropdown-toggle" type="button" id="menu9" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        		<i class="fa fa-bars"></i> Dropdown
+                        		<span class="caret"></span>
+                        	</button>
+                        	<ul  *dropdownMenu class="dropdown-menu bg-primary" aria-labelledby="menu9">
+                                <li class="dropdown-header color-gray">Basic Actions</li>
+                        		<li><a href="#">Action</a></li>
+                        		<li><a href="#">Some Link</a></li>
+                        		<li><a href="#">Something else here</a></li>
+                                <li class="dropdown-header color-gray">More Actions</li>
+                                <li><a href="#">Something more here</a></li>
+                        	</ul>
+                        </div>
+                        <!-- /.dropdown -->
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Danger Background</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <p>Wrap the dropdown's trigger and the dropdown menu within <code class="language-html">.dropdown</code>, or another element that declares <code class="language-html">position: relative;</code>. Then add the menu's HTML.</p>
+                        <div class="dropdown" dropdown>
+                        	<button dropdownToggle class="btn btn-default dropdown-toggle" type="button" id="menu10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        		<i class="fa fa-bars"></i> Dropdown
+                        		<span class="caret"></span>
+                        	</button>
+                        	<ul  *dropdownMenu class="dropdown-menu bg-danger" aria-labelledby="menu10">
+                        		<li><a href="#"><i class="fa fa-bell-o"></i> Action</a></li>
+                        		<li><a href="#"><i class="fa fa-comment-o"></i> Some Link</a></li>
+                        		<li><a href="#"><i class="fa fa-clock-o"></i> Something else here</a></li>
+                                <li><a href="#"><i class="fa fa-diamond"></i> Something more here</a></li>
+                        	</ul>
+                        </div>
+                        <!-- /.dropdown -->
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Black Background</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <p>Wrap the dropdown's trigger and the dropdown menu within <code class="language-html">.dropdown</code>, or another element that declares <code class="language-html">position: relative;</code>. Then add the menu's HTML.</p>
+                        <div class="dropdown" dropdown>
+                        	<button dropdownToggle class="btn btn-default dropdown-toggle" type="button" id="menu11" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        		<i class="fa fa-bars"></i> Dropdown
+                        		<span class="caret"></span>
+                        	</button>
+                        	<ul  *dropdownMenu class="dropdown-menu bg-black" aria-labelledby="menu11">
+                                <li><a href="#"><i class="fa fa-bell-o"></i> Action</a></li>
+                        		<li><a href="#"><i class="fa fa-comment-o"></i> Some Link</a></li>
+                        		<li><a href="#"><i class="fa fa-clock-o"></i> Something else here</a></li>
+                                <li><a href="#"><i class="fa fa-diamond"></i> Something more here</a></li>
+                        	</ul>
+                        </div>
+                        <!-- /.dropdown -->
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Gray Background</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <p>Wrap the dropdown's trigger and the dropdown menu within <code class="language-html">.dropdown</code>, or another element that declares <code class="language-html">position: relative;</code>. Then add the menu's HTML.</p>
+                        <div class="dropdown" dropdown>
+                        	<button dropdownToggle class="btn btn-default dropdown-toggle" type="button" id="menu12" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        		<i class="fa fa-bars"></i> Dropdown
+                        		<span class="caret"></span>
+                        	</button>
+                        	<ul  *dropdownMenu class="dropdown-menu bg-gray" aria-labelledby="menu12">
+                        		<li><a href="#"><i class="fa fa-bell-o"></i> Action</a></li>
+                        		<li><a href="#"><i class="fa fa-comment-o"></i> Some Link</a></li>
+                        		<li><a href="#"><i class="fa fa-clock-o"></i> Something else here</a></li>
+                                <li><a href="#"><i class="fa fa-diamond"></i> Something more here</a></li>
+                        	</ul>
+                        </div>
+                        <!-- /.dropdown -->
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Icons on Right</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <p>Wrap the dropdown's trigger and the dropdown menu within <code class="language-html">.dropdown</code>, or another element that declares <code class="language-html">position: relative;</code>. Then add the menu's HTML.</p>
+                        <div class="dropdown" dropdown>
+                        	<button dropdownToggle class="btn btn-default dropdown-toggle" type="button" id="menu13" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        		<i class="fa fa-bars"></i> Dropdown
+                        		<span class="caret"></span>
+                        	</button>
+                        	<ul  *dropdownMenu class="dropdown-menu" aria-labelledby="menu13">
+                                <li><a href="#">Action <i class="fa fa-bell-o icon-right"></i></a></li>
+                        		<li><a href="#">Some Link <i class="fa fa-comment-o icon-right"></i></a></li>
+                        		<li><a href="#">Something else here <i class="fa fa-clock-o icon-right"></i></a></li>
+                                <li><a href="#">Something more here <i class="fa fa-diamond icon-right"></i></a></li>
+                        	</ul>
+                        </div>
+                        <!-- /.dropdown -->
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Labels right</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <p>Wrap the dropdown's trigger and the dropdown menu within <code class="language-html">.dropdown</code>, or another element that declares <code class="language-html">position: relative;</code>. Then add the menu's HTML.</p>
+                        <div class="dropdown" dropdown>
+                        	<button dropdownToggle class="btn btn-default dropdown-toggle" type="button" id="menu14" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        		<i class="fa fa-bars"></i> Dropdown
+                        		<span class="caret"></span>
+                        	</button>
+                        	<ul  *dropdownMenu class="dropdown-menu" aria-labelledby="menu14">
+                                <li><a href="#">Action  <span class="label label-danger icon-right">Hot</span></a></li>
+                        		<li><a href="#">Some Link</a></li>
+                        		<li><a href="#">Something else here  <span class="label label-primary icon-right">New</span></a></li>
+                                <li><a href="#">Something more here </a></li>
+                        	</ul>
+                        </div>
+                        <!-- /.dropdown -->
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Split Button - Primary</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <p>Wrap the dropdown's trigger and the dropdown menu within <code class="language-html">.dropdown</code>, or another element that declares <code class="language-html">position: relative;</code>. Then add the menu's HTML.</p>
+                        <div class="btn-group" dropdown>
+                            <button type="button" class="btn btn-primary">Primary</button>
+                            <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="caret"></span>
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <ul  *dropdownMenu class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Split Button - Danger</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <p>Wrap the dropdown's trigger and the dropdown menu within <code class="language-html">.dropdown</code>, or another element that declares <code class="language-html">position: relative;</code>. Then add the menu's HTML.</p>
+                        <div class="btn-group" dropdown>
+                            <button type="button" class="btn btn-danger">Danger</button>
+                            <button dropdownToggle type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="caret"></span>
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <ul  *dropdownMenu class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Split Button - Black - Dropup</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <p>Wrap the dropdown's trigger and the dropdown menu within <code class="language-html">.dropdown</code>, or another element that declares <code class="language-html">position: relative;</code>. Then add the menu's HTML.</p>
+                        <div class="btn-group dropup" dropdown>
+                            <button type="button" class="btn btn-black">Dropup</button>
+                            <button dropdownToggle type="button" class="btn btn-black dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="caret"></span>
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <ul  *dropdownMenu class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+
+            <div class="col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Split Button - Warning - Dropup</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <p>Wrap the dropdown's trigger and the dropdown menu within <code class="language-html">.dropdown</code>, or another element that declares <code class="language-html">position: relative;</code>. Then add the menu's HTML.</p>
+                        <div class="btn-group dropup" dropdown>
+                            <button type="button" class="btn btn-warning">Dropup</button>
+                            <button dropdownToggle type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="caret"></span>
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <ul  *dropdownMenu class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="alert alert-info" role="alert">
+            <strong>Basic Bootstrap Dropdown!</strong> You are currently viewing advanced dropdown menus. To see more basic bootstrap options of dropdown, <a [routerLink]="'bt-dropdowns'" target="_blank" class=" ml-5"><i class="fa fa-hand-o-right"></i> click here <i class="fa fa-hand-o-left"></i></a>.
+        </div>
+        <!-- /.alert alert-info -->
+
+        <div class="alert alert-warning" role="alert">
+            <strong>Button Dropdowns!</strong> You are currently viewing advanced dropdown menus. To see basic variations of button dropdown, <a [routerLink]="'bt-button-dropdown'" target="_blank" class=" ml-5"><i class="fa fa-hand-o-right"></i> click here <i class="fa fa-hand-o-left"></i></a>.
+        </div>
+        <!-- /.alert alert-info -->
+
+    </div>
+    <!-- /.container-fluid -->
+</section>
+<!-- /.section -->

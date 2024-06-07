@@ -1,0 +1,249 @@
+<div class="container-fluid">
+    <div class="row page-title-div">
+        <div class="col-sm-6">
+            <h2 class="title">Dashboard</h2>
+            <p class="sub-title">One stop solution for perfect admin dashboard!</p>
+        </div>
+        <!-- /.col-sm-6 -->
+        <div class="col-sm-6 right-side">
+            <div class="dropdown pull-right" dropdown>
+            	<button dropdownToggle class="btn btn-default dropdown-toggle" type="button" id="menu14" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            		<i class="fa fa-bars"></i> Dropdown
+            		<span class="caret"></span>
+            	</button>
+            	<ul *dropdownMenu class="dropdown-menu bg-gray" aria-labelledby="menu14">
+                    <li><a href="#">Action  <span class="label label-danger icon-right">Hot</span></a></li>
+            		<li><a href="#">Some Link</a></li>
+            		<li><a href="#">More here  <span class="label label-primary icon-right">New</span></a></li>
+                    <li><a href="#">Something more here </a></li>
+            	</ul>
+            </div>
+        </div>
+        <!-- /.col-sm-6 text-right -->
+    </div>
+    <!-- /.row -->
+    <div class="row breadcrumb-div">
+        <div class="col-sm-6">
+            <ul class="breadcrumb">
+                <li><a [routerLink]="'dashboard'"><i class="fa fa-home"></i> Home</a></li>
+                <li class="active">Dashboard</li>
+            </ul>
+        </div>
+        <!-- /.col-sm-6 -->
+        <div class="col-sm-6 text-right hidden-xs">
+            <a href="#"><i class="fa fa-comments"></i> Talk to us</a>
+            <a href="#" class="pl-20"><i class="fa fa-cog"></i> Settings</a>
+        </div>
+        <!-- /.col-sm-6 -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+
+<section class="section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <a class="dashboard-stat bg-primary" href="#">
+                    <span class="number counter">1,411</span>
+                    <span class="name">Comments</span>
+                    <span class="bg-icon"><i class="fa fa-comments"></i></span>
+                </a>
+                <!-- /.dashboard-stat -->
+            </div>
+            <!-- /.col-lg-3 col-md-3 col-sm-6 col-xs-12 -->
+
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <a class="dashboard-stat bg-danger" href="#">
+                    <span class="number counter">322</span>
+                    <span class="name">Total Tickets</span>
+                    <span class="bg-icon"><i class="fa fa-ticket"></i></span>
+                </a>
+                <!-- /.dashboard-stat -->
+            </div>
+            <!-- /.col-lg-3 col-md-3 col-sm-6 col-xs-12 -->
+
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <a class="dashboard-stat bg-warning" href="#">
+                    <span class="number counter">5,551</span>
+                    <span class="name">Bank Credits</span>
+                    <span class="bg-icon"><i class="fa fa-bank"></i></span>
+                </a>
+                <!-- /.dashboard-stat -->
+            </div>
+            <!-- /.col-lg-3 col-md-3 col-sm-6 col-xs-12 -->
+
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <a class="dashboard-stat bg-success" href="#">
+                    <span class="number counter">16,710</span>
+                    <span class="name">Thumbs Up</span>
+                    <span class="bg-icon"><i class="fa fa-thumbs-o-up"></i></span>
+                </a>
+                <!-- /.dashboard-stat -->
+            </div>
+            <!-- /.col-lg-3 col-md-3 col-sm-6 col-xs-12 -->
+
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</section>
+<!-- /.section -->
+
+<section class="section pt-10">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel border-primary no-border border-3-top" data-panel-control>
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Production Change <small>over years</small></h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div id="prod-chart" [style.width.%]="100" [style.height.px]="500"></div>
+                    </div>
+                </div>
+                <!-- /.panel -->
+            </div>
+            <!-- /.col-md-6 -->
+
+            <div class="col-md-6">
+                <div class="panel border-primary no-border border-3-top" data-panel-control>
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Traffic Stats <small>over years</small></h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div id="traffic-chart" [style.width.%]="100" [style.height.px]="500"></div>
+                    </div>
+                </div>
+                <!-- /.panel -->
+            </div>
+            <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</section>
+<!-- /.section -->
+
+
+<section class="section pt-n">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel border-primary no-border border-3-top" data-panel-control>
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Table <small>with actions</small></h5>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+                        <table class="table table-striped table-bordered">
+                        	<thead>
+                        		<tr>
+                        			<th>#</th>
+                        			<th>First Name</th>
+                        			<th>Username</th>
+                                    <th>Action</th>
+                        		</tr>
+                        	</thead>
+                        	<tbody>
+                        		<tr>
+                        			<th scope="row">1</th>
+                        			<td>Mark</td>
+                        			<td>@mdo</td>
+                                    <td>
+                                        <button type="button" class="btn btn-success btn-xs btn-labeled">Approve<span class="btn-label btn-label-right"><i class="fa fa-check"></i></span></button>
+                                        <button type="button" class="btn btn-danger btn-xs btn-labeled">Reject<span class="btn-label btn-label-right"><i class="fa fa-times"></i></span></button>
+                                    </td>
+                        		</tr>
+                        		<tr>
+                        			<th scope="row">2</th>
+                        			<td>Jacob</td>
+                        			<td>@cool</td>
+                                    <td>
+                                        <button type="button" class="btn btn-success btn-xs btn-labeled">Approve<span class="btn-label btn-label-right"><i class="fa fa-check"></i></span></button>
+                                        <button type="button" class="btn btn-danger btn-xs btn-labeled">Reject<span class="btn-label btn-label-right"><i class="fa fa-times"></i></span></button>
+                                    </td>
+                        		</tr>
+                                <tr>
+                        			<th scope="row">5</th>
+                        			<td>Sachin</td>
+                        			<td>@the.god</td>
+                                    <td>
+                                        <button type="button" class="btn btn-success btn-xs btn-labeled">Approve<span class="btn-label btn-label-right"><i class="fa fa-check"></i></span></button>
+                                        <button type="button" class="btn btn-danger btn-xs btn-labeled">Reject<span class="btn-label btn-label-right"><i class="fa fa-times"></i></span></button>
+                                    </td>
+                        		</tr>
+                        		<tr>
+                        			<th scope="row">3</th>
+                        			<td>Larry</td>
+                        			<td>@twitter</td>
+                                    <td>
+                                        <button type="button" class="btn btn-success btn-xs btn-labeled">Approve<span class="btn-label btn-label-right"><i class="fa fa-check"></i></span></button>
+                                        <button type="button" class="btn btn-danger btn-xs btn-labeled">Reject<span class="btn-label btn-label-right"><i class="fa fa-times"></i></span></button>
+                                    </td>
+                        		</tr>
+                                <tr>
+                        			<th scope="row">4</th>
+                        			<td>Salman</td>
+                        			<td>@bhai</td>
+                                    <td>
+                                        <button type="button" class="btn btn-success btn-xs btn-labeled">Approve<span class="btn-label btn-label-right"><i class="fa fa-check"></i></span></button>
+                                        <button type="button" class="btn btn-danger btn-xs btn-labeled">Reject<span class="btn-label btn-label-right"><i class="fa fa-times"></i></span></button>
+                                    </td>
+                        		</tr>
+                                <tr>
+                        			<th scope="row">6</th>
+                        			<td>Mark</td>
+                        			<td>@faceb</td>
+                                    <td>
+                                        <button type="button" class="btn btn-success btn-xs btn-labeled">Approve<span class="btn-label btn-label-right"><i class="fa fa-check"></i></span></button>
+                                        <button type="button" class="btn btn-danger btn-xs btn-labeled">Reject<span class="btn-label btn-label-right"><i class="fa fa-times"></i></span></button>
+                                    </td>
+                        		</tr>
+                        	</tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- /.panel -->
+            </div>
+            <!-- /.col-md-6 -->
+
+            <div class="col-md-6">
+                <div class="panel border-primary no-border border-3-top" data-panel-control>
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h5>Carousel</h5>
+                        </div>
+                    </div>
+                    <div class="panel-body p-20">
+
+                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                            <carousel>
+                            	<slide>
+                            		<img src="/assets/images/img-1.jpg" alt="First Slide" class="img-responsive">
+                            	</slide>
+                            	<slide>
+                            		<img src="/assets/images/img-2.jpg" alt="Second Slide" class="img-responsive">
+                            	</slide>
+                            	<slide>
+                            		<img src="/assets/images/img-1.jpg" alt="Third Slide" class="img-responsive">
+                            	</slide>
+                            </carousel>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.panel -->
+            </div>
+            <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</section>
+<!-- /.section -->

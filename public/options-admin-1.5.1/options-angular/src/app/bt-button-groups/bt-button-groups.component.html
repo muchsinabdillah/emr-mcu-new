@@ -1,0 +1,285 @@
+<div class="container-fluid">
+    <div class="row page-title-div">
+        <div class="col-md-6">
+            <h2 class="title">Bootstrap - Button Groups</h2>
+            <p class="sub-title">We have styled all Bootstrap elements just as you want!</p>
+        </div>
+        <!-- /.col-md-6 -->
+        <div class="col-md-6 right-side">
+            <a class="btn bg-black toggle-code-handle" role="button">Toggle Code!</a>
+        </div>
+        <!-- /.col-md-6 text-right -->
+    </div>
+    <!-- /.row -->
+    <div class="row breadcrumb-div">
+        <div class="col-md-6">
+            <ul class="breadcrumb">
+				<li><a [routerLink]="'dashboard'"><i class="fa fa-home"></i> Home</a></li>
+				<li><a href="#">Bootstrap</a></li>
+				<li class="active">Button Groups</li>
+			</ul>
+        </div>
+        <!-- /.col-md-6 -->
+        <div class="col-md-6 text-right">
+            <a href="#"><i class="fa fa-comments"></i> Talk to us</a>
+            <a href="#" class="pl-20"><i class="fa fa-cog"></i> Settings</a>
+        </div>
+        <!-- /.col-md-6 -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+
+<section class="section">
+    <div class="container">
+
+        <div class="row mt-40">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h4 class="title underline">Basic Example</h4>
+                    <p class="sub-title">Group a series of buttons together on a single line with the button group.</p>
+                </div>
+                <!-- /.section-title -->
+            </div>
+            <!-- /.col-md-12 -->
+
+            <div class="col-md-12 mb-15">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default">Left</button>
+                    <button type="button" class="btn btn-default">Middle</button>
+                    <button type="button" class="btn btn-default">Right</button>
+                </div>
+                <!-- /.btn-group -->
+            </div>
+            <!-- /.col-md-12 -->
+
+        </div>
+        <!-- /.row -->
+
+        <div class="row mt-40">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h4 class="title underline">Button Toolbar</h4>
+                    <p class="sub-title">Combine sets of <code class="language-html">&lt;div class="btn-group"&gt;</code> into a <code class="language-html">&lt;div class="btn-toolbar"&gt;</code> for more complex components.</p>
+                </div>
+                <!-- /.section-title -->
+            </div>
+            <!-- /.col-md-12 -->
+
+            <div class="col-md-12 mb-15">
+                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                	<div class="btn-group" role="group" aria-label="First group">
+                		<button type="button" class="btn btn-default">1</button>
+                		<button type="button" class="btn btn-default">2</button>
+                		<button type="button" class="btn btn-default">3</button>
+                		<button type="button" class="btn btn-default">4</button>
+                	</div>
+                	<div class="btn-group" role="group" aria-label="Second group">
+                		<button type="button" class="btn btn-default">5</button>
+                		<button type="button" class="btn btn-default">6</button>
+                		<button type="button" class="btn btn-default">7</button>
+                	</div>
+                	<div class="btn-group" role="group" aria-label="Third group">
+                		<button type="button" class="btn btn-default">8</button>
+                	</div>
+                </div>
+                <!-- /.btn-toolbar -->
+            </div>
+            <!-- /.col-md-12 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row mt-40">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h4 class="title underline">Sizing</h4>
+                    <p class="sub-title">Instead of applying button sizing classes to every button in a group, just add <code class="language-html">.btn-group-*</code> to each <code class="language-html">.btn-group</code>, including when nesting multiple groups.</p>
+                </div>
+                <!-- /.section-title -->
+            </div>
+            <!-- /.col-md-12 -->
+
+            <div class="col-md-12 mb-15">
+                <div class="btn-group btn-group-lg mb-15" role="group" aria-label="Large button group">
+                	<button type="button" class="btn btn-default">Left</button>
+                	<button type="button" class="btn btn-default">Middle</button>
+                	<button type="button" class="btn btn-default">Right</button>
+                </div>
+                <br>
+                <div class="btn-group mb-15" role="group" aria-label="Default button group">
+                	<button type="button" class="btn btn-default">Left</button>
+                	<button type="button" class="btn btn-default">Middle</button>
+                	<button type="button" class="btn btn-default">Right</button>
+                </div>
+                <br>
+                <div class="btn-group btn-group-sm mb-15" role="group" aria-label="Small button group">
+                	<button type="button" class="btn btn-default">Left</button>
+                	<button type="button" class="btn btn-default">Middle</button>
+                	<button type="button" class="btn btn-default">Right</button>
+                </div>
+                <br>
+                <div class="btn-group btn-group-xs mb-15" role="group" aria-label="Extra-small button group">
+                	<button type="button" class="btn btn-default">Left</button>
+                	<button type="button" class="btn btn-default">Middle</button>
+                	<button type="button" class="btn btn-default">Right</button>
+                </div>
+            </div>
+            <!-- /.col-md-12 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row mt-40">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h4 class="title underline">Nesting</h4>
+                    <p class="sub-title">Place a <code class="language-html">.btn-group</code> within another <code class="language-html">.btn-group</code> when you want dropdown menus mixed with a series of buttons.</p>
+                </div>
+                <!-- /.section-title -->
+            </div>
+            <!-- /.col-md-12 -->
+
+            <div class="col-md-12 mb-15">
+                <div class="btn-group" role="group" >
+                	<button type="button" class="btn btn-default">1</button>
+                	<button type="button" class="btn btn-default">2</button>
+
+                	<div class="btn-group" role="group" dropdown>
+                		<button dropdownToggle type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                			Dropdown
+                			<span class="caret"></span>
+                		</button>
+                		<ul *dropdownMenu class="dropdown-menu">
+                			<li><a href="#">Dropdown link</a></li>
+                			<li><a href="#">Dropdown link</a></li>
+                		</ul>
+                	</div>
+                </div>
+            </div>
+            <!-- /.col-md-12 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row mt-40">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h4 class="title underline">Vertical Button Group</h4>
+                    <p class="sub-title">Make a set of buttons appear vertically stacked rather than horizontally. Split button dropdowns are not supported here.</p>
+                </div>
+                <!-- /.section-title -->
+            </div>
+            <!-- /.col-md-12 -->
+
+            <div class="col-md-12 mb-15">
+                <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                	<button type="button" class="btn btn-default">Button</button>
+                	<button type="button" class="btn btn-default">Button</button>
+                	<div class="btn-group" role="group" dropdown>
+                		<button dropdownToggle id="btnGroupVerticalDrop1" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Dropdown <span class="caret"></span> </button>
+                		<ul *dropdownMenu class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop1">
+                			<li><a href="#">Dropdown link</a></li>
+                			<li><a href="#">Dropdown link</a></li>
+                		</ul>
+                	</div>
+                	<button type="button" class="btn btn-default">Button</button>
+                	<button type="button" class="btn btn-default">Button</button>
+                    <div class="btn-group" role="group" dropdown>
+                		<button dropdownToggle id="btnGroupVerticalDrop1" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Dropdown <span class="caret"></span> </button>
+                		<ul *dropdownMenu class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop1">
+                			<li><a href="#">Dropdown link</a></li>
+                			<li><a href="#">Dropdown link</a></li>
+                		</ul>
+                	</div>
+                    <div class="btn-group" role="group" dropdown>
+                		<button dropdownToggle id="btnGroupVerticalDrop1" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Dropdown <span class="caret"></span> </button>
+                		<ul *dropdownMenu class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop1">
+                			<li><a href="#">Dropdown link</a></li>
+                			<li><a href="#">Dropdown link</a></li>
+                		</ul>
+                	</div>
+                    <div class="btn-group" role="group" dropdown>
+                		<button dropdownToggle id="btnGroupVerticalDrop1" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Dropdown <span class="caret"></span> </button>
+                		<ul *dropdownMenu class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop1">
+                			<li><a href="#">Dropdown link</a></li>
+                			<li><a href="#">Dropdown link</a></li>
+                		</ul>
+                	</div>
+                </div>
+                <!-- /.btn-group-vertical -->
+            </div>
+            <!-- /.col-md-12 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row mt-40">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h4 class="title underline">Justified Button Group</h4>
+                    <p class="sub-title">To use justified button groups with <code class="language-html">&lt;button&gt;</code> elements, you must wrap each button in a button group. Wrap all these button groups in a wrapper with class <code class="language-html">.btn-group.btn-group-justified</code>. Most browsers don't properly apply our CSS for justification to <code class="language-html">&lt;button&gt;</code> elements, but since we support button dropdowns, we can work around that.</p>
+                </div>
+                <!-- /.section-title -->
+            </div>
+            <!-- /.col-md-12 -->
+
+            <div class="col-md-12 mb-15">
+                <div class="btn-group btn-group-justified" role="group" >
+                	<div class="btn-group" role="group">
+                		<button type="button" class="btn btn-default">Left</button>
+                	</div>
+                	<div class="btn-group" role="group">
+                		<button type="button" class="btn btn-default">Middle</button>
+                	</div>
+                	<div class="btn-group" role="group">
+                		<button type="button" class="btn btn-default">Right</button>
+                	</div>
+                </div>
+            </div>
+            <!-- /.col-md-12 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row mt-40">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h4 class="title underline">Checkbox Button Group</h4>
+                    <p class="sub-title">Add <code class="language-html">data-toggle="buttons"</code> to a <code class="language-html">.btn-group</code> containing checkbox or radio inputs to enable toggling in their respective styles.</p>
+                </div>
+                <!-- /.section-title -->
+            </div>
+            <!-- /.col-md-12 -->
+
+            <div class="col-md-12 mb-15">
+                <div class="btn-group">
+                	<label class="btn btn-primary" [(ngModel)]="checkModel.left" btnCheckbox>Checkbox 1</label>
+                	<label class="btn btn-primary" [(ngModel)]="checkModel.middle" btnCheckbox>Checkbox 2</label>
+                	<label class="btn btn-primary" [(ngModel)]="checkModel.right" btnCheckbox>Checkbox 3</label>
+                </div>
+            </div>
+            <!-- /.col-md-12 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row mt-40">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h4 class="title underline">Radio Button Group</h4>
+                    <p class="sub-title">Add <code class="language-html">data-toggle="buttons"</code> to a <code class="language-html">.btn-group</code> containing checkbox or radio inputs to enable toggling in their respective styles.</p>
+                </div>
+                <!-- /.section-title -->
+            </div>
+            <!-- /.col-md-12 -->
+
+            <div class="col-md-12 mb-15">
+                <div class="btn-group">
+                	<label class="btn btn-primary" [(ngModel)]="radioModel" btnRadio="Left">Radio 1 (Preselected)</label>
+                	<label class="btn btn-primary" [(ngModel)]="radioModel" btnRadio="Middle">Radio 2</label>
+                	<label class="btn btn-primary" [(ngModel)]="radioModel" btnRadio="Right">Radio 3</label>
+                </div>
+            </div>
+            <!-- /.col-md-12 -->
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+</section>
+<!-- /.section -->
