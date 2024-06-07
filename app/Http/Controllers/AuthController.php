@@ -8,7 +8,45 @@ use Illuminate\Support\Facades\Http;
 
 class AuthController extends Controller
 {
-    //
+    /**
+     * @var array
+     */
+    public static $aclRolesPermissions =
+    [
+        [
+           "role" => "user", // Rumah Sakit //
+
+           "permissions" => [
+
+              "emrs.create.*", // Create Data EMR MCU (Pengisian EMR MCU) //
+              "emrs.update.*", // Update Data EMR MCU (Pengisian EMR MCU) //
+              "emrs.view.*", // View Data EMR MCU (Pengisian EMR MCU) //
+              "reports.report.*", // Report Data Report MCU //
+              "sds.report.*", // Report Data SDS MCU //
+              "results.export.*", // Export Data Pasien MCU //
+           ],
+        ],
+
+        [
+          "role" => "mitra", // Rekanan //
+
+          "permissions" => [
+
+            "patients.viewAny.*", // List Data Pasien MCU //
+            "results.view.*", // View Data MCU //
+         ],
+       ],
+    ];
+
+    /**
+     * @param string $acl
+     * @return string
+     */
+    public static function find($acl)
+    {
+      return json_encode(collect(self::$aclRolesPermissions)->filter(function ($item) use ($acl) { return $item["role"] == $acl; })->firstOrFail()["permissions"]);
+    }
+
     use ApiConsumse;
     public function index(){
       $user = request()->cookie('login');
@@ -16,7 +54,7 @@ class AuthController extends Controller
       if($user <> null){
             return Redirect('/main');
       }else{
-           return redirect('login');
+           return view('login.login', [ "acl" => collect(self::$aclRolesPermissions)->pluck("role"), ]);
       }
     }
 
@@ -29,10 +67,15 @@ class AuthController extends Controller
               'password' => $request->password,
           ])
         );
-        if($JsonData['status'] == true){
-            $cookie = cookie('login', 'True',60);
-            cookie('nama', $JsonData['data']['0']['First Name'],60);
-            return Redirect('/')->cookie($cookie);
+        if($JsonData['status'] == true && count($JsonData['data'])){
+            $role = $request->acl;
+            $permissions = self::find($role);
+
+            return Redirect('/')
+            ->withCookie(cookie('login', 'True',60))
+            ->withCookie(cookie('nama', @$JsonData['data']['0']['First Name'],60))
+            ->withCookie(cookie('role', $role))
+            ->withCookie(cookie('permissions', $permissions));
         }else{
             return redirect('login')
             ->withInput()
@@ -40,7 +83,11 @@ class AuthController extends Controller
         }
     }
     public function logout(){
-      cookie('login',null,60);
-      return redirect('login');
+
+      return redirect('login')
+      ->withCookie(\Cookie::forget("login"))
+      ->withCookie(\Cookie::forget("nama"))
+      ->withCookie(\Cookie::forget("role"))
+      ->withCookie(\Cookie::forget("permissions"));
     }
 }

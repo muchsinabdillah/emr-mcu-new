@@ -26,13 +26,13 @@
                     
                     <!-- /.dropdown --> 
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User<span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ \Cookie::get('nama') }} ({{ \Cookie::get('role') }}) <span class="caret"></span></a>
                         <ul class="dropdown-menu profile-dropdown">
                             <li class="profile-menu bg-gray">
                                 <div class="">
                                     <img src="http://placehold.it/60/c2c2c2?text=User" alt="John Doe" class="img-circle profile-img">
                                     <div class="profile-name">
-                                        <h6>User</h6>
+                                        <h6>{{ \Cookie::get('nama') }}</h6>
                                         <a href="#">View Profile</a>
                                     </div>
                                     <div class="clearfix"></div>

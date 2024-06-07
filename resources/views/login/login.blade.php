@@ -14,7 +14,12 @@
                     <div class="panel-body p-20">
 
                         <div class="section-title">
-                            <p class="sub-title text-muted">Silahkan Login Untuk Memulai Aplikasi.</p>
+                            <div class="row">
+                                <div class="col justify-content-center text-center">
+                                    <img width="120px" height="120px" src="{{ URL::asset('logo.jpg') }}" />
+                                </div>
+                            </div>
+                            <p class="sub-title text-muted">Selamat datang di Rumah Sakit Yarsi...</p>
                         </div>
                             @if(session('error'))
                                 <div class="alert alert-danger" role="alert">
@@ -37,7 +42,15 @@
                             {{ csrf_field() }}
                             <meta name="csrf-token" content="{{ csrf_token() }}">
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Username</label>
+                                <label for="acl">Jenis</label>
+                                <select class="form-select" id="acl" name="acl">
+                                    @foreach($acl as $role)
+                                        <option value="{{ $role }}">{{ ucfirst($role) }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="username">Username</label>
                                 <input type="text" class="form-control" id="username" required name="username" placeholder="Enter Username" autocomplete="off" >
                                 <div class="form-control-wrap">
                                     @if($errors->has('username'))
@@ -46,7 +59,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Password</label>
+                                <label for="password">Password</label>
                                 <input type="password" class="form-control" required id="password" Name="password" placeholder="Password">
                                 <div class="form-control-wrap"> 
                                      @if($errors->has('password'))
@@ -60,9 +73,8 @@
                                 </label>
                             </div>
                             <div class="form-group mt-20">
-                                <div class="">
-                                    <a href="#" class="form-link"><small class="muted-text">Forgot Password?</small></a>
-                                    <button type="submit" class="btn btn-success btn-labeled pull-right">Sign in<span class="btn-label btn-label-right"><i class="fa fa-check"></i></span></button>
+                                <div>
+                                    <button type="submit" class="btn btn-success btn-labeled pull-center">Sign in<span class="btn-label btn-label-right"><i class="fa fa-check"></i></span></button>
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
