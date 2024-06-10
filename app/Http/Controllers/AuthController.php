@@ -41,12 +41,31 @@ class AuthController extends Controller
     ];
 
     /**
-     * @param string $acl
+     * @param string $role
      * @return string
      */
-    public static function find($acl)
+    public static function encode($role)
     {
-      return json_encode(collect(self::$aclRolesPermissions)->filter(function ($item) use ($acl) { return $item["role"] == $acl; })->firstOrFail()["permissions"]);
+      return json_encode(collect(self::$aclRolesPermissions)->filter(function ($item) use ($role) { return $item["role"] == $role; })->firstOrFail()["permissions"]);
+    }
+
+    /**
+     * @param string $permission
+     * @return bool
+     */
+    public static function decode($permission)
+    {
+      $encode = \Cookie::get("permissions");
+      return $encode ? in_array($permission, json_decode($encode)) : false;
+    }
+
+    /**
+     * @param string $permission
+     * @return bool
+     */
+    public static function can($permission)
+    {
+      return self::decode($permission);
     }
 
     use ApiConsumse;
@@ -82,7 +101,7 @@ class AuthController extends Controller
         );
         if($JsonData['status'] == true && count($JsonData['data'])){
             $role = $request->acl;
-            $permissions = self::find($role);
+            $permissions = self::encode($role);
 
             return Redirect('/')
             ->withCookie(cookie('login', 'True',60))
