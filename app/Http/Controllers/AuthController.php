@@ -20,12 +20,12 @@ class AuthController extends Controller
 
            "permissions" => [
 
-              "emrs.create.*", // Create Data EMR MCU (Pengisian EMR MCU) //
-              "emrs.update.*", // Update Data EMR MCU (Pengisian EMR MCU) //
-              "emrs.view.*", // View Data EMR MCU (Pengisian EMR MCU) //
-              "reports.report.*", // Report Data Report MCU //
-              "sds.report.*", // Report Data SDS MCU //
-              "results.export.*", // Export Data Pasien MCU //
+              "emrs.create", // Create Data EMR MCU (Pengisian EMR MCU) //
+              "emrs.update", // Update Data EMR MCU (Pengisian EMR MCU) //
+              "emrs.view", // View Data EMR MCU (Pengisian EMR MCU) //
+              "reports.report", // Report Data Report MCU //
+              "sds.report", // Report Data SDS MCU //
+              "results.export", // Export Data Pasien MCU //
            ],
         ],
 
@@ -34,8 +34,8 @@ class AuthController extends Controller
 
           "permissions" => [
 
-            "patients.viewAny.*", // List Data Pasien MCU //
-            "results.view.*", // View Data MCU //
+            "patients.viewAny", // List Data Pasien MCU //
+            "results.view", // View Data MCU //
          ],
        ],
     ];
