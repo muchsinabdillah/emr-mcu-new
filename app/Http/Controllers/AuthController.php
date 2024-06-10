@@ -5,6 +5,8 @@ use App\Traits\ApiConsumse;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rules\Password;
 
 class AuthController extends Controller
 {
@@ -59,6 +61,13 @@ class AuthController extends Controller
     }
 
     public function proses_login(Request $request){
+
+        Validator::make($request->all(), [
+          'username' => ['required', 'string', 'max:255'],
+          'password' => Password::min(3),
+          'captcha' => 'required|captcha',
+      ])->validate();
+
         $JsonData =  $this->GuzzleClientRequestPost(
           env('API_URL_YARSI') . "getLoginSimrs",
           "POST",

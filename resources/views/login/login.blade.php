@@ -67,6 +67,13 @@
                                     @endif
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <img src="{{ captcha_src('flat') }}" alt="captcha" />
+                                <div class="mt-2"></div>
+                                <input type="text" name="captcha" class="form-control @error('captcha') is-invalid @enderror" placeholder="Captcha" />
+                                    @error('captcha')
+                                <div class="invalid-feedback">{{ $message }}</div> @enderror
+                            </div>
                             <div class="checkbox op-check">
                                 <label>
                                     <input type="checkbox" name="remember" class="flat-blue-style"> <span class="ml-10">Remember me</span>
