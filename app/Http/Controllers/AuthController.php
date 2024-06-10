@@ -63,10 +63,14 @@ class AuthController extends Controller
     public function proses_login(Request $request){
 
         Validator::make($request->all(), [
+          'acl' => ['required', 'in:'.implode(",", collect(self::$aclRolesPermissions)->pluck("role")->toArray())],
           'username' => ['required', 'string', 'max:255'],
           'password' => Password::min(3),
           'captcha' => 'required|captcha',
-      ])->validate();
+        ],
+        [
+          'captcha' => "Captcha is not correct.",
+        ])->validate();
 
         $JsonData =  $this->GuzzleClientRequestPost(
           env('API_URL_YARSI') . "getLoginSimrs",
