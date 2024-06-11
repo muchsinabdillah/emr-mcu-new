@@ -43,6 +43,7 @@ Route::get('/pdfreportlist', function () {
   return view('main.mcu.reportpdfmcu');
 });
 Route::post('/getRegistrationMCUbyDate', [PdfController::class, 'getRegistrationMCUbyDate']); 
+Route::post('/getRekapSDSbyPeriode', [PdfController::class, 'getRekapSDSbyPeriode']); 
 Route::get('/pdflist', function () {
   return view('main.mcu.pdfmcu');
 });
@@ -86,3 +87,14 @@ Route::get('email-test', function(){
 });
 Route::get('/create/pdf', [TcpdfController::class, 'createPDF'])->name('createPDF');
 Route::get('/tscprinter', [TcpdfController::class, 'tscprinter'])->name('tscprinter');
+
+
+Route::get('/rekapsds', function () {
+  return view('main.mcu.rekapsds');
+});
+Route::get('/rekapgrafik', function () {
+  return view('main.mcu.rekapgrafik');
+});
+
+Route::get('/getNamaPenjamin/{idgroupjaminan}', [PdfController::class, 'getNamaPenjamin']); 
+Route::post('/getRekap', [PdfController::class, 'getRekap']); 

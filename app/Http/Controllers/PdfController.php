@@ -558,5 +558,23 @@ class PdfController extends Controller
       return $data['data'];
     }
 
+    public function getRekapSDSbyPeriode(Request $request){
+      $unitService  = new PdfService();
+      $data = $unitService->getRekapSDSbyPeriode($request);
+      return $data['data'];
+    }
+    
+    public function getNamaPenjamin($idgroupjaminan){
+      $unitService  = new PdfService();
+      $data = $unitService->getNamaPenjamin($idgroupjaminan);
+      return $data['data'];
+    }
+
+    public function getRekap(Request $request){
+      $unitService  = new PdfService();
+      $data = $unitService->getRekap($request);
+      return $data;
+    }
+
     
 }

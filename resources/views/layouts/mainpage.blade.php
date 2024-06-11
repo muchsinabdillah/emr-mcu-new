@@ -17,6 +17,8 @@
         <link rel="stylesheet" href="{{ URL::asset('css/icheck/skins/line/blue.css') }}" >
         <link rel="stylesheet" href="{{ URL::asset('css/icheck/skins/line/red.css') }}" >
         <link rel="stylesheet" href="{{ URL::asset('css/icheck/skins/line/green.css') }}" >
+        <!-- Select2 -->
+        <link rel="stylesheet" href="{{ URL::asset('/css/select2/select2.min.css') }}" >
         
         <!-- ========== THEME CSS ========== -->
         <link rel="stylesheet" href="{{ URL::asset('css/main.css') }}" media="screen" >
@@ -97,6 +99,7 @@
         <script src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.colVis.min.js"></script>
         <script src="https://cdn.datatables.net/scroller/2.0.3/js/dataTables.scroller.min.js"></script>
         <script src="{{ URL::asset('js/DataTables/Checkboxes/dataTables.checkboxes.min.js') }}"></script>
+        <script src="{{ URL::asset('js/select2/select2.js') }}"></script>
       
         <script>
             $(function($) {

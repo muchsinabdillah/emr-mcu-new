@@ -39,40 +39,42 @@ class PDF extends Fpdf
             //Margin top
         $this->Cell(10, 12, '', 0, 1);
         // $this->Cell(10, 3, '', 0, 1);
-        $this->SetFont('Arial', '', 10);
+        $this->SetFont('Arial', 'B', 10);
+        $border = 0;
         //row 1 (left)-------------------
-        $this->Cell(8, 7, '', 0, 0);
-        $this->Cell(14, 0, 'NAMA', 0, 0);
-        $this->Cell(15, 0, '', 0, 0);
+        $this->Cell(8, 5, '', $border, 0);
+        $this->Cell(25, 5, 'Nama Pasien', $border, 0);
         //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->Cell(4, 2, ': ', 0, 0);
-        $this->Cell(20, 2, 'LAILA YUSRO, STP. NY', 0, 0);
-        $this->Cell(60, 5, '', 0, 0);
+        $this->Cell(4, 5, ': ', $border, 0);
+        $this->Cell(85, 5, $GLOBALS['identitas_pasien']['PatientName'], $border, 0);
+        $this->Cell(5, 5, '', $border, 0);
 
-        // $this->Cell(8, 7, '', 0, 0);
-        $this->Cell(14, 0, 'Tanggal Lahir', 0, 0);
-        $this->Cell(15, 0, '', 0, 0);
+        // $this->Cell(8, 7, '', $border, 0);
+        $this->Cell(25, 5, 'Tanggal Lahir', $border, 0);
         //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->Cell(4, 2, ': ', 0, 0);
-        $this->Cell(20, 2, '13/07/1972', 0, 0);
-        $this->Cell(0, 5, '', 0, 1);
+        $this->Cell(4, 5, ': ', $border, 0);
+        $this->Cell(30, 5, date('d/m/Y', strtotime($GLOBALS['identitas_pasien']['Date_of_birth'])), $border, 1);
+
+        if ($GLOBALS['identitas_pasien']['Gander'] == 'L'){
+            $jeniskelamin = 'LAKI-LAKI';
+        }else{
+            $jeniskelamin = 'PEREMPUAN';
+        }
 
         //row 1 (left)-------------------
-        $this->Cell(8, 7, '', 0, 0);
-        $this->Cell(14, 0, 'Jenis Kelamin', 0, 0);
-        $this->Cell(15, 0, '', 0, 0);
+        $this->Cell(8, 5, '', $border, 0);
+        $this->Cell(25, 5, 'Jenis Kelamin', $border, 0);
         //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->Cell(4, 2, ': ', 0, 0);
-        $this->Cell(20, 2, 'PEREMPUAN', 0, 0);
-        $this->Cell(60, 5, '', 0, 0);
+        $this->Cell(4, 5, ': ', $border, 0);
+        $this->Cell(85, 5, $jeniskelamin, $border, 0);
+        $this->Cell(5, 5, '', $border, 0);
 
-        // $this->Cell(8, 7, '', 0, 0);
-        $this->Cell(14, 0, 'No.RM', 0, 0);
-        $this->Cell(15, 0, '', 0, 0);
+
+        // $this->Cell(8, 7, '', $border, 0);
+        $this->Cell(25, 5, 'No.RM', $border, 0);
         //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->Cell(4, 2, ': ', 0, 0);
-        $this->Cell(20, 2, '00-53-09', 0, 0);
-        $this->Cell(0, 5, '', 0, 1);
+        $this->Cell(4, 5, ': ', $border, 0);
+        $this->Cell(30, 5, $GLOBALS['identitas_pasien']['NoMR'], $border, 1);
         // Garis---
         $this->SetFont('Arial', 'U', 12);
         $this->Cell(6, 4, '', 0, 0);
@@ -174,8 +176,15 @@ class PdfHasilMCUController extends Controller
     {
         $unitService  = new PdfService();
         $data = $unitService->hasilMCU($noregistrasi);
+        //dd($data);
         //var_dump($data['data']['reportMCU1']);exit;
+        if ($data['status'] == false){
+            return $data['message'];
+        }
         $NamaJaminan = $data['data']['registrasi'][0]['NamaJaminan'];
+
+        
+        $GLOBALS['identitas_pasien'] = $data['data']['registrasi'][0];
 
         $this->fpdf->SetAutoPageBreak(TRUE, 33);
         $this->fpdf->AliasNbPages();
@@ -336,6 +345,14 @@ class PdfHasilMCUController extends Controller
                 $KetKonkaNasal = $key['KetKonkaNasal'];
                 $KetokSinus = $key['KetokSinus'];
                 $KetKetokSinus = $key['KetKetokSinus'];
+                $MeatusNasiKiri = $key['MeatusNasiKiri'];
+                $KetMeatusNasiKiri = $key['KetMeatusNasiKiri'];
+                $SeptumNasiKiri = $key['SeptumNasiKiri'];
+                $KetSeptumNasiKiri = $key['KetSeptumNasiKiri'];
+                $KonkaNasalKiri = $key['KonkaNasalKiri'];
+                $KetKonkaNasalKiri = $key['KetKonkaNasalKiri'];
+                $KetokSinusKiri = $key['KetokSinusKiri'];
+                $KetKetokSinusKiri = $key['KetKetokSinusKiri'];
                 $Penciuman = $key['Penciuman'];
                 $KetPenciuman = $key['KetPenciuman'];
                 $Bibir = $key['Bibir'];
@@ -439,6 +456,20 @@ class PdfHasilMCUController extends Controller
                 $TBWarnaKi = $key['TBWarnaKi'];
                 $KetTBWarana = $key['KetTBWarana'];
                 $SatLamaPengobatan = $key['SatLamaPengobatan'];
+                $KetKonjungtivaKiri = $key['KetKonjungtivaKiri'];
+                $KetKesegarisanKiri = $key['KetKesegarisanKiri'];
+                $KetSkleraKiri = $key['KetSkleraKiri'];
+                $KetLensaMataKiri = $key['KetLensaMataKiri'];
+                $KetKorneaKiri = $key['KetKorneaKiri'];
+                $KetBuluMataKiri = $key['KetBuluMataKiri'];
+                $KetTekananBMKiri = $key['KetTekananBMKiri'];
+                $KetTBWaranaKiri = $key['KetTBWaranaKiri'];
+                $KetPenglihatan3DKiri = $key['KetPenglihatan3DKiri'];
+                $KetDaunTelingaKiri = $key['KetDaunTelingaKiri'];
+                $KetLiangTelingaKiri = $key['KetLiangTelingaKiri'];
+                $KetSerumenKiri = $key['KetSerumenKiri'];
+                $KetMembranTimpaniKiri = $key['KetMembranTimpaniKiri'];
+                $KetTesberbisikKiri = $key['KetTesberbisikKiri'];
             }
         } else {
             $ID = null;
@@ -594,6 +625,14 @@ class PdfHasilMCUController extends Controller
             $KetKonkaNasal = null;
             $KetokSinus = null;
             $KetKetokSinus = null;
+            $MeatusNasiKiri = null;
+            $KetMeatusNasiKiri = null;
+            $SeptumNasiKiri = null;
+            $KetSeptumNasiKiri = null;
+            $KonkaNasalKiri = null;
+            $KetKonkaNasalKiri = null;
+            $KetokSinusKiri = null;
+            $KetKetokSinusKiri = null;
             $Penciuman = null;
             $KetPenciuman = null;
             $Bibir = null;
@@ -697,6 +736,20 @@ class PdfHasilMCUController extends Controller
             $TBWarnaKi = null;
             $KetTBWarana = null;
             $SatLamaPengobatan = null;
+            $KetKonjungtivaKiri = null;
+            $KetKesegarisanKiri = null;
+            $KetSkleraKiri = null;
+            $KetLensaMataKiri = null;
+            $KetKorneaKiri = null;
+            $KetBuluMataKiri = null;
+            $KetTekananBMKiri = null;
+            $KetTBWaranaKiri = null;
+            $KetPenglihatan3DKiri = null;
+            $KetDaunTelingaKiri = null;
+            $KetLiangTelingaKiri = null;
+            $KetSerumenKiri = null;
+            $KetMembranTimpaniKiri = null;
+            $KetTesberbisikKiri = null;
         }
         if ($data['data']['reportMCU2'] != null) {
             foreach ($data['data']['reportMCU2'] as $key) {
@@ -1115,40 +1168,6 @@ class PdfHasilMCUController extends Controller
 
         // //blank
 
-        //BR
-        $this->fpdf->Cell(0, 5, '', 0, 1);
-
-        //new1-------------------------
-        $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(10, 5, '', 0, 1);
-        $this->fpdf->Cell(15, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'DOKTER YANG MELAKUKAN PEMERIKSAAN', 0, 0);
-        $this->fpdf->Cell(60, 0, '', 0, 0);
-        $this->fpdf->Cell(0, 5, '', 0, 1);
-        $this->fpdf->SetFont('Arial', 'i', 10);
-        $this->fpdf->Cell(15, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'Physical examination doctor', 0, 0);
-        $this->fpdf->Cell(60, 0, '', 0, 0);
-
-        //BR
-        $this->fpdf->Cell(0, 5, '', 0, 1);
-        
-        foreach ($data['data']['dokter'] as $datadokter) {
-        //new1-------------------------
-        $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(10, 5, '', 0, 1);
-        $this->fpdf->Cell(25, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, $datadokter['AliasDokter'], 0, 0);
-        $this->fpdf->Cell(60, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['address'],0,0);
-        $this->fpdf->Cell(8, 2, ': ', 0, 0);
-        $this->fpdf->SetFont('Arial', 'i', 10);
-        $this->fpdf->Cell(20, 2, $datadokter['NamaDokter'], 0, 0);
-        $this->fpdf->Cell(0, 5, '', 0, 1);
-        $this->fpdf->Cell(25, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'Occupational health doctor', 0, 0);
-        $this->fpdf->Cell(60, 4, '', 0, 1);
-        }
 
 
         // $this->fpdf->SetTextColor(0, 0, 0);
@@ -1191,6 +1210,42 @@ class PdfHasilMCUController extends Controller
         // $pdf->SetAutoPageBreak(true,50);  
         // }
         $this->fpdf->AddPage();  
+
+        
+        //BR
+        $this->fpdf->Cell(0, 15, '', 0, 1);
+        //new1-------------------------
+        $this->fpdf->SetFont('Arial', 'B', 10);
+        $this->fpdf->Cell(10, 5, '', 0, 1);
+        $this->fpdf->Cell(15, 7, '', 0, 0);
+        $this->fpdf->Cell(10, 0, 'DOKTER YANG MELAKUKAN PEMERIKSAAN', 0, 0);
+        $this->fpdf->Cell(60, 0, '', 0, 0);
+        $this->fpdf->Cell(0, 5, '', 0, 1);
+        $this->fpdf->SetFont('Arial', 'i', 10);
+        $this->fpdf->Cell(15, 7, '', 0, 0);
+        $this->fpdf->Cell(10, 0, 'Physical examination doctor', 0, 0);
+        $this->fpdf->Cell(60, 0, '', 0, 0);
+
+        //BR
+        $this->fpdf->Cell(0, 5, '', 0, 1);
+        
+        foreach ($data['data']['dokter'] as $datadokter) {
+        //new1-------------------------
+        $this->fpdf->SetFont('Arial', 'B', 10);
+        $this->fpdf->Cell(10, 5, '', 0, 1);
+        $this->fpdf->Cell(25, 7, '', 0, 0);
+        $this->fpdf->Cell(10, 0, $datadokter['AliasDokter'], 0, 0);
+        $this->fpdf->Cell(60, 0, '', 0, 0);
+        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['address'],0,0);
+        $this->fpdf->Cell(8, 2, ': ', 0, 0);
+        $this->fpdf->SetFont('Arial', 'i', 10);
+        $this->fpdf->Cell(20, 2, $datadokter['NamaDokter'], 0, 0);
+        $this->fpdf->Cell(0, 5, '', 0, 1);
+        $this->fpdf->Cell(25, 7, '', 0, 0);
+        $this->fpdf->Cell(10, 0, 'Occupational health doctor', 0, 0);
+        $this->fpdf->Cell(60, 4, '', 0, 1);
+        }
+        $this->fpdf->AddPage();
 
 
         // Page 2
@@ -1245,14 +1300,13 @@ class PdfHasilMCUController extends Controller
         $this->fpdf->Cell(59, $h, '4. Pernah Kecelakaan', 0, 0);
         $this->fpdf->Cell($h, $h, ': ', 0, 0);
         $this->fpdf->MultiCell(0, $h, $PKecelakaan, 0, 1);
-
+        if ($Jeniskelamin == 'PEREMPUAN'){
         $this->fpdf->Cell(6, $h, '', 0, 0);
         $this->fpdf->Cell(59, $h, '5. Riwayat Reproduksi', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
-        if ($Jeniskelamin == 'Perempuan'){
-            $this->fpdf->Cell(20, $h, 'Haid Terakhir : ' . $HaidTerakhir . ';G : ' . $Gravida . ',  P : ' . $Para . ',  A :  ' . $Abortus, 0, 1);
+            $this->fpdf->Cell(20, $h, 'Haid Terakhir : ' . date('d/m/Y', strtotime($HaidTerakhir)) . ' ;G : ' . $Gravida . ',  P : ' . $Para . ',  A :  ' . $Abortus, 0, 1);
         }else{
-            $this->fpdf->Cell(20, $h, 'Tidak Diperiksa', 0, 1);
+           // $this->fpdf->Cell(20, $h, 'Tidak Diperiksa', 0, 1);
         }
         
         //$this->fpdf->Cell(60, 5, '', 0, 1);
@@ -1459,28 +1513,28 @@ class PdfHasilMCUController extends Controller
         // PAGE 3
 
         //Line 1
-        $this->fpdf->Cell(0, 4, '', 0, 1);
+        $this->fpdf->Cell(0, 8, '', 0, 1);
         $this->fpdf->SetFont('Arial', 'B', 10);
         $this->fpdf->Cell(6, 7, '', 0, 0);
         $this->fpdf->Cell(59, $h, '5. Kepala', 0, 1);
 
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(10, 7, '', 0, 0);
+        $this->fpdf->Cell(13, 7, '', 0, 0);
         $this->fpdf->Cell(55, $h, 'a. Tulang', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
         $this->fpdf->MultiCell(0, $h, $TulangKepala, 0, 1);
 
-        $this->fpdf->Cell(10, 7, '', 0, 0);
+        $this->fpdf->Cell(13, 7, '', 0, 0);
         $this->fpdf->Cell(55, $h, 'b. Kulit Kepala', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
         $this->fpdf->MultiCell(0, $h, $KulitKepala, 0, 1);
 
-        $this->fpdf->Cell(10, 7, '', 0, 0);
+        $this->fpdf->Cell(13, 7, '', 0, 0);
         $this->fpdf->Cell(55, $h, 'c. Rambut', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
         $this->fpdf->MultiCell(0, $h, $Rambut, 0, 1);
 
-        $this->fpdf->Cell(10, 7, '', 0, 0);
+        $this->fpdf->Cell(13, 7, '', 0, 0);
         $this->fpdf->Cell(55, $h, 'd. Bentuk Wajah', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
         $this->fpdf->MultiCell(0, $h, $BentukWajah, 0, 1);
@@ -1612,11 +1666,10 @@ class PdfHasilMCUController extends Controller
         $this->fpdf->SetFont('Arial', 'B', 10);
         $this->fpdf->Cell(50, 7, '', 0, 1);
         $this->fpdf->Cell(72, 7, '', 0, 0);
-        $this->fpdf->Cell(10, $h, 'Kanan', 0, 0);
-        $this->fpdf->Cell(24, $h, '', 0, 0);
-        $this->fpdf->Cell(10, $h, 'Kiri', 0, 0);
-        $this->fpdf->Cell(30, $h, '', 0, 0);
-        $this->fpdf->Cell(10, $h, 'Keterangan', 0, 1);
+        $this->fpdf->Cell(27, $h, 'Kanan', 0, 0);
+        $this->fpdf->Cell(35, $h, 'Keterangan', 0, 0);
+        $this->fpdf->Cell(27, $h, 'Kiri', 0, 0);
+        $this->fpdf->Cell(35, $h, 'Keterangan', 0, 1);
 
         if ($KetKonjungtiva == null || $KetKonjungtiva == ''){
             $cell = 'Cell';
@@ -1626,13 +1679,13 @@ class PdfHasilMCUController extends Controller
 
         $this->fpdf->SetFont('Arial', '', 9);
         $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(55, $h, 'b. Konjungtia', 0, 0);
+        $this->fpdf->Cell(4, $h, 'b.', 0, 0);
+        $this->fpdf->Cell(53, $h, 'Konjungtiva', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
-        $this->fpdf->Cell(20, $h, $KonjungtivaKanan, 0, 0);
-        $this->fpdf->Cell(14, $h, '', 0, 0);
-        $this->fpdf->Cell(20, $h, $KonjungtivaKiri, 0, 0);
-        $this->fpdf->Cell(20, $h, '', 0, 0);
-        $this->fpdf->$cell(0, $h, $KetKonjungtiva, 0, 1);
+        $this->fpdf->Cell(27, $h, $KonjungtivaKanan, 0, 0);
+        $this->fpdf->Cell(35, $h, $KetKonjungtiva, 0, 0);
+        $this->fpdf->Cell(27, $h, $KonjungtivaKiri, 0, 0);
+        $this->fpdf->Cell(35, $h, $KetKonjungtivaKiri, 0, 1);
 
         if ($KetKesegarisan == null || $KetKesegarisan == ''){
             $cell = 'Cell';
@@ -1641,13 +1694,13 @@ class PdfHasilMCUController extends Controller
         }
 
         $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(55, $h, 'c. Kesegarisan', 0, 0);
+        $this->fpdf->Cell(4, $h, 'c.', 0, 0);
+        $this->fpdf->Cell(53, $h, 'Kesegarisan', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
-        $this->fpdf->Cell(20, $h, $Kesegarisankanan, 0, 0);
-        $this->fpdf->Cell(14, $h, '', 0, 0);
-        $this->fpdf->Cell(20, $h, $KesegarisanKiri, 0, 0);
-        $this->fpdf->Cell(20, $h, '', 0, 0);
-        $this->fpdf->$cell(0, $h, $KetKesegarisan, 0, 1);
+        $this->fpdf->Cell(27, $h, $Kesegarisankanan, 0, 0);
+        $this->fpdf->Cell(35, $h, $KetKesegarisan, 0, 0);
+        $this->fpdf->Cell(27, $h, $KesegarisanKiri, 0, 0);
+        $this->fpdf->Cell(35, $h, $KetKesegarisanKiri, 0, 1);
 
         if ($KetSklera == null || $KetSklera == ''){
             $cell = 'Cell';
@@ -1656,13 +1709,13 @@ class PdfHasilMCUController extends Controller
         }
 
         $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(55, $h, 'd. Sklera', 0, 0);
+        $this->fpdf->Cell(4, $h, 'd.', 0, 0);
+        $this->fpdf->Cell(53, $h, 'Sklera', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
-        $this->fpdf->Cell(20, $h, $SkleraKanan, 0, 0);
-        $this->fpdf->Cell(14, $h, '', 0, 0);
-        $this->fpdf->Cell(20, $h, $SkleraKiri, 0, 0);
-        $this->fpdf->Cell(20, $h, '', 0, 0);
-        $this->fpdf->$cell(0, $h, $KetSklera, 0, 1);
+        $this->fpdf->Cell(27, $h, $SkleraKanan, 0, 0);
+        $this->fpdf->Cell(35, $h, $KetSklera, 0, 0);
+        $this->fpdf->Cell(27, $h, $SkleraKiri, 0, 0);
+        $this->fpdf->Cell(35, $h, $KetSkleraKiri, 0, 1);
 
         if ($KetLensaMata == null || $KetLensaMata == ''){
             $cell = 'Cell';
@@ -1671,13 +1724,13 @@ class PdfHasilMCUController extends Controller
         }
 
         $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(55, $h, 'e. Lensa Mata', 0, 0);
+        $this->fpdf->Cell(4, $h, 'e.', 0, 0);
+        $this->fpdf->Cell(53, $h, 'Lensa Mata', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
-        $this->fpdf->Cell(20, $h, $LensaMataKanan, 0, 0);
-        $this->fpdf->Cell(14, $h, '', 0, 0);
-        $this->fpdf->Cell(20, $h, $LensaMataKiri, 0, 0);
-        $this->fpdf->Cell(20, $h, '', 0, 0);
-        $this->fpdf->$cell(0, $h, $KetLensaMata, 0, 1);
+        $this->fpdf->Cell(27, $h, $LensaMataKanan, 0, 0);
+        $this->fpdf->Cell(35, $h, $KetLensaMata, 0, 0);
+        $this->fpdf->Cell(27, $h, $LensaMataKiri, 0, 0);
+        $this->fpdf->Cell(35, $h, $KetLensaMataKiri, 0, 1);
 
         if ($KetKornea == null || $KetKornea == ''){
             $cell = 'Cell';
@@ -1686,13 +1739,13 @@ class PdfHasilMCUController extends Controller
         }
 
         $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(55, $h, 'f. Kornea', 0, 0);
+        $this->fpdf->Cell(4, $h, 'f.', 0, 0);
+        $this->fpdf->Cell(53, $h, 'Kornea', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
-        $this->fpdf->Cell(20, $h, $KorneaKanan, 0, 0);
-        $this->fpdf->Cell(14, $h, '', 0, 0);
-        $this->fpdf->Cell(20, $h, $KorneaKiri, 0, 0);
-        $this->fpdf->Cell(20, $h, '', 0, 0);
-        $this->fpdf->$cell(0, $h, $KetKornea, 0, 1);
+        $this->fpdf->Cell(27, $h, $KorneaKanan, 0, 0);
+        $this->fpdf->Cell(35, $h, $KetKornea, 0, 0);
+        $this->fpdf->Cell(27, $h, $KorneaKiri, 0, 0);
+        $this->fpdf->Cell(35, $h, $KetKorneaKiri, 0, 1);
 
         if ($KetBuluMata == null || $KetBuluMata == ''){
             $cell = 'Cell';
@@ -1701,13 +1754,13 @@ class PdfHasilMCUController extends Controller
         }
 
         $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(55, $h, 'g. Bulu Mata', 0, 0);
+        $this->fpdf->Cell(4, $h, 'g.', 0, 0);
+        $this->fpdf->Cell(53, $h, 'Bulu Mata', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
-        $this->fpdf->Cell(20, $h, $BuluMataKanan, 0, 0);
-        $this->fpdf->Cell(14, $h, '', 0, 0);
-        $this->fpdf->Cell(20, $h, $BuluMatakiri, 0, 0);
-        $this->fpdf->Cell(20, $h, '', 0, 0);
-        $this->fpdf->$cell(0, $h, $KetBuluMata, 0, 1);
+        $this->fpdf->Cell(27, $h, $BuluMataKanan, 0, 0);
+        $this->fpdf->Cell(35, $h, $KetBuluMata, 0, 0);
+        $this->fpdf->Cell(27, $h, $BuluMatakiri, 0, 0);
+        $this->fpdf->Cell(35, $h, $KetBuluMataKiri, 0, 1);
 
         if ($KetTekananBM == null || $KetTekananBM == ''){
             $cell = 'Cell';
@@ -1716,13 +1769,13 @@ class PdfHasilMCUController extends Controller
         }
 
         $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(55, $h, 'h. Tekanan Bola Mata', 0, 0);
+        $this->fpdf->Cell(4, $h, 'h.', 0, 0);
+        $this->fpdf->Cell(53, $h, 'Tekanan Bola Mata', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
-        $this->fpdf->Cell(20, $h, $TekananBMKanan, 0, 0);
-        $this->fpdf->Cell(14, $h, '', 0, 0);
-        $this->fpdf->Cell(20, $h, $TekananBMKiri, 0, 0);
-        $this->fpdf->Cell(20, $h, '', 0, 0);
-        $this->fpdf->$cell(0, $h, $KetTekananBM, 0, 1);
+        $this->fpdf->Cell(27, $h, $TekananBMKanan, 0, 0);
+        $this->fpdf->Cell(35, $h, $KetTekananBM, 0, 0);
+        $this->fpdf->Cell(27, $h, $TekananBMKiri, 0, 0);
+        $this->fpdf->Cell(35, $h, $KetTekananBMKiri, 0, 1);
 
         if ($KetTBWarana == null || $KetTBWarana == ''){
             $cell = 'Cell';
@@ -1731,13 +1784,13 @@ class PdfHasilMCUController extends Controller
         }
 
         $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(55, $h, 'i. Tes Buta Warna', 0, 0);
+        $this->fpdf->Cell(4, $h, 'i.', 0, 0);
+        $this->fpdf->Cell(53, $h, 'Tes Buta Warna', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
-        $this->fpdf->Cell(20, $h, $TBWarnaKa, 0, 0);
-        $this->fpdf->Cell(14, $h, '', 0, 0);
-        $this->fpdf->Cell(20, $h, $TBWarnaKi, 0, 0);
-        $this->fpdf->Cell(20, $h, '', 0, 0);
-        $this->fpdf->$cell(0, $h, $KetTBWarana, 0, 1);
+        $this->fpdf->Cell(27, $h, $TBWarnaKa, 0, 0);
+        $this->fpdf->Cell(35, $h, $KetTBWarana, 0, 0);
+        $this->fpdf->Cell(27, $h, $TBWarnaKi, 0, 0);
+        $this->fpdf->Cell(35, $h, $KetTBWaranaKiri, 0, 1);
         
 
         $this->fpdf->Cell(0, 4, '', 0, 1);
@@ -1745,11 +1798,10 @@ class PdfHasilMCUController extends Controller
         $this->fpdf->Cell(6, 7, '', 0, 0);
         $this->fpdf->Cell(66, $hm, '7. Telinga', 0, 0);
         $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(10, $h, 'Kanan', 0, 0);
-        $this->fpdf->Cell(24, $h, '', 0, 0);
-        $this->fpdf->Cell(10, $h, 'Kiri', 0, 0);
-        $this->fpdf->Cell(30, $h, '', 0, 0);
-        $this->fpdf->Cell(10, $h, 'Keterangan', 0, 1);
+        $this->fpdf->Cell(27, $h, 'Kanan', 0, 0);
+        $this->fpdf->Cell(35, $h, 'Keterangan', 0, 0);
+        $this->fpdf->Cell(27, $h, 'Kiri', 0, 0);
+        $this->fpdf->Cell(35, $h, 'Keterangan', 0, 1);
 
         if ($KetDaunTelinga == null || $KetDaunTelinga == ''){
             $cell = 'Cell';
@@ -1761,11 +1813,10 @@ class PdfHasilMCUController extends Controller
         $this->fpdf->Cell(13, 7, '', 0, 0);
         $this->fpdf->Cell(55, $h, 'a. Daun Telinga', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
-        $this->fpdf->Cell(20, $h, $DaunTelingaKanan, 0, 0);
-        $this->fpdf->Cell(14, $h, '', 0, 0);
-        $this->fpdf->Cell(20, $h, $DaunTelingaKiri, 0, 0);
-        $this->fpdf->Cell(20, $h, '', 0, 0);
-        $this->fpdf->$cell(0, $h, $KetDaunTelinga, 0, 1);
+        $this->fpdf->Cell(27, $h, $DaunTelingaKanan, 0, 0);
+        $this->fpdf->Cell(35, $h, $KetDaunTelinga, 0, 0);
+        $this->fpdf->Cell(27, $h, $DaunTelingaKiri, 0, 0);
+        $this->fpdf->Cell(35, $h, $KetDaunTelingaKiri, 0, 1);
 
         if ($KetLiangTelinga == null || $KetLiangTelinga == ''){
             $cell = 'Cell';
@@ -1776,11 +1827,10 @@ class PdfHasilMCUController extends Controller
         $this->fpdf->Cell(13, 7, '', 0, 0);
         $this->fpdf->Cell(55, $h, 'b. Liang Telinga', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
-        $this->fpdf->Cell(20, $h, $LiangTelingaKanan, 0, 0);
-        $this->fpdf->Cell(14, $h, '', 0, 0);
-        $this->fpdf->Cell(20, $h, $LiangTelingaKiri, 0, 0);
-        $this->fpdf->Cell(20, $h, '', 0, 0);
-        $this->fpdf->$cell(0, $h, $KetLiangTelinga, 0, 1);
+        $this->fpdf->Cell(27, $h, $LiangTelingaKanan, 0, 0);
+        $this->fpdf->Cell(35, $h, $KetLiangTelinga, 0, 0);
+        $this->fpdf->Cell(27, $h, $LiangTelingaKiri, 0, 0);
+        $this->fpdf->Cell(35, $h, $KetLiangTelingaKiri, 0, 1);
 
         if ($KetSerumen == null || $KetSerumen == ''){
             $cell = 'Cell';
@@ -1792,11 +1842,10 @@ class PdfHasilMCUController extends Controller
         $this->fpdf->Cell(20, 7, '', 0, 0);
         $this->fpdf->Cell(48, $h, '-Serumen', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
-        $this->fpdf->Cell(20, $h, $SerumenKanan, 0, 0);
-        $this->fpdf->Cell(14, $h, '', 0, 0);
-        $this->fpdf->Cell(20, $h, $SerumenKiri, 0, 0);
-        $this->fpdf->Cell(20, $h, '', 0, 0);
-        $this->fpdf->$cell(20, $h, $KetSerumen, 0, 1);
+        $this->fpdf->Cell(27, $h, $SerumenKanan, 0, 0);
+        $this->fpdf->Cell(35, $h, $KetSerumen, 0, 0);
+        $this->fpdf->Cell(27, $h, $SerumenKiri, 0, 0);
+        $this->fpdf->Cell(35, $h, $KetSerumenKiri, 0, 1);
 
         if ($KetMembranTimpani == null || $KetMembranTimpani == ''){
             $cell = 'Cell';
@@ -1805,44 +1854,70 @@ class PdfHasilMCUController extends Controller
         }
 
         $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(55, $h, 'b. Membran Timpani', 0, 0);
+        $this->fpdf->Cell(55, $h, 'c. Membran Timpani', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
-        $this->fpdf->Cell(20, $h, $MembranTimpaniKa, 0, 0);
-        $this->fpdf->Cell(14, $h, '', 0, 0);
-        $this->fpdf->Cell(20, $h, $MembranTimpaniKi, 0, 0);
-        $this->fpdf->Cell(20, $h, '', 0, 0);
-        $this->fpdf->$cell(0, $h, $KetMembranTimpani, 0, 1);
+        $this->fpdf->Cell(27, $h, $MembranTimpaniKa, 0, 0);
+        $this->fpdf->Cell(35, $h, $KetMembranTimpani, 0, 0);
+        $this->fpdf->Cell(27, $h, $MembranTimpaniKi, 0, 0);
+        $this->fpdf->Cell(35, $h, $KetMembranTimpaniKiri, 0, 1);
 
         $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(55, $h, 'b. Lain-Lain', 0, 0);
+        $this->fpdf->Cell(55, $h, 'd. Lain-Lain', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
         $this->fpdf->MultiCell(0, $h, $TelingaLainLain, 0, 1);
 
         $this->fpdf->Cell(0, 4, '', 0, 1);
         $this->fpdf->SetFont('Arial', 'B', 10);
         $this->fpdf->Cell(6, 7, '', 0, 0);
-        $this->fpdf->Cell(59, $h, '8. Hidung', 0, 1);
+        $this->fpdf->Cell(66, $hm, '8. Hidung', 0, 0);
+        $this->fpdf->SetFont('Arial', 'B', 10);
+        $this->fpdf->Cell(27, $h, 'Kanan', 0, 0);
+        $this->fpdf->Cell(35, $h, 'Keterangan', 0, 0);
+        $this->fpdf->Cell(27, $h, 'Kiri', 0, 0);
+        $this->fpdf->Cell(35, $h, 'Keterangan', 0, 1);
+
+        
+        if ($KetDaunTelinga == null || $KetDaunTelinga == ''){
+            $cell = 'Cell';
+        }else{
+            $cell = 'CellFitScale';
+        }
 
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(10, 7, '', 0, 0);
+        $this->fpdf->Cell(13, 7, '', 0, 0);
         $this->fpdf->Cell(55, $h, 'a. Meatus nasi', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
-        $this->fpdf->MultiCell(0, $h, $MeatusNasi, 0, 1);
-
-        $this->fpdf->Cell(10, 7, '', 0, 0);
+        $this->fpdf->Cell(27, $h, $MeatusNasi, 0, 0);
+        $this->fpdf->Cell(35, $h, $KetMeatusNasi, 0, 0);
+        $this->fpdf->Cell(27, $h, $MeatusNasiKiri, 0, 0);
+        $this->fpdf->Cell(35, $h, $KetMeatusNasiKiri, 0, 1);
+        
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(13, 7, '', 0, 0);
         $this->fpdf->Cell(55, $h, 'b. Septum nasi', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
-        $this->fpdf->MultiCell(0, $h, $SeptumNasi, 0, 1);
-
-        $this->fpdf->Cell(10, 7, '', 0, 0);
+        $this->fpdf->Cell(27, $h, $SeptumNasi, 0, 0);
+        $this->fpdf->Cell(35, $h, $KetSeptumNasi, 0, 0);
+        $this->fpdf->Cell(27, $h, $SeptumNasiKiri, 0, 0);
+        $this->fpdf->Cell(35, $h, $KetSeptumNasiKiri, 0, 1);
+        
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(13, 7, '', 0, 0);
         $this->fpdf->Cell(55, $h, 'c. Konka Nasal', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
-        $this->fpdf->MultiCell(0, $h, $KonkaNasal, 0, 1);
-
-        $this->fpdf->Cell(10, 7, '', 0, 0);
+        $this->fpdf->Cell(27, $h, $KonkaNasal, 0, 0);
+        $this->fpdf->Cell(35, $h, $KetKonkaNasal, 0, 0);
+        $this->fpdf->Cell(27, $h, $KonkaNasalKiri, 0, 0);
+        $this->fpdf->Cell(35, $h, $KetKonkaNasalKiri, 0, 1);
+        
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(13, 7, '', 0, 0);
         $this->fpdf->Cell(55, $h, 'd. Nyeri Ketok Sinus', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
-        $this->fpdf->MultiCell(0, $h, $KetokSinus, 0, 1);
+        $this->fpdf->Cell(27, $h, $KetokSinus, 0, 0);
+        $this->fpdf->Cell(35, $h, $KetKetokSinus, 0, 0);
+        $this->fpdf->Cell(27, $h, $KetokSinusKiri, 0, 0);
+        $this->fpdf->Cell(35, $h, $KetKetokSinusKiri, 0, 1);
 
         //MB
         $this->fpdf->Cell(0, 4, '', 0, 1);
@@ -1851,22 +1926,22 @@ class PdfHasilMCUController extends Controller
         $this->fpdf->Cell(59, $h, '9. Mulut Dan Bibir', 0, 1);
 
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(10, 7, '', 0, 0);
+        $this->fpdf->Cell(13, 7, '', 0, 0);
         $this->fpdf->Cell(55, $h, 'a. Bibir', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
         $this->fpdf->MultiCell(0, $h, $Bibir, 0, 1);
 
-        $this->fpdf->Cell(10, 7, '', 0, 0);
+        $this->fpdf->Cell(13, 7, '', 0, 0);
         $this->fpdf->Cell(55, $h, 'b. Lidah', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
         $this->fpdf->MultiCell(0, $h, $Lidah, 0, 1);
 
-        $this->fpdf->Cell(10, 7, '', 0, 0);
+        $this->fpdf->Cell(13, 7, '', 0, 0);
         $this->fpdf->Cell(55, $h, 'c. Gusi', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
         $this->fpdf->MultiCell(0, $h, $Gusi, 0, 1);
 
-        $this->fpdf->Cell(10, 7, '', 0, 0);
+        $this->fpdf->Cell(13, 7, '', 0, 0);
         $this->fpdf->Cell(55, $h, 'd. Lain-Lain', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
         $this->fpdf->MultiCell(0, $h, $MulutLainLain, 0, 1);
@@ -1880,7 +1955,7 @@ class PdfHasilMCUController extends Controller
         // end page 3
 
 
-        $this->fpdf->Cell(0, 5, '', 0, 1);
+        $this->fpdf->Cell(0, 15, '', 0, 1);
         $this->fpdf->SetFont('Arial', 'B', 10);
         $this->fpdf->Cell(6, 7, '', 0, 0);
         $this->fpdf->Cell(14, 0, '10.  Gigi dan Gusi', 0, 0);
@@ -2381,6 +2456,8 @@ class PdfHasilMCUController extends Controller
         $this->fpdf->Cell(4, 0, ': ', 0, 0);
         $this->fpdf->Cell(20, 0, $GenitaliaEksternal, 0, 0);
 
+        
+        if ($Jeniskelamin == 'LAKI-LAKI'){
         $this->fpdf->SetFont('Arial', '', 9);
         $this->fpdf->Cell(50, 4, '', 0, 1);
         $this->fpdf->Cell(13, 7, '', 0, 0);
@@ -2389,6 +2466,7 @@ class PdfHasilMCUController extends Controller
         //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
         $this->fpdf->Cell(4, 0, ': ', 0, 0);
         $this->fpdf->Cell(20, 0, $Prostat, 0, 0);
+        }
 
         $this->fpdf->Cell(0, 7, '', 0, 1);
         $this->fpdf->SetFont('Arial', 'B', 10);
@@ -2980,6 +3058,44 @@ class PdfHasilMCUController extends Controller
         $this->fpdf->Cell(55, $h, 'i. Laboratorium', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
         $this->fpdf->MultiCell(0, $h, $PFK_Lab, 0, 1);
+        
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(10, 7, '', 0, 0);
+        $this->fpdf->Cell(55, $h, 'j. SDS Test', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+
+        if ($data['data']['reportsds'] == null){
+            $this->fpdf->MultiCell(0, $h, 'Tidak dilakukan', 0, 1);
+        }else{
+            $this->fpdf->Cell(65, $h, '- Ketaksaan Peran', 0, 0);
+            $this->fpdf->Cell(3, $h, ':', 0, 0);
+            $this->fpdf->Cell(35, $h, $data['data']['reportsds']['TP_ResumeHasil'], 0, 1);
+            
+            $this->fpdf->Cell(69, $h, '', 0, 0);
+            $this->fpdf->Cell(65, $h, '- Konflik Peran', 0, 0);
+            $this->fpdf->Cell(3, $h, ':', 0, 0);
+            $this->fpdf->Cell(35, $h, $data['data']['reportsds']['KP_ResumeHasil'], 0, 1);
+            
+            $this->fpdf->Cell(69, $h, '', 0, 0);
+            $this->fpdf->Cell(65, $h, '- Beban Kerja Berlebih (Kuantitaif)', 0, 0);
+            $this->fpdf->Cell(3, $h, ':', 0, 0);
+            $this->fpdf->Cell(35, $h, $data['data']['reportsds']['BBKuan_ResumeHasil'], 0, 1);
+            
+            $this->fpdf->Cell(69, $h, '', 0, 0);
+            $this->fpdf->Cell(65, $h, '- Beban Kerja Berlebih (Kualitatif)', 0, 0);
+            $this->fpdf->Cell(3, $h, ':', 0, 0);
+            $this->fpdf->Cell(35, $h, $data['data']['reportsds']['BBKual_ResumeHasil'], 0, 1);
+            
+            $this->fpdf->Cell(69, $h, '', 0, 0);
+            $this->fpdf->Cell(65, $h, '- Pengembangan Karir', 0, 0);
+            $this->fpdf->Cell(3, $h, ':', 0, 0);
+            $this->fpdf->Cell(35, $h, $data['data']['reportsds']['PK_ResumeHasil'], 0, 1);
+            
+            $this->fpdf->Cell(69, $h, '', 0, 0);
+            $this->fpdf->Cell(65, $h, '- Tanggung Jawab Terhadap Orang Lain', 0, 0);
+            $this->fpdf->Cell(3, $h, ':', 0, 0);
+            $this->fpdf->Cell(35, $h, $data['data']['reportsds']['TJO_ResumeHasil'], 0, 1);
+        }
 
         $this->fpdf->Cell(0, 4, '', 0, 1);
         $this->fpdf->SetFont('Arial', 'B', 10);

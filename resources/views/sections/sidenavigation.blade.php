@@ -17,6 +17,8 @@
                     <ul class="child-nav">
                         <li><a href="/pdflist"><i class="fa fa-bolt"></i> <span>Create PDF MCU</span></a></li> 
                         <li><a href="/pdfreportlist"><i class="fa fa-bolt"></i> <span>Report PDF MCU</span></a></li> 
+                        <li><a href="/rekapsds"><i class="fa fa-bolt"></i> <span>Rekap Assesment SDS</span></a></li> 
+                        <li><a href="/rekapgrafik"><i class="fa fa-bolt"></i> <span>Info Grafik</span></a></li> 
                     </ul>
                 </li> 
             </ul>
