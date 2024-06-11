@@ -279,4 +279,52 @@ class PdfService extends Controller
                 throw new HttpException(200, $e);
             }
         }
+
+        public function getRekapSDSbyPeriode($request)
+        {
+            try {
+                return $this->GuzzleClientRequestPost(
+                    env('API_URL_YARSI') . "MedicalCheckup/getRekapSDSbyPeriode",
+                    "POST",
+                    json_encode([
+                        'tglPeriodeBerobatAwal' => $request->tglAwal,
+                        'tglPeriodeBerobatAkhir' => $request->tglAkhir,
+                    ])
+                );
+            } catch (\Exception $e) {
+                throw new HttpException(200, $e);
+            }
+        }
+
+        
+        public function getNamaPenjamin($idgroupjaminan)
+        {
+            try {
+                return $this->GuzzleClientRequest(
+                    env('API_URL_YARSI') . "masterdata/reg/jaminan/view/".$idgroupjaminan ,
+                    "GET"
+                );
+            } catch (\Exception $e) {
+                throw new HttpException(200, $e);
+            }
+        }
+
+        public function getRekap($request)
+        {
+            try {
+                return $this->GuzzleClientRequestPost(
+                    env('API_URL_YARSI') . "MedicalCheckup/getRekapMCU",
+                    "POST",
+                    json_encode([
+                        'tglAwal' => $request->tglAwal,
+                        'tglAkhir' => $request->tglAkhir,
+                        'JenisRekap' => $request->JenisRekap,
+                        'TipePenjamin' => $request->TipePenjamin,
+                        'NamaPenjamin' => $request->NamaPenjamin,
+                    ])
+                );
+            } catch (\Exception $e) {
+                throw new HttpException(200, $e);
+            }
+        }
 }
