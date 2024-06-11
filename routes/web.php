@@ -32,9 +32,7 @@ Route::get('/main', function () {
  
   return view('main.main');
 });
-Route::get('/login', function () {
-  return view('login.login');
-});
+Route::get('/login', [AuthController::class,'index']);
 
 Route::get('/pdf', function () {
   return view('main.mcu.pdfmcu');
