@@ -111,7 +111,7 @@ class PDF extends Fpdf {
     	$datenowx = date('d/m/y      H:i');
         // Position at 1.5 cm from bottom
                         $this->SetTextColor(0,0,0);
-            $this->SetY(-37);
+            $this->SetY(-43);
         $this->SetFont('Arial','U',8);
         $this->Cell(15,4,'',0,0);
         $this->Cell(10,4,'                                                                                                                                           Approved by Radiologist : dr. Tia Bonita Sp.Rad' ,0,1);
@@ -123,7 +123,7 @@ class PDF extends Fpdf {
         $this->Cell(35,4,$datenowx,0,1);
         $this->Cell(15,4,'',0,0);
         $this->Cell(55,4,'Sri Mulyani,A.Md.Rad',0,0);
-        $this->Image('assets/img/footer2.png',175,265,30);
+        $this->Image('assets/img/LogoGabungCert.png',155,260,50);
         $this->Image('assets/img/footer_1.png',1,283,208, 13);
     }
 
@@ -209,6 +209,10 @@ class PdfHasilRadiologiController extends Controller
         //$GLOBALS['header'] = $data['data'][0];
   
         foreach ($data['data'] as $datareg ) {
+            $dataHasil = $unitService->showviewHasilRadiology($datareg['ACCESSION_NO']);
+            if ($dataHasil['status'] == false){
+                return false;
+            }
             $GLOBALS['header'] = $datareg;
 
             $this->fpdf->SetAutoPageBreak(TRUE, 35);
@@ -216,8 +220,7 @@ class PdfHasilRadiologiController extends Controller
             $this->fpdf->AddPage();
 
             
-             $dataHasil = $unitService->showviewHasilRadiology($datareg['ACCESSION_NO']);
-             if ($dataHasil['status'] == true){
+             
              $viewHasilAd = $dataHasil['data'];
              
             $REPORT_TEXT = $viewHasilAd['REPORT_TEXT'];
@@ -264,7 +267,6 @@ $this->fpdf->setFont('Arial','',10);
       $this->fpdf->Cell(3,1,'',0,0);
       $this->fpdf->MultiCell(141,6,$CONCLUSION,0,1);
       $this->fpdf->Cell(0,1,'',0,1);//br
-    }
        
        
         //Storage::put('public/pdf/invoice.pdf', $this->fpdf->Output());
@@ -295,7 +297,7 @@ $this->fpdf->setFont('Arial','',10);
         }else{
             $response = [
                 'status' => false, 
-                'message' => "Generate PDF Surat bebas Narkoba Tidak Berhasi, Data Tidak Ada.", 
+                'message' => "Generate PDF Radiologi Tidak Berhasi, Data Tidak Ada.", 
             ];
             return response()->json($response, 200);
         }
@@ -310,7 +312,7 @@ $this->fpdf->setFont('Arial','',10);
         }else{
             $response = [
                 'status' => false, 
-                'message' => "Generate PDF Surat bebas Narkoba Tidak Berhasi, Data Tidak Ada.", 
+                'message' => "Generate PDF Radiologi Tidak Berhasi, Data Tidak Ada.", 
             ];
             return response()->json($response, 200);
         }

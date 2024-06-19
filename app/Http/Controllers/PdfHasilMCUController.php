@@ -86,14 +86,14 @@ class PDF extends Fpdf
     }
     function Footer()
     {
-        if ( $this->PageNo() > 2 ) {
+        if ( $this->PageNo() > 0 ) {
             $datenowx = date('d/m/y      H:i');
         // Position at 1.5 cm from bottom
                         $this->SetTextColor(0,0,0);
             $this->SetY(-22);
         $this->SetFont('Arial','B',8);
         $this->cell(5,5,'Page '.$this->PageNo().' of {nb}',0,1);
-        $this->Image('assets/img/footer2.png',175,265,30);
+        $this->Image('assets/img/LogoGabungCert.png',155,260,50);
         $this->Image('assets/img/footer_1.png',1,283,208, 13);
             
         }
@@ -470,6 +470,26 @@ class PdfHasilMCUController extends Controller
                 $KetSerumenKiri = $key['KetSerumenKiri'];
                 $KetMembranTimpaniKiri = $key['KetMembranTimpaniKiri'];
                 $KetTesberbisikKiri = $key['KetTesberbisikKiri'];
+                $GA55 = $key['GA55'];
+                $GA54 = $key['GA54'];
+                $GA53 = $key['GA53'];
+                $GA52 = $key['GA52'];
+                $GA51 = $key['GA51'];
+                $GA61 = $key['GA61'];
+                $GA62 = $key['GA62'];
+                $GA63 = $key['GA63'];
+                $GA64 = $key['GA64'];
+                $GA65 = $key['GA65'];
+                $GB85 = $key['GB85'];
+                $GB84 = $key['GB84'];
+                $GB83 = $key['GB83'];
+                $GB82 = $key['GB82'];
+                $GB81 = $key['GB81'];
+                $GB71 = $key['GB71'];
+                $GB72 = $key['GB72'];
+                $GB73 = $key['GB73'];
+                $GB74 = $key['GB74'];
+                $GB75 = $key['GB75'];
             }
         } else {
             $ID = null;
@@ -750,6 +770,26 @@ class PdfHasilMCUController extends Controller
             $KetSerumenKiri = null;
             $KetMembranTimpaniKiri = null;
             $KetTesberbisikKiri = null;
+            $GA55 = null;
+            $GA54 = null;
+            $GA53 = null;
+            $GA52 = null;
+            $GA51 = null;
+            $GA61 = null;
+            $GA62 = null;
+            $GA63 = null;
+            $GA64 = null;
+            $GA65 = null;
+            $GB85 = null;
+            $GB84 = null;
+            $GB83 = null;
+            $GB82 = null;
+            $GB81 = null;
+            $GB71 = null;
+            $GB72 = null;
+            $GB73 = null;
+            $GB74 = null;
+            $GB75 = null;
         }
         if ($data['data']['reportMCU2'] != null) {
             foreach ($data['data']['reportMCU2'] as $key) {
@@ -1040,7 +1080,7 @@ class PdfHasilMCUController extends Controller
             $PFK_Lab = null;
         }
 
-        $this->fpdf->Cell(10, 1, '', 0, 1);
+        $this->fpdf->Cell(10, 15, '', 0, 1);
         //Line 1
         $this->fpdf->SetFont('Arial', 'B', 12);
         $this->fpdf->Cell(0, 12, 'MEDICAL CHECK UP', 'TLR', 0, 'C');
@@ -1055,114 +1095,119 @@ class PdfHasilMCUController extends Controller
         //BR
         $this->fpdf->Cell(0, 15, '', 0, 1);
 
+        $h = 5;
 
         $this->fpdf->Cell(10, 3, '', 0, 1);
         $this->fpdf->SetFont('Arial', 'B', 10);
         //row 1 (left)-------------------
-        $this->fpdf->Cell(25, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'NAMA', 0, 0);
-        $this->fpdf->Cell(60, 0, '', 0, 0);
+        $this->fpdf->Cell(25, $h, '', 0, 0);
+        $this->fpdf->Cell(70, $h, 'NAMA', 0, 0);
         //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(8, 2, ': ', 0, 0);
+        $this->fpdf->Cell(8, $h, ': ', 0, 0);
         $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(20, 2, $NamaPasien, 0, 0);
+        $this->fpdf->Cell(0, $h, $NamaPasien, 0, 1);
         $this->fpdf->SetFont('Arial', 'i', 10);
-        $this->fpdf->Cell(0, 5, '', 0, 1);
-        $this->fpdf->Cell(25, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'Name', 0, 0);
-        $this->fpdf->Cell(60, 0, '', 0, 0);
+        $this->fpdf->Cell(25, $h, '', 0, 0);
+        $this->fpdf->Cell(70, $h, 'Name', 0, 0);
         //BR
         $this->fpdf->Cell(0, 5, '', 0, 1);
 
         //row 2 (left)---------------------
         $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(10, 5, '', 0, 1);
-        $this->fpdf->Cell(25, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'TANGGAL LAHIR', 0, 0);
-        $this->fpdf->Cell(60, 0, '', 0, 0);
-        $this->fpdf->Cell(8, 2, ': ', 0, 0);
+        $this->fpdf->Cell(10, 3, '', 0, 1);
+        $this->fpdf->Cell(25, $h, '', 0, 0);
+        $this->fpdf->Cell(70, $h, 'TANGGAL LAHIR', 0, 0);
+        $this->fpdf->Cell(8, $h, ': ', 0, 0);
         $this->fpdf->SetFont('Arial', '', 10);
-        $this->fpdf->Cell(20, 2, $TglLahir, 0, 0);
-        $this->fpdf->Cell(60, 2, $Umur, 0, 0);
+        $this->fpdf->Cell(27, $h, $TglLahir, 0, 0);
+        $this->fpdf->Cell(60, $h, $Umur, 0, 0);
         $this->fpdf->SetFont('Arial', 'i', 10);
-        $this->fpdf->Cell(0, 5, '', 0, 1);
-        $this->fpdf->Cell(25, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'Date of birth', 0, 0);
-        $this->fpdf->Cell(60, 0, '', 0, 0);
+        $this->fpdf->Cell(0, $h, '', 0, 1);
+        $this->fpdf->Cell(25, $h, '', 0, 0);
+        $this->fpdf->Cell(70, $h, 'Date of birth', 0, 0);
         //BRfpdf->
         $this->fpdf->Cell(0, 5, '', 0, 1);
 
-        //row 3 (left)-----------------------------
+        $this->fpdf->Cell(10, 3, '', 0, 1);
         $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(10, 5, '', 0, 1);
-        $this->fpdf->Cell(25, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'JENIS KELAMIN', 0, 0);
-        $this->fpdf->Cell(60, 0, '', 0, 0);
-        //$this->Cell(35,0,': '.$GLOBALS['identitas_pasien']['birth_dt'],0,0);
-        //$this->Cell(35,0,': '.$GLOBALS['identitas_pasien']['birth_dt'],0,0);
-        $this->fpdf->Cell(8, 2, ': ', 0, 0);
+        //row 1 (left)-------------------
+        $this->fpdf->Cell(25, $h, '', 0, 0);
+        $this->fpdf->Cell(70, $h, 'JENIS KELAMIN', 0, 0);
+        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
+        $this->fpdf->Cell(8, $h, ': ', 0, 0);
         $this->fpdf->SetFont('Arial', '', 10);
-        $this->fpdf->Cell(20, 2, $Jeniskelamin, 0, 0);
+        $this->fpdf->Cell(0, $h, $Jeniskelamin, 0, 1);
         $this->fpdf->SetFont('Arial', 'i', 10);
-        //$this->Cell(25,0,'('.$GLOBALS['identitas_pasien']['age'].'Y)',0,0);
-        $this->fpdf->Cell(0, 5, '', 0, 1);
-        $this->fpdf->Cell(25, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'Gender', 0, 0);
-        $this->fpdf->Cell(60, 0, '', 0, 0);
+        $this->fpdf->Cell(25, $h, '', 0, 0);
+        $this->fpdf->Cell(70, $h, 'Gender', 0, 0);
         //BR
         $this->fpdf->Cell(0, 5, '', 0, 1);
 
-        //row 4 (left)---------------------
+        $this->fpdf->Cell(10, 3, '', 0, 1);
         $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(10, 5, '', 0, 1);
-        $this->fpdf->Cell(25, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'REKAM MEDIS', 0, 0);
-        $this->fpdf->Cell(60, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['gender'],0,0);
-        $this->fpdf->Cell(8, 2, ': ', 0, 0);
+        //row 1 (left)-------------------
+        $this->fpdf->Cell(25, $h, '', 0, 0);
+        $this->fpdf->Cell(70, $h, 'REKAM MEDIS', 0, 0);
+        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
+        $this->fpdf->Cell(8, $h, ': ', 0, 0);
         $this->fpdf->SetFont('Arial', '', 10);
-        $this->fpdf->Cell(20, 2, $NoMR, 0, 0);
+        $this->fpdf->Cell(0, $h, $NoMR, 0, 1);
         $this->fpdf->SetFont('Arial', 'i', 10);
-        $this->fpdf->Cell(0, 5, '', 0, 1);
-        $this->fpdf->Cell(25, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'Medical record', 0, 0);
-        $this->fpdf->Cell(60, 0, '', 0, 0);
+        $this->fpdf->Cell(25, $h, '', 0, 0);
+        $this->fpdf->Cell(70, $h, 'Medical record', 0, 0);
         //BR
         $this->fpdf->Cell(0, 5, '', 0, 1);
 
-       //row 4 (left)---------------------
-       $this->fpdf->SetFont('Arial', 'B', 10);
-       $this->fpdf->Cell(10, 5, '', 0, 1);
-       $this->fpdf->Cell(25, 7, '', 0, 0);
-       $this->fpdf->Cell(10, 0, 'ALAMAT', 0, 0);
-       $this->fpdf->Cell(60, 0, '', 0, 0);
-       //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['gender'],0,0);
-       $this->fpdf->Cell(8, 2, ': ', 0, 0);
-       $this->fpdf->SetFont('Arial', '', 10);
-       $this->fpdf->MultiCell(0, 4, $Alamat, 0, 0);
-       $this->fpdf->SetFont('Arial', 'i', 10);
-       $this->fpdf->Cell(0, 5, '', 0, 1);
-       $this->fpdf->Cell(25, 7, '', 0, 0);
-       $this->fpdf->Cell(0, 0, 'Address', 0, 0);
-       $this->fpdf->Cell(60, 0, '', 0, 0);
-       //BR
-       $this->fpdf->Cell(0, 5, '', 0, 1);
-
-        //row 6 (left)---------------------
+        $this->fpdf->Cell(10, 3, '', 0, 1);
         $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(10, 5, '', 0, 1);
-        $this->fpdf->Cell(25, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'TANGGAL PEMERIKSAAN', 0, 0);
-        $this->fpdf->Cell(60, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['address'],0,0);
-        $this->fpdf->Cell(8, 2, ': ', 0, 0);
-        $this->fpdf->SetFont('Arial', '', 10);
-        $this->fpdf->Cell(20, 2, $Tanggal_Pemeriksaan, 0, 0);
+        //row 1 (left)-------------------
+        $this->fpdf->Cell(25, $h, '', 0, 0);
+        $this->fpdf->Cell(70, $h, 'ALAMAT', 0, 1);
+        $this->fpdf->Cell(25, $h, '', 0, 0);
         $this->fpdf->SetFont('Arial', 'i', 10);
+        $this->fpdf->Cell(70, $h, 'Address', 0, 0);
+        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
+        $this->fpdf->SetFont('Arial', '', 10);
+        $this->fpdf->Cell(8, -5, ': ', 0, 0);
+        $this->fpdf->SetFont('Arial', '', 10);
+        $this->fpdf->setY($this->fpdf->getY()-4);
+        $this->fpdf->Cell(95+8, $h, '', 0, 0);
+        $this->fpdf->MultiCell(0, 4, $Alamat, 0, 1);
+        //$this->fpdf->Cell(70, $h, 'Address', 0, 0);
+        //BR
         $this->fpdf->Cell(0, 5, '', 0, 1);
-        $this->fpdf->Cell(25, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'Date of Examination', 0, 0);
-        $this->fpdf->Cell(60, 0, '', 0, 0);
+
+        $this->fpdf->Cell(10, 3, '', 0, 1);
+        $this->fpdf->SetFont('Arial', 'B', 10);
+        //row 1 (left)-------------------
+        $this->fpdf->Cell(25, $h, '', 0, 0);
+        $this->fpdf->Cell(70, $h, 'TANGGAL PEMERIKSAAN', 0, 0);
+        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
+        $this->fpdf->Cell(8, $h, ': ', 0, 0);
+        $this->fpdf->SetFont('Arial', '', 10);
+        $this->fpdf->MultiCell(0, $h, $Tanggal_Pemeriksaan, 0, 1);
+        $this->fpdf->SetFont('Arial', 'i', 10);
+        $this->fpdf->Cell(25, $h, '', 0, 0);
+        $this->fpdf->Cell(70, $h, 'Date of Examination', 0, 0);
+        //BR
+        $this->fpdf->Cell(0, 5, '', 0, 1);
+
+        $this->fpdf->Cell(10, 45, '', 0, 1);
+        $this->fpdf->SetFont('Arial', 'B', 10);
+        //row 1 (left)-------------------
+        $this->fpdf->Cell(25, $h, '', 0, 0);
+        $this->fpdf->Cell(70, $h, 'KATEGORI KESEHATAN', 0, 1);
+        $this->fpdf->Cell(25, $h, '', 0, 0);
+        $this->fpdf->SetFont('Arial', 'i', 10);
+        $this->fpdf->Cell(70, $h, 'Health Category', 0, 0);
+        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
+        $this->fpdf->SetFont('Arial', '', 10);
+        $this->fpdf->Cell(8, -5, ': ', 0, 0);
+        $this->fpdf->SetFont('Arial', '', 10);
+        $this->fpdf->setY($this->fpdf->getY()-4);
+        $this->fpdf->Cell(95+8, $h, '', 0, 0);
+        $this->fpdf->MultiCell(0, 4, $KetKesehatan, 0, 1);
+        //$this->fpdf->Cell(70, $h, 'Address', 0, 0);
         //BR
         $this->fpdf->Cell(0, 5, '', 0, 1);
 
@@ -1179,7 +1224,7 @@ class PdfHasilMCUController extends Controller
         $this->fpdf->SetFont('Arial', 'B', 10);
         $this->fpdf->Cell(10, 5, '', 0, 1);
         $this->fpdf->Cell(25, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'Terimakasih atas kepercayaan anda untuk melakukan pemeriksaan kesehatan pada', 0, 0);
+        $this->fpdf->Cell(10, 0, 'Terima kasih atas kepercayaan anda untuk melakukan pemeriksaan kesehatan pada', 0, 0);
         $this->fpdf->Cell(60, 0, '', 0, 0);
         //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['address'],0,0);
         // $this->Cell(8, 2, ': ', 0, 0);
@@ -1201,7 +1246,7 @@ class PdfHasilMCUController extends Controller
         $this->fpdf->SetFont('Arial', 'I', 10);
         $this->fpdf->Cell(0, 7, 'Medical Check Up one year later', 0, 0, 'C');
         $this->fpdf->Cell(0, 2, '', 0, 1);
-
+        //$this->fpdf->SetAutoPageBreak(false); 
         // $gety = $pdf->getY();
 
         // if(($gety>250.00125 && $gety<252.000000) || $gety < 230.000000){
@@ -1270,16 +1315,16 @@ class PdfHasilMCUController extends Controller
         $this->fpdf->Cell(0, 8, '', 0, 1);
 
         $h = 4;
-
+        $no = 1;
         $this->fpdf->SetFont('Arial', '', 9);
         $this->fpdf->Cell(6, $h, '', 0, 0);
-        $this->fpdf->Cell(59, $h, '1. Penyakit yang pernah diderita', 0, 0);
+        $this->fpdf->Cell(59, $h, $no++.'. Penyakit yang pernah diderita', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
         $this->fpdf->MultiCell(0, $h, $PPD_, 0, 1);
         // $this->fpdf->Cell(60, 5, '', 1, 1);
 
         $this->fpdf->Cell(6, $h, '', 0, 0);
-        $this->fpdf->Cell(59, $h, '2. Pernah dirawat di rumah sakit', 0, 0);
+        $this->fpdf->Cell(59, $h, $no++.'. Pernah dirawat di rumah sakit', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
         $this->fpdf->MultiCell(0, $h, $PPD_RS, 0, 1);
 
@@ -1292,17 +1337,17 @@ class PdfHasilMCUController extends Controller
         // $this->fpdf->Cell(60, 5, '', 0, 1);
 
         $this->fpdf->Cell(6, $h, '', 0, 0);
-        $this->fpdf->Cell(59, $h, '3. Pernah Operasi', 0, 0);
+        $this->fpdf->Cell(59, $h, $no++.'. Pernah Operasi', 0, 0);
         $this->fpdf->Cell($h, $h, ': ', 0, 0);
         $this->fpdf->MultiCell(0, $h, $P_Operasi, 0, 1);
 
         $this->fpdf->Cell(6, $h, '', 0, 0);
-        $this->fpdf->Cell(59, $h, '4. Pernah Kecelakaan', 0, 0);
+        $this->fpdf->Cell(59, $h, $no++.'. Pernah Kecelakaan', 0, 0);
         $this->fpdf->Cell($h, $h, ': ', 0, 0);
         $this->fpdf->MultiCell(0, $h, $PKecelakaan, 0, 1);
         if ($Jeniskelamin == 'PEREMPUAN'){
         $this->fpdf->Cell(6, $h, '', 0, 0);
-        $this->fpdf->Cell(59, $h, '5. Riwayat Reproduksi', 0, 0);
+        $this->fpdf->Cell(59, $h, $no++.'. Riwayat Reproduksi', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
             $this->fpdf->Cell(20, $h, 'Haid Terakhir : ' . date('d/m/Y', strtotime($HaidTerakhir)) . ' ;G : ' . $Gravida . ',  P : ' . $Para . ',  A :  ' . $Abortus, 0, 1);
         }else{
@@ -1312,7 +1357,7 @@ class PdfHasilMCUController extends Controller
         //$this->fpdf->Cell(60, 5, '', 0, 1);
 
         $this->fpdf->Cell(6, $h, '', 0, 0);
-        $this->fpdf->Cell(59, $h, '6. Kebiasaan', 0, 0);
+        $this->fpdf->Cell(59, $h, $no++.'. Kebiasaan', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
         $this->fpdf->Cell(20, $h, '', 0, 1);
         //$this->fpdf->Cell(60, 5, '', 0, 1);
@@ -1680,7 +1725,7 @@ class PdfHasilMCUController extends Controller
         $this->fpdf->SetFont('Arial', '', 9);
         $this->fpdf->Cell(13, 7, '', 0, 0);
         $this->fpdf->Cell(4, $h, 'b.', 0, 0);
-        $this->fpdf->Cell(53, $h, 'Konjungtiva', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Konjungtiva', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
         $this->fpdf->Cell(27, $h, $KonjungtivaKanan, 0, 0);
         $this->fpdf->Cell(35, $h, $KetKonjungtiva, 0, 0);
@@ -1695,7 +1740,7 @@ class PdfHasilMCUController extends Controller
 
         $this->fpdf->Cell(13, 7, '', 0, 0);
         $this->fpdf->Cell(4, $h, 'c.', 0, 0);
-        $this->fpdf->Cell(53, $h, 'Kesegarisan', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Kesegarisan', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
         $this->fpdf->Cell(27, $h, $Kesegarisankanan, 0, 0);
         $this->fpdf->Cell(35, $h, $KetKesegarisan, 0, 0);
@@ -1710,7 +1755,7 @@ class PdfHasilMCUController extends Controller
 
         $this->fpdf->Cell(13, 7, '', 0, 0);
         $this->fpdf->Cell(4, $h, 'd.', 0, 0);
-        $this->fpdf->Cell(53, $h, 'Sklera', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Sklera', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
         $this->fpdf->Cell(27, $h, $SkleraKanan, 0, 0);
         $this->fpdf->Cell(35, $h, $KetSklera, 0, 0);
@@ -1725,7 +1770,7 @@ class PdfHasilMCUController extends Controller
 
         $this->fpdf->Cell(13, 7, '', 0, 0);
         $this->fpdf->Cell(4, $h, 'e.', 0, 0);
-        $this->fpdf->Cell(53, $h, 'Lensa Mata', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Lensa Mata', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
         $this->fpdf->Cell(27, $h, $LensaMataKanan, 0, 0);
         $this->fpdf->Cell(35, $h, $KetLensaMata, 0, 0);
@@ -1740,7 +1785,7 @@ class PdfHasilMCUController extends Controller
 
         $this->fpdf->Cell(13, 7, '', 0, 0);
         $this->fpdf->Cell(4, $h, 'f.', 0, 0);
-        $this->fpdf->Cell(53, $h, 'Kornea', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Kornea', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
         $this->fpdf->Cell(27, $h, $KorneaKanan, 0, 0);
         $this->fpdf->Cell(35, $h, $KetKornea, 0, 0);
@@ -1755,7 +1800,7 @@ class PdfHasilMCUController extends Controller
 
         $this->fpdf->Cell(13, 7, '', 0, 0);
         $this->fpdf->Cell(4, $h, 'g.', 0, 0);
-        $this->fpdf->Cell(53, $h, 'Bulu Mata', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Bulu Mata', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
         $this->fpdf->Cell(27, $h, $BuluMataKanan, 0, 0);
         $this->fpdf->Cell(35, $h, $KetBuluMata, 0, 0);
@@ -1770,7 +1815,7 @@ class PdfHasilMCUController extends Controller
 
         $this->fpdf->Cell(13, 7, '', 0, 0);
         $this->fpdf->Cell(4, $h, 'h.', 0, 0);
-        $this->fpdf->Cell(53, $h, 'Tekanan Bola Mata', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Tekanan Bola Mata', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
         $this->fpdf->Cell(27, $h, $TekananBMKanan, 0, 0);
         $this->fpdf->Cell(35, $h, $KetTekananBM, 0, 0);
@@ -1785,7 +1830,7 @@ class PdfHasilMCUController extends Controller
 
         $this->fpdf->Cell(13, 7, '', 0, 0);
         $this->fpdf->Cell(4, $h, 'i.', 0, 0);
-        $this->fpdf->Cell(53, $h, 'Tes Buta Warna', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Tes Buta Warna', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
         $this->fpdf->Cell(27, $h, $TBWarnaKa, 0, 0);
         $this->fpdf->Cell(35, $h, $KetTBWarana, 0, 0);
@@ -1989,7 +2034,7 @@ class PdfHasilMCUController extends Controller
         $this->fpdf->Cell(8, 4, $GA25, 1, 0, 'C');
         $this->fpdf->Cell(8, 4, $GA26, 1, 0, 'C');
         $this->fpdf->Cell(8, 4, $GA27, 1, 0, 'C');
-        $this->fpdf->Cell(8, 4, $GA28, 1, 0, 'C');
+        $this->fpdf->Cell(8, 4, $GA28, 1, 1, 'C');
 
 
         $this->fpdf->Cell(0, 5, '', 0, 1);
@@ -2004,11 +2049,60 @@ class PdfHasilMCUController extends Controller
         $this->fpdf->SetFont('Arial', '', 9);
         //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
         $gety = $this->fpdf->getY();
-        $this->fpdf->Image('assets/img/Gigi2.png', 66, $gety, 130, 0);
+        $this->fpdf->Image('assets/img/odon_atas.png', 66, $gety-4, 130, 0);
+
+
         $this->fpdf->Cell(20, 0, '', 0, 0);
 
         //BR
-        $this->fpdf->Cell(0, 40, '', 0, 1);
+        $this->fpdf->Cell(0, 15, '', 0, 1);
+        
+        $this->fpdf->Cell(56, 4, '', 0, 0);
+        $this->fpdf->Cell(8, 4, '', 0, 0, 'C');
+        $this->fpdf->Cell(8, 4, '', 0, 0, 'C');
+        $this->fpdf->Cell(8, 4, '', 0, 0, 'C');
+        $this->fpdf->Cell(9, 4, $GA55, 1, 0, 'C');
+        $this->fpdf->Cell(8, 4, $GA54, 1, 0, 'C');
+        $this->fpdf->Cell(8, 4, $GA53, 1, 0, 'C');
+        $this->fpdf->Cell(8, 4, $GA52, 1, 0, 'C');
+        $this->fpdf->Cell(8, 4, $GA51, 1, 0, 'C');
+        $this->fpdf->Cell(8, 4, $GA61, 1, 0, 'C');
+        $this->fpdf->Cell(9, 4, $GA62, 1, 0, 'C');
+        $this->fpdf->Cell(8, 4, $GA63, 1, 0, 'C');
+        $this->fpdf->Cell(8, 4, $GA64, 1, 0, 'C');
+        $this->fpdf->Cell(8, 4, $GA65, 1, 0, 'C');
+        $this->fpdf->Cell(8, 4, '', 0, 0, 'C');
+        $this->fpdf->Cell(8, 4, '', 0, 0, 'C');
+        $this->fpdf->Cell(8, 4, '', 0, 1, 'C');
+        
+        $this->fpdf->Cell(0, 1, '', 0, 1);
+
+        
+        $this->fpdf->Cell(56, 4, '', 0, 0);
+        $this->fpdf->Cell(8, 4, '', 0, 0, 'C');
+        $this->fpdf->Cell(8, 4, '', 0, 0, 'C');
+        $this->fpdf->Cell(8, 4, '', 0, 0, 'C');
+        $this->fpdf->Cell(9, 4, $GB85, 1, 0, 'C');
+        $this->fpdf->Cell(8, 4, $GB84, 1, 0, 'C');
+        $this->fpdf->Cell(8, 4, $GB83, 1, 0, 'C');
+        $this->fpdf->Cell(8, 4, $GB82, 1, 0, 'C');
+        $this->fpdf->Cell(8, 4, $GB81, 1, 0, 'C');
+        $this->fpdf->Cell(8, 4, $GB71, 1, 0, 'C');
+        $this->fpdf->Cell(9, 4, $GB72, 1, 0, 'C');
+        $this->fpdf->Cell(8, 4, $GB73, 1, 0, 'C');
+        $this->fpdf->Cell(8, 4, $GB74, 1, 0, 'C');
+        $this->fpdf->Cell(8, 4, $GB75, 1, 0, 'C');
+        $this->fpdf->Cell(8, 4, '', 0, 0, 'C');
+        $this->fpdf->Cell(8, 4, '', 0, 0, 'C');
+        $this->fpdf->Cell(8, 4, '', 0, 1, 'C');
+
+        
+        $gety = $this->fpdf->getY();
+        $this->fpdf->Image('assets/img/odon_bawah.png', 66, $gety, 130, 0);
+        
+        //BR
+        $this->fpdf->Cell(0, 20, '', 0, 1);
+
 
         $this->fpdf->SetFont('Arial', 'B', 10);
         $this->fpdf->Cell(56, 4, '', 0, 0);
@@ -2030,431 +2124,324 @@ class PdfHasilMCUController extends Controller
         $this->fpdf->Cell(8, 4, $GB37, 1, 0, 'C');
         $this->fpdf->Cell(8, 4, $GB38, 1, 0, 'C');
 
-        $this->fpdf->Cell(0, 15, '', 0, 1);
-        $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(6, 7, '', 0, 0);
-        $this->fpdf->Cell(14, 0, '11.  Tenggorokan', 0, 0);
-        $this->fpdf->Cell(52, 7, '', 0, 0);
 
-        $this->fpdf->Cell(45, 0, '', 0, 0);
+        $this->fpdf->Cell(0, $h, '', 0, 1);
+        $this->fpdf->SetFont('Arial', 'B', 10);
+        $this->fpdf->Cell(6, $h, '', 0, 0);
+        $this->fpdf->Cell(14, $h, '11.  Tenggorokan', 0, 1);
 
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'a.Pharynx', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $Pharynx, 0, 0);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(55, $h, 'a. Pharynx', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $Pharynx, 0, 1);
 
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'b.Ukuran Tonsil', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(55, $h, 'b. Ukuran Tonsil', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
         $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(11, 0, 'Kanan', 0, 0);
-        $this->fpdf->Cell(1, 0, '', 0, 0);
-        $this->fpdf->Cell(2, 0, ': ', 0, 0);
+        $this->fpdf->Cell(12, $h, 'Kanan', 0, 0);
+        $this->fpdf->Cell(2, $h, ': ', 0, 0);
         $this->fpdf->SetFont('Arial', '', 10);
-        $this->fpdf->Cell(63, 0, $TonsilKanan, 0, 0);
+        $this->fpdf->Cell(50, $h, $TonsilKanan, 0, 0);
         $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(6, 0, 'Kiri', 0, 0);
-        $this->fpdf->Cell(1, 0, '', 0, 0);
-        $this->fpdf->Cell(2, 0, ': ', 0, 0);
+        $this->fpdf->Cell(8, $h, 'Kiri', 0, 0);
+        $this->fpdf->Cell(2, $h, ': ', 0, 0);
         $this->fpdf->SetFont('Arial', '', 10);
-        $this->fpdf->Cell(63, 0, $TonsilKiri, 0, 0);
+        $this->fpdf->Cell(0, $h, $TonsilKiri, 0, 1);
 
+        
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'c.Palatum', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $Palatum, 0, 0);
-
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(55, $h, 'a. Palatum', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $Palatum, 0, 1);
+        
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'd.Lain-Lain', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $TenggorokanLainLain, 0, 0);
-
-        $this->fpdf->Cell(0, 7, '', 0, 1);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(55, $h, 'd. Lain-Lain', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $TenggorokanLainLain, 0, 1);
+        
+        $this->fpdf->Cell(0, $h, '', 0, 1);
         $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(6, 7, '', 0, 0);
-        $this->fpdf->Cell(14, 0, '12.  Leher', 0, 0);
-        $this->fpdf->Cell(52, 7, '', 0, 0);
-
-        $this->fpdf->Cell(45, 0, '', 0, 0);
+        $this->fpdf->Cell(6, $h, '', 0, 0);
+        $this->fpdf->Cell(14, $h, '12.  Leher', 0, 1);
+        
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'a.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Gerakan Leher', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $GerakanLeher, 0, 1);
+        
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'b.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Otot-otot Leher', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $OtotLeher, 0, 1);
+        
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'c.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Kelenjar Tyroid', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $KelenjarTyroid, 0, 1);
+        
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'd.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Pulsasi Carotis', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $PulsasiCarotis, 0, 1);
+        
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'e.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Tekanan vena jugularis', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $VenaJugularis, 0, 1);
+        
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'f.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Trachea', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $Trachea, 0, 1);
+        //ket
 
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'a.Gerakan Leher', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $GerakanLeher, 0, 0);
-
-        $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'b.Otot-otot Leher', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $OtotLeher, 0, 0);
-
-        $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'c.Kelenjar Tyroid', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $KelenjarTyroid, 0, 0);
-
-        $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'd.Pulsasi Carotis', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $PulsasiCarotis, 0, 0);
-
-        $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'e.Tekanan vena jugularis', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $PulsasiCarotis, 0, 0);
-
-        $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'f.Trachea', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $Trachea, 0, 0);
-
-        $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'g.Lain-lain', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $LeherLain2, 0, 0);
-
-        $this->fpdf->Cell(0, 7, '', 0, 1);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'g.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Lain-lain', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $LeherLain2, 0, 1);
+        
+        $this->fpdf->Cell(0, $h, '', 0, 1);
         $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(6, 7, '', 0, 0);
-        $this->fpdf->Cell(14, 0, '13.  Dada', 0, 0);
-        $this->fpdf->Cell(52, 7, '', 0, 0);
-
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-
+        $this->fpdf->Cell(6, $h, '', 0, 0);
+        $this->fpdf->Cell(14, $h, '13.  Dada', 0, 1);
+        
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'a.Bentuk', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $BentukDada, 0, 0);
-
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(55, $h, 'a. Bentuk', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $BentukDada, 0, 1);
+        
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'b.Mammae', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $Mammae, 0, 0);
-
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(55, $h, 'b. Mammae', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $Mammae, 0, 1);
+        
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'c.Lain-lain', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $DadaLain2, 0, 0);
-        // PAGE 4
-
-        $this->fpdf->Cell(0, 7, '', 0, 1);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(55, $h, 'c. Lain-lain', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $DadaLain2, 0, 1);
+        
+        $this->fpdf->Cell(0, $h, '', 0, 1);
         $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(6, 7, '', 0, 0);
-        $this->fpdf->Cell(14, 0, '14.  Paru-paru dan Jantung', 0, 0);
-        $this->fpdf->Cell(52, 7, '', 0, 0);
-
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-
+        $this->fpdf->Cell(6, $h, '', 0, 0);
+        $this->fpdf->Cell(14, $h, '14.  Paru-paru dan Jantung', 0, 1);
+        
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'a.Palpasi', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $Paru_Palpasi, 0, 0);
-
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(55, $h, 'a. Palpasi', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $Paru_Palpasi, 0, 1);
+        
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'b.Perkusi', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(55, $h, 'b. Perkusi', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
         $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(11, 0, 'Kanan', 0, 0);
-        $this->fpdf->Cell(1, 0, '', 0, 0);
-        $this->fpdf->Cell(2, 0, ': ', 0, 0);
+        $this->fpdf->Cell(12, $h, 'Kanan', 0, 0);
+        $this->fpdf->Cell(2, $h, ': ', 0, 0);
         $this->fpdf->SetFont('Arial', '', 10);
-        $this->fpdf->Cell(63, 0, $Paru_PerkusiKanan, 0, 0);
+        $this->fpdf->Cell(50, $h, $Paru_PerkusiKanan, 0, 0);
         $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(6, 0, 'Kiri', 0, 0);
-        $this->fpdf->Cell(1, 0, '', 0, 0);
-        $this->fpdf->Cell(2, 0, ': ', 0, 0);
+        $this->fpdf->Cell(8, $h, 'Kiri', 0, 0);
+        $this->fpdf->Cell(2, $h, ': ', 0, 0);
         $this->fpdf->SetFont('Arial', '', 10);
-        $this->fpdf->Cell(63, 0, $Paru_PerkusiKanan, 0, 0);
+        $this->fpdf->Cell(0, $h, $Paru_PerkusiKanan, 0, 1);
 
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(20, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, '-Iktus Kordis', 0, 0);
-        $this->fpdf->Cell(38, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $Paru_IktusKordis, 0, 0);
-
+        $this->fpdf->Cell(20, $h, '', 0, 0);
+        $this->fpdf->Cell(48, $h, '- Iktus Kordis', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $Paru_IktusKordis, 0, 1);
+        
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(20, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, '-Batas Jantung', 0, 0);
-        $this->fpdf->Cell(38, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $Paru_BatasJantung, 0, 0);
-
+        $this->fpdf->Cell(20, $h, '', 0, 0);
+        $this->fpdf->Cell(48, $h, '- Batas Jantung', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $Paru_BatasJantung, 0, 1);
+        
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'c.Auskultasi', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(55, $h, 'c. Auskultasi', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
         $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(11, 0, 'Kanan', 0, 0);
-        $this->fpdf->Cell(1, 0, '', 0, 0);
-        $this->fpdf->Cell(2, 0, ': ', 0, 0);
+        $this->fpdf->Cell(12, $h, 'Kanan', 0, 0);
+        $this->fpdf->Cell(2, $h, '', 0, 0);
         $this->fpdf->SetFont('Arial', '', 10);
-        $this->fpdf->Cell(63, 0, '', 0, 0);
+        $this->fpdf->Cell(50, $h, '', 0, 0);
         $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(6, 0, 'Kiri', 0, 0);
-        $this->fpdf->Cell(1, 0, '', 0, 0);
-        $this->fpdf->Cell(2, 0, ': ', 0, 0);
+        $this->fpdf->Cell(8, $h, 'Kiri', 0, 0);
+        $this->fpdf->Cell(2, $h, '', 0, 0);
         $this->fpdf->SetFont('Arial', '', 10);
-        $this->fpdf->Cell(63, 0, '', 0, 0);
-
+        $this->fpdf->Cell(0, $h, '', 0, 1);
+        
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(20, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, '-Bunyi Napas', 0, 0);
-        $this->fpdf->Cell(38, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $Paru_BunyiNapasKanan, 0, 0);
-        $this->fpdf->Cell(57, 0, '', 0, 0);
-        $this->fpdf->Cell(20, 0, $Paru_BunyiNapasKiri, 0, 0);
-
+        $this->fpdf->Cell(20, $h, '', 0, 0);
+        $this->fpdf->Cell(48, $h, '- Bunyi Napas', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(64, $h, $Paru_BunyiNapasKanan, 0, 0);
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(20, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, '-Bunyi Napas Tambahan', 0, 0);
-        $this->fpdf->Cell(38, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $Paru_BNPTambahanKa, 0, 0);
-        $this->fpdf->Cell(57, 0, '', 0, 0);
-        $this->fpdf->Cell(20, 0, $Paru_BNPTambahanKi, 0, 0);
-
+        $this->fpdf->Cell(0, $h, $Paru_BunyiNapasKiri, 0, 1);
+        
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(20, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, '-Bunyi Jantung', 0, 0);
-        $this->fpdf->Cell(38, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $Paru_BNPTambahanKi, 0, 0);
-
-        $this->fpdf->Cell(0, 7, '', 0, 1);
+        $this->fpdf->Cell(20, $h, '', 0, 0);
+        $this->fpdf->Cell(48, $h, '- Bunyi Napas Tambahan', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(64, $h, $Paru_BNPTambahanKa, 0, 0);
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(0, $h, $Paru_BNPTambahanKi, 0, 1);
+        
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(20, $h, '', 0, 0);
+        $this->fpdf->Cell(48, $h, '- Bunyi Jantung', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(19, $h, $Paru_BunyiJantung, 0, 0);
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(40, $h, '', 0, 0);
+        $this->fpdf->Cell(19, $h, '', 0, 0);
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(0, $h, '', 0, 1);
+        
+        $this->fpdf->Cell(0, $h, '', 0, 1);
         $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(6, 7, '', 0, 0);
-        $this->fpdf->Cell(14, 0, '15.  Abdomen', 0, 0);
-        $this->fpdf->Cell(52, 7, '', 0, 0);
-
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-
+        $this->fpdf->Cell(6, $h, '', 0, 0);
+        $this->fpdf->Cell(14, $h, '15.  Abdomen', 0, 1);
+        
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'a.Inspeksi', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $Abdo_Inspeksi, 0, 0);
-
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'a.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Inspeksi', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $Abdo_Inspeksi, 0, 1);
+        
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'b.Perkusi', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $Abdo_Perkusi, 0, 0);
-
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'b.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Perkusi', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $Abdo_Perkusi, 0, 1);
+        
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'c.Auskultasi bising usus', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $Abdo_Perkusi, 0, 0);
-
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'c.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Auskultasi bising usus', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $Abdo_BisingUsus, 0, 1);
+        
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'd.Hati', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $Abdo_Hati, 0, 0);
-
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'd.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Hati', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $Abdo_Hati, 0, 1);
+        
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'e.Limpa', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $Abdo_Limpa, 0, 0);
-
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'e.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Limpa', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $Abdo_Limpa, 0, 1);
+        
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'f.Ginjal', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'f.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Ginjal', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
         $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(11, 0, 'Kanan', 0, 0);
-        $this->fpdf->Cell(1, 0, '', 0, 0);
-        $this->fpdf->Cell(2, 0, ': ', 0, 0);
+        $this->fpdf->Cell(12, $h, 'Kanan', 0, 0);
+        $this->fpdf->Cell(2, $h, ': ', 0, 0);
         $this->fpdf->SetFont('Arial', '', 10);
-        $this->fpdf->Cell(63, 0, $Abdo_GinjalKa, 0, 0);
+        $this->fpdf->Cell(50, $h, $Abdo_GinjalKa, 0, 0);
         $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(6, 0, 'Kiri', 0, 0);
-        $this->fpdf->Cell(1, 0, '', 0, 0);
-        $this->fpdf->Cell(2, 0, ': ', 0, 0);
+        $this->fpdf->Cell(8, $h, 'Kiri', 0, 0);
+        $this->fpdf->Cell(2, $h, ': ', 0, 0);
         $this->fpdf->SetFont('Arial', '', 10);
-        $this->fpdf->Cell(63, 0, $Abdo_GinjalKi, 0, 0);
-
+        $this->fpdf->Cell(0, $h, $Abdo_GinjalKi, 0, 1);
+        
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'g.Ballotement', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'g.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Ballotement', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
         $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(11, 0, 'Kanan', 0, 0);
-        $this->fpdf->Cell(1, 0, '', 0, 0);
-        $this->fpdf->Cell(2, 0, ': ', 0, 0);
+        $this->fpdf->Cell(12, $h, 'Kanan', 0, 0);
+        $this->fpdf->Cell(2, $h, ': ', 0, 0);
         $this->fpdf->SetFont('Arial', '', 10);
-        $this->fpdf->Cell(63, 0, $Abdo_BallotementKa, 0, 0);
+        $this->fpdf->Cell(50, $h, $Abdo_BallotementKa, 0, 0);
         $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(6, 0, 'Kiri', 0, 0);
-        $this->fpdf->Cell(1, 0, '', 0, 0);
-        $this->fpdf->Cell(2, 0, ': ', 0, 0);
+        $this->fpdf->Cell(8, $h, 'Kiri', 0, 0);
+        $this->fpdf->Cell(2, $h, ': ', 0, 0);
         $this->fpdf->SetFont('Arial', '', 10);
-        $this->fpdf->Cell(63, 0, $Abdo_BallotementKi, 0, 0);
-
+        $this->fpdf->Cell(0, $h, $Abdo_BallotementKi, 0, 1);
+        
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'h.Nyeri Costo Vertebrae', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'g.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Nyeri Costo Vertebrae', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
         $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(11, 0, 'Kanan', 0, 0);
-        $this->fpdf->Cell(1, 0, '', 0, 0);
-        $this->fpdf->Cell(2, 0, ': ', 0, 0);
+        $this->fpdf->Cell(12, $h, 'Kanan', 0, 0);
+        $this->fpdf->Cell(2, $h, ': ', 0, 0);
         $this->fpdf->SetFont('Arial', '', 10);
-        $this->fpdf->Cell(63, 0, $Abdo_NCVKanan, 0, 0);
+        $this->fpdf->Cell(50, $h, $Abdo_NCVKanan, 0, 0);
         $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(6, 0, 'Kiri', 0, 0);
-        $this->fpdf->Cell(1, 0, '', 0, 0);
-        $this->fpdf->Cell(2, 0, ': ', 0, 0);
+        $this->fpdf->Cell(8, $h, 'Kiri', 0, 0);
+        $this->fpdf->Cell(2, $h, ': ', 0, 0);
         $this->fpdf->SetFont('Arial', '', 10);
-        $this->fpdf->Cell(63, 0, $Abdo_NCVKiri, 0, 0);
-
+        $this->fpdf->Cell(0, $h, $Abdo_NCVKiri, 0, 1);
+        
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'i.Lain-lain', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $Abdo_LainLain, 0, 0);
-
-
-        $this->fpdf->Cell(0, 10, '', 0, 1);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'e.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Lain-lain', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $Abdo_LainLain, 0, 1);
+        
+        $this->fpdf->Cell(0, $h, '', 0, 1);
         $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(6, 7, '', 0, 0);
-        $this->fpdf->Cell(14, 0, '16.  Genitourinaria', 0, 0);
-        $this->fpdf->Cell(52, 7, '', 0, 0);
-
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-
+        $this->fpdf->Cell(6, $h, '', 0, 0);
+        $this->fpdf->Cell(14, $h, '16.  Genitourinaria', 0, 1);
+        
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'a.Kandung Kemih', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $KandungKemih, 0, 0);
-
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'a.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Kandung Kemih', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $KandungKemih, 0, 1);
+        
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'b.Anus / rectum / perinal', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $Anus, 0, 0);
-
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'b.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Anus / rectum / perinal', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $Anus, 0, 1);
+        
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'c.Genitalia External', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $GenitaliaEksternal, 0, 0);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'c.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Genitalia External', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $GenitaliaEksternal, 0, 1);
 
         
         if ($Jeniskelamin == 'LAKI-LAKI'){
@@ -2467,601 +2454,501 @@ class PdfHasilMCUController extends Controller
         $this->fpdf->Cell(4, 0, ': ', 0, 0);
         $this->fpdf->Cell(20, 0, $Prostat, 0, 0);
         }
-
-        $this->fpdf->Cell(0, 7, '', 0, 1);
+        
+        $this->fpdf->Cell(0, $h, '', 0, 1);
         $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(6, 7, '', 0, 0);
-        $this->fpdf->Cell(14, 0, '17.  Vertebra', 0, 0);
-        $this->fpdf->Cell(48, 0, '', 0, 0);
+        $this->fpdf->Cell(6, $h, '', 0, 0);
+        $this->fpdf->Cell(62, $h, '17.  Vertebra', 0, 0);
         $this->fpdf->SetFont('Arial', '', 9);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $Vertebra, 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-
-        $this->fpdf->Cell(0, 7, '', 0, 1);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $Vertebra, 0, 1);
+        
+        $this->fpdf->Cell(0, $h, '', 0, 1);
         $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(6, 7, '', 0, 0);
-        $this->fpdf->Cell(14, 0, '18.  Tulang/Sendi Ekstrimitas atas', 0, 0);
-        $this->fpdf->Cell(52, 7, '', 0, 0);
-        $this->fpdf->Cell(11, 0, 'Kanan', 0, 0);
-        $this->fpdf->Cell(1, 0, '', 0, 0);
-        $this->fpdf->Cell(2, 0, '', 0, 0);
-        $this->fpdf->Cell(63, 0, '', 0, 0);
+        $this->fpdf->Cell(6, $h, '', 0, 0);
+        $this->fpdf->Cell(66, $h, '18.  Tulang/Sendi Ekstrimitas atas', 0, 0);
         $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(6, 0, 'Kiri', 0, 0);
-        $this->fpdf->Cell(1, 0, '', 0, 0);
-        $this->fpdf->Cell(2, 0, ' ', 0, 0);
-        $this->fpdf->Cell(63, 0, '', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-
-        $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'a.Simetri', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $Ekstra_SimetriKa, 0, 0);
-        $this->fpdf->Cell(57, 0, '', 0, 0);
-        $this->fpdf->Cell(20, 0, $Ekstra_SimetriKi, 0, 0);
-
-        $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'b.Gerakan', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $Ekstra_GerakanKa, 0, 0);
-        $this->fpdf->Cell(57, 0, '', 0, 0);
-        $this->fpdf->Cell(20, 0, $Ekstra_GerakanKa, 0, 0);
-
-        $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'c.Tulang', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $Ekstra_TulangKa, 0, 0);
-        $this->fpdf->Cell(57, 0, '', 0, 0);
-        $this->fpdf->Cell(20, 0, $Ekstra_TulangKi, 0, 0);
-
-        $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'd.Sensibilitas', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $Ekstra_SensibilitasKa, 0, 0);
-        $this->fpdf->Cell(57, 0, '', 0, 0);
-        $this->fpdf->Cell(20, 0, $Ekstra_SensibilitasKi, 0, 0);
-
-        $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'e.Oedema', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $Ekstra_OedemaKa, 0, 0);
-        $this->fpdf->Cell(57, 0, '', 0, 0);
-        $this->fpdf->Cell(20, 0, $Ekstra_OedemaKi, 0, 0);
-
-        $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'f.Varises', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $Ekstra_VarisesKa, 0, 0);
-        $this->fpdf->Cell(57, 0, '', 0, 0);
-        $this->fpdf->Cell(20, 0, $Ekstra_VarisesKi, 0, 0);
-
-        $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'g.Kekuatan Otot', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $Ekstra_KOtotKa, 0, 0);
-        $this->fpdf->Cell(57, 0, '', 0, 0);
-        $this->fpdf->Cell(20, 0, $Ekstra_KOtotKi, 0, 0);
-
-        $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'h.Vaskulerisasi', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $Ekstra_VaskularisasiKa, 0, 0);
-        $this->fpdf->Cell(57, 0, '', 0, 0);
-        $this->fpdf->Cell(20, 0, $Ekstra_VaskularisasiKi, 0, 0);
-
-        $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'i.Kelainan Kuku/Jari', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $Ekstra_KelKukuKa, 0, 0);
-        $this->fpdf->Cell(57, 0, '', 0, 0);
-        $this->fpdf->Cell(20, 0, $Ekstra_KelKukuKi, 0, 0);
-
-        $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'j.Keterangan', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $Ekstra_Keterangan, 0, 0);
-
-        $this->fpdf->Cell(0, 7, '', 0, 1);
+        $this->fpdf->Cell(12, $h, 'Kanan', 0, 0);
+        $this->fpdf->Cell(2, $h, '', 0, 0);
+        $this->fpdf->SetFont('Arial', '', 10);
+        $this->fpdf->Cell(50, $h, '', 0, 0);
         $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(6, 7, '', 0, 0);
-        $this->fpdf->Cell(14, 0, '19.  Tulang/Sendi Ekstrimitas bawah', 0, 0);
-        $this->fpdf->Cell(52, 7, '', 0, 0);
-        $this->fpdf->Cell(11, 0, 'Kanan', 0, 0);
-        $this->fpdf->Cell(1, 0, '', 0, 0);
-        $this->fpdf->Cell(2, 0, '', 0, 0);
-        $this->fpdf->Cell(63, 0, '', 0, 0);
+        $this->fpdf->Cell(8, $h, 'Kiri', 0, 0);
+        $this->fpdf->Cell(2, $h, '', 0, 0);
+        $this->fpdf->SetFont('Arial', '', 10);
+        $this->fpdf->Cell(0, $h, '', 0, 1);
+
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'a.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Simetri', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(64, $h, $Ekstra_SimetriKa, 0, 0);
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(0, $h, $Ekstra_SimetriKi, 0, 1);
+
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'b.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Gerakan', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(64, $h, $Ekstra_GerakanKa, 0, 0);
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(0, $h, $Ekstra_GerakanKi, 0, 1);
+
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'c.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Tulang', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(64, $h, $Ekstra_TulangKa, 0, 0);
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(0, $h, $Ekstra_TulangKi, 0, 1);
+
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'd.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Sensibilitas', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(64, $h, $Ekstra_SensibilitasKa, 0, 0);
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(0, $h, $Ekstra_SensibilitasKi, 0, 1);
+
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'e.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Oedema', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(64, $h, $Ekstra_OedemaKa, 0, 0);
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(0, $h, $Ekstra_OedemaKi, 0, 1);
+
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'f.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Varises', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(64, $h, $Ekstra_VarisesKa, 0, 0);
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(0, $h, $Ekstra_VarisesKi, 0, 1);
+
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'g.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Kekuatan Otot', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(64, $h, $Ekstra_KOtotKa, 0, 0);
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(0, $h, $Ekstra_KOtotKi, 0, 1);
+
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'h.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Vaskulerisasi', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(64, $h, $Ekstra_VaskularisasiKa, 0, 0);
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(0, $h, $Ekstra_VaskularisasiKi, 0, 1);
+
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'i.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Kelainan Kuku/Jari', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(64, $h, $Ekstra_KelKukuKa, 0, 0);
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(0, $h, $Ekstra_KelKukuKi, 0, 1);
+
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'j.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Keterangan', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $Ekstra_Keterangan, 0, 1);
+        
+        $this->fpdf->Cell(0, $h, '', 0, 1);
         $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(6, 0, 'Kiri', 0, 0);
-        $this->fpdf->Cell(1, 0, '', 0, 0);
-        $this->fpdf->Cell(2, 0, ' ', 0, 0);
-        $this->fpdf->Cell(63, 0, '', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-
-        $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'a.Simetri', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $EkstrB_SimetriKa, 0, 0);
-        $this->fpdf->Cell(57, 0, '', 0, 0);
-        $this->fpdf->Cell(20, 0, $EkstrB_SimetriKi, 0, 0);
-
-        $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'b.Gerakan', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $EkstrB_GerakanKa, 0, 0);
-        $this->fpdf->Cell(57, 0, '', 0, 0);
-        $this->fpdf->Cell(20, 0, $EkstrB_GerakanKi, 0, 0);
-
-        $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'c.Kekuatan Otot', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $EkstrB_KOKa, 0, 0);
-        $this->fpdf->Cell(57, 0, '', 0, 0);
-        $this->fpdf->Cell(20, 0, $EkstrB_KOKi, 0, 0);
-
-        $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'd.Tulang', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $EkstrB_TulangKa, 0, 0);
-        $this->fpdf->Cell(57, 0, '', 0, 0);
-        $this->fpdf->Cell(20, 0, $EkstrB_TulangKi, 0, 0);
-
-        $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'e.Sensibilitas', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $EkstrB_SensibilitasKa, 0, 0);
-        $this->fpdf->Cell(57, 0, '', 0, 0);
-        $this->fpdf->Cell(20, 0, $EkstrB_SensibilitasKi, 0, 0);
-
-        $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'f.Oedema', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $EkstrB_OedemaKa, 0, 0);
-        $this->fpdf->Cell(57, 0, '', 0, 0);
-        $this->fpdf->Cell(20, 0, $EkstrB_OedemaKi, 0, 0);
-
-        $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'g.Varises', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $EkstrB_VarisesKa, 0, 0);
-        $this->fpdf->Cell(57, 0, '', 0, 0);
-        $this->fpdf->Cell(20, 0, $EkstrB_VarisesKi, 0, 0);
-
-        $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'h.Vaskularisasi', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $EkstrB_VaskularKa, 0, 0);
-        $this->fpdf->Cell(57, 0, '', 0, 0);
-        $this->fpdf->Cell(20, 0, $EkstrB_VaskularKi, 0, 0);
-
-        $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'i.Kelainan Kuku/Jari', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $EkstrB_KelKukuKa, 0, 0);
-        $this->fpdf->Cell(57, 0, '', 0, 0);
-        $this->fpdf->Cell(20, 0, $EkstrB_KelKukuKi, 0, 0);
-
-        $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'j.Keterangan', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $EkstrB_Keterangan, 0, 0);
-
-        $this->fpdf->Cell(0, 7, '', 0, 1);
+        $this->fpdf->Cell(6, $h, '', 0, 0);
+        $this->fpdf->Cell(66, $h, '19.  Tulang/Sendi Ekstrimitas bawah', 0, 0);
         $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(6, 7, '', 0, 0);
-        $this->fpdf->Cell(14, 0, '20.  Otot Motorik(Secara Keseluruhan)', 0, 0);
-        $this->fpdf->Cell(52, 7, '', 0, 0);
-        $this->fpdf->Cell(11, 0, 'Kanan', 0, 0);
-        $this->fpdf->Cell(1, 0, '', 0, 0);
-        $this->fpdf->Cell(2, 0, '', 0, 0);
-        $this->fpdf->Cell(63, 0, '', 0, 0);
+        $this->fpdf->Cell(12, $h, 'Kanan', 0, 0);
+        $this->fpdf->Cell(2, $h, '', 0, 0);
+        $this->fpdf->SetFont('Arial', '', 10);
+        $this->fpdf->Cell(50, $h, '', 0, 0);
         $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(6, 0, 'Kiri', 0, 0);
-        $this->fpdf->Cell(1, 0, '', 0, 0);
-        $this->fpdf->Cell(2, 0, ' ', 0, 0);
-        $this->fpdf->Cell(63, 0, '', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
+        $this->fpdf->Cell(8, $h, 'Kiri', 0, 0);
+        $this->fpdf->Cell(2, $h, '', 0, 0);
+        $this->fpdf->SetFont('Arial', '', 10);
+        $this->fpdf->Cell(0, $h, '', 0, 1);
 
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'a.Trofi', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $Omot_TrofiKa, 0, 0);
-        $this->fpdf->Cell(57, 0, '', 0, 0);
-        $this->fpdf->Cell(20, 0, $Omot_TrofiKi, 0, 0);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'a.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Simetri', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(64, $h, $Ekstra_KelKukuKa, 0, 0);
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(0, $h, $Ekstra_KelKukuKi, 0, 1);
 
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'b.Tonus', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $Omot_TonusKa, 0, 0);
-        $this->fpdf->Cell(57, 0, '', 0, 0);
-        $this->fpdf->Cell(20, 0, $Omot_TonusKi, 0, 0);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'b.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Gerakan', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(64, $h, $EkstrB_GerakanKa, 0, 0);
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(0, $h, $EkstrB_GerakanKi, 0, 1);
 
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'c.Gerakan Abnormal', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $Omot_GerAbnoKa, 0, 0);
-        $this->fpdf->Cell(57, 0, '', 0, 0);
-        $this->fpdf->Cell(20, 0, $Omot_GerAbnoKi, 0, 0);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'c.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Kekuatan Otot', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(64, $h, $EkstrB_KOKa, 0, 0);
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(0, $h, $EkstrB_KOKi, 0, 1);
 
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'd.Keterangan', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $Omot_Keterangan, 0, 0);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'd.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Tulang', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(64, $h, $EkstrB_TulangKa, 0, 0);
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(0, $h, $EkstrB_TulangKi, 0, 1);
 
-        $this->fpdf->Cell(0, 7, '', 0, 1);
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'e.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Sensibilitas', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(64, $h, $EkstrB_SensibilitasKa, 0, 0);
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(0, $h, $EkstrB_SensibilitasKi, 0, 1);
+
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'f.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Oedema', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(64, $h, $EkstrB_OedemaKa, 0, 0);
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(0, $h, $EkstrB_OedemaKi, 0, 1);
+
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'g.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Varises', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(64, $h, $EkstrB_VarisesKa, 0, 0);
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(0, $h, $EkstrB_VarisesKi, 0, 1);
+
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'h.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Vaskularisasi', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(64, $h, $EkstrB_VaskularKa, 0, 0);
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(0, $h, $EkstrB_VaskularKi, 0, 1);
+
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'i.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Kelainan Kuku/Jari', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(64, $h, $EkstrB_KelKukuKa, 0, 0);
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(0, $h, $EkstrB_KelKukuKi, 0, 1);
+
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'j.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Keterangan', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $EkstrB_Keterangan, 0, 1);
+        
+        $this->fpdf->Cell(0, $h, '', 0, 1);
         $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(6, 7, '', 0, 0);
-        $this->fpdf->Cell(14, 0, '21.  Fungsi Sensorik dan Otonom', 0, 0);
-        $this->fpdf->Cell(52, 7, '', 0, 0);
-        $this->fpdf->Cell(11, 0, 'Kanan', 0, 0);
-        $this->fpdf->Cell(1, 0, '', 0, 0);
-        $this->fpdf->Cell(2, 0, '', 0, 0);
-        $this->fpdf->Cell(63, 0, '', 0, 0);
+        $this->fpdf->Cell(6, $h, '', 0, 0);
+        $this->fpdf->Cell(66, $h, '20.  Otot Motorik(Secara Keseluruhan)', 0, 0);
         $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(6, 0, 'Kiri', 0, 0);
-        $this->fpdf->Cell(1, 0, '', 0, 0);
-        $this->fpdf->Cell(2, 0, ' ', 0, 0);
-        $this->fpdf->Cell(63, 0, '', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-
-        $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'a.Fungsi Sensorik', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $FuSen_FSensorikKa, 0, 0);
-        $this->fpdf->Cell(57, 0, '', 0, 0);
-        $this->fpdf->Cell(20, 0, $FuSen_FSensorikKi, 0, 0);
-
-        $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'b.Fungsi Otonom', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $FuSen_FotonomKa, 0, 0);
-        $this->fpdf->Cell(57, 0, '', 0, 0);
-        $this->fpdf->Cell(20, 0, $FuSen_FotonomKi, 0, 0);
-
-        $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'c.Keterangan', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $FuSen_Keterangan, 0, 0);
-
-        $this->fpdf->Cell(0, 7, '', 0, 1);
+        $this->fpdf->Cell(12, $h, 'Kanan', 0, 0);
+        $this->fpdf->Cell(2, $h, '', 0, 0);
+        $this->fpdf->SetFont('Arial', '', 10);
+        $this->fpdf->Cell(50, $h, '', 0, 0);
         $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(6, 7, '', 0, 0);
-        $this->fpdf->Cell(14, 0, '22.  Syaraf dan Fungsi Luhur', 0, 0);
-        $this->fpdf->Cell(52, 7, '', 0, 0);
-
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-
-        $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'a.Daya ingat', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $SFL_DISegera, 0, 0);
+        $this->fpdf->Cell(8, $h, 'Kiri', 0, 0);
+        $this->fpdf->Cell(2, $h, '', 0, 0);
+        $this->fpdf->SetFont('Arial', '', 10);
+        $this->fpdf->Cell(0, $h, '', 0, 1);
 
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'b.Orientasi', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'a.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Trofi', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(64, $h, $Omot_TrofiKa, 0, 0);
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(0, $h, $Omot_TrofiKi, 0, 1);
 
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(20, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, '-Waktu', 0, 0);
-        $this->fpdf->Cell(38, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $SFL_OrientasiWaktu, 0, 0);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'b.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Tonus', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(64, $h, $Omot_TonusKa, 0, 0);
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(0, $h, $Omot_TonusKi, 0, 1);
 
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(20, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, '-Tempat', 0, 0);
-        $this->fpdf->Cell(38, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $SFL_OrientasiTempat, 0, 0);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'c.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Gerakan Abnormal', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(64, $h, $Omot_GerAbnoKa, 0, 0);
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(0, $h, $Omot_GerAbnoKi, 0, 1);
 
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(20, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, '-Orang', 0, 0);
-        $this->fpdf->Cell(38, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $SFL_OrientasiOrang, 0, 0);
-
-        $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'c.Keterangan', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $SFL_KSOKeterangan, 0, 0);
-
-        $this->fpdf->Cell(0, 7, '', 0, 1);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'd.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Keterangan', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $Omot_Keterangan, 0,1);
+        
+        $this->fpdf->Cell(0, $h, '', 0, 1);
         $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(6, 7, '', 0, 0);
-        $this->fpdf->Cell(14, 0, '23.  Refleks', 0, 0);
-        $this->fpdf->Cell(52, 7, '', 0, 0);
-
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-
-        // $this->fpdf->Cell(0, 4, '', 0, 1);
-        $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(14, 0, 'a.Refleks Fisiologis', 0, 0);
-        $this->fpdf->Cell(45, 7, '', 0, 0);
-        $this->fpdf->Cell(11, 0, 'Kanan', 0, 0);
-        $this->fpdf->Cell(1, 0, '', 0, 0);
-        $this->fpdf->Cell(2, 0, '', 0, 0);
-        $this->fpdf->Cell(63, 0, '', 0, 0);
-        $this->fpdf->Cell(6, 0, 'Kiri', 0, 0);
-        $this->fpdf->Cell(1, 0, '', 0, 0);
-        $this->fpdf->Cell(2, 0, ' ', 0, 0);
-        $this->fpdf->Cell(63, 0, '', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-
-        $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 3, '', 0, 1);
-        $this->fpdf->Cell(20, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, '-Patella', 0, 0);
-        $this->fpdf->Cell(38, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $RFL_PatellaKa, 0, 0);
-        $this->fpdf->Cell(57, 0, '', 0, 0);
-        $this->fpdf->Cell(20, 0, $RFL_PatellaKi, 0, 0);
-
-        $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 3, '', 0, 1);
-        $this->fpdf->Cell(20, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, '-Lainnya', 0, 0);
-        $this->fpdf->Cell(38, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $RFL_Lainnya, 0, 0);
-        $this->fpdf->Cell(0, 5, '', 0, 1);
-        $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 3, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'b.Refleks Patologi babinsky', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $RFL_PBKa, 0, 0);
-
-        $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 3, '', 0, 1);
-        $this->fpdf->Cell(20, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, '-Lainnya', 0, 0);
-        $this->fpdf->Cell(38, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $RFL_PBLainnya, 0, 0);
-        // PAGE 5
-
-
-
-
-        $this->fpdf->Cell(0, 7, '', 0, 1);
+        $this->fpdf->Cell(6, $h, '', 0, 0);
+        $this->fpdf->Cell(66, $h, '21.  Fungsi Sensorik dan Otonom', 0, 0);
         $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(6, 7, '', 0, 0);
-        $this->fpdf->Cell(14, 0, '24.  Kulit', 0, 0);
-        $this->fpdf->Cell(52, 7, '', 0, 0);
-
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-
-        $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'a.Kulit', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $Kulit, 0, 0);
+        $this->fpdf->Cell(12, $h, 'Kanan', 0, 0);
+        $this->fpdf->Cell(2, $h, '', 0, 0);
+        $this->fpdf->SetFont('Arial', '', 10);
+        $this->fpdf->Cell(50, $h, '', 0, 0);
+        $this->fpdf->SetFont('Arial', 'B', 10);
+        $this->fpdf->Cell(8, $h, 'Kiri', 0, 0);
+        $this->fpdf->Cell(2, $h, '', 0, 0);
+        $this->fpdf->SetFont('Arial', '', 10);
+        $this->fpdf->Cell(0, $h, '', 0, 1);
 
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(13, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, 'b.Selaput Lender', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $SelaputLendir, 0, 0);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'a.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Fungsi Sensorik', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(64, $h, $FuSen_FSensorikKa, 0, 0);
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(0, $h, $FuSen_FSensorikKi, 0, 1);
 
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(50, 4, '', 0, 1);
-        $this->fpdf->Cell(20, 7, '', 0, 0);
-        $this->fpdf->Cell(10, 0, '-Lainnya', 0, 0);
-        $this->fpdf->Cell(38, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, ': ', 0, 0);
-        $this->fpdf->Cell(20, 0, $KulitLainnya, 0, 0);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'b.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Fungsi Otonom', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(64, $h, $FuSen_FotonomKa, 0, 0);
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(0, $h, $FuSen_FotonomKi, 0, 1);
+        
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'c.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Keterangan', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $FuSen_Keterangan, 0, 1);
+        
+        $this->fpdf->Cell(0, $h, '', 0, 1);
+        $this->fpdf->SetFont('Arial', 'B', 10);
+        $this->fpdf->Cell(6, $h, '', 0, 0);
+        $this->fpdf->Cell(0, $h, '22.  Syaraf dan Fungsi Luhur', 0, 1);
+        
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'a.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Daya ingat', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $SFL_DISegera, 0, 1);
+        
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'b.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Orientasi', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $SFL_DISegera, 0, 1);
+
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(20, $h, '', 0, 0);
+        $this->fpdf->Cell(48, $h, '- Waktu', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $SFL_OrientasiWaktu, 0, 1);
+
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(20, $h, '', 0, 0);
+        $this->fpdf->Cell(48, $h, '- Tempat', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $SFL_OrientasiTempat, 0, 1);
+
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(20, $h, '', 0, 0);
+        $this->fpdf->Cell(48, $h, '- Orang', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $SFL_OrientasiOrang, 0, 1);
+        
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'c.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Keterangan', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $SFL_DISegera, 0, 1);
+        
+        $this->fpdf->Cell(0, $h, '', 0, 1);
+        $this->fpdf->SetFont('Arial', 'B', 10);
+        $this->fpdf->Cell(6, $h, '', 0, 0);
+        $this->fpdf->Cell(0, $h, '23.  Refleks', 0, 1);
+        
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(55, $h, 'a. Refleks Fisiologis', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->SetFont('Arial', 'B', 10);
+        $this->fpdf->Cell(12, $h, 'Kanan', 0, 0);
+        $this->fpdf->Cell(2, $h, '', 0, 0);
+        $this->fpdf->SetFont('Arial', '', 10);
+        $this->fpdf->Cell(50, $h, '', 0, 0);
+        $this->fpdf->SetFont('Arial', 'B', 10);
+        $this->fpdf->Cell(8, $h, 'Kiri', 0, 0);
+        $this->fpdf->Cell(2, $h, '', 0, 0);
+        $this->fpdf->SetFont('Arial', '', 10);
+        $this->fpdf->Cell(0, $h, '', 0, 1);
+        
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(20, $h, '', 0, 0);
+        $this->fpdf->Cell(48, $h, '- Patella', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(64, $h, $RFL_PatellaKa, 0, 0);
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(0, $h, $RFL_PatellaKi, 0, 1);
+        
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(20, $h, '', 0, 0);
+        $this->fpdf->Cell(48, $h, '- Lainnya', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $RFL_Lainnya, 0, 1);
+
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'b.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Refleks Patologi babinsky', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(64, $h, $RFL_PBKa, 0, 0);
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(0, $h, $RFL_PBKi, 0, 1);
+        
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(20, $h, '', 0, 0);
+        $this->fpdf->Cell(48, $h, '- Lainnya', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $RFL_PBLainnya, 0, 1);
+        
+        $this->fpdf->Cell(0, $h, '', 0, 1);
+        $this->fpdf->SetFont('Arial', 'B', 10);
+        $this->fpdf->Cell(6, $h, '', 0, 0);
+        $this->fpdf->Cell(0, $h, '24.  Kulit', 0, 1);
+        
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'a.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Kulit', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $Kulit, 0, 1);
+        
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(13, $h, '', 0, 0);
+        $this->fpdf->Cell(4, $h, 'b.', 0, 0);
+        $this->fpdf->Cell(51, $h, 'Selaput Lender', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $SelaputLendir, 0, 1);
+        
+        $this->fpdf->SetFont('Arial', '', 9);
+        $this->fpdf->Cell(20, $h, '', 0, 0);
+        $this->fpdf->Cell(48, $h, '- Lainnya', 0, 0);
+        $this->fpdf->Cell(4, $h, ': ', 0, 0);
+        $this->fpdf->Cell(0, $h, $KulitLainnya, 0, 1);
 
         
         $this->fpdf->Cell(0, 4, '', 0, 1);
         $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(6, 7, '', 0, 0);
-        $this->fpdf->Cell(59, $h, '25. Pemeriksaan Fisik Khusus', 0, 1);
+        $this->fpdf->Cell(6, $h, '', 0, 0);
+        $this->fpdf->Cell(59, $h, '25. Pemeriksaan Penunjang Medis', 0, 1);
 
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(10, 7, '', 0, 0);
-        $this->fpdf->Cell(55, $h, 'a. Radiologi', 0, 0);
+        $this->fpdf->Cell(10, $h, '', 0, 0);
+        $this->fpdf->Cell(5, $h, 'a. ', 0, 0);
+        $this->fpdf->Cell(53, $h, 'Radiologi', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
         $this->fpdf->MultiCell(0, $h, $PFK_Radiologi, 0, 1);
 
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(10, 7, '', 0, 0);
-        $this->fpdf->Cell(55, $h, 'b. USG', 0, 0);
+        $this->fpdf->Cell(10, $h, '', 0, 0);
+        $this->fpdf->Cell(5, $h, 'b. ', 0, 0);
+        $this->fpdf->Cell(53, $h, 'USG', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
         $this->fpdf->MultiCell(0, $h, $PFK_USG, 0, 1);
 
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(10, 7, '', 0, 0);
-        $this->fpdf->Cell(55, $h, 'b. USG', 0, 0);
-        $this->fpdf->Cell(4, $h, ': ', 0, 0);
-        $this->fpdf->MultiCell(0, $h, $PFK_USG, 0, 1);
-
-        $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(10, 7, '', 0, 0);
-        $this->fpdf->Cell(55, $h, 'c. EKG', 0, 0);
+        $this->fpdf->Cell(10, $h, '', 0, 0);
+        $this->fpdf->Cell(5, $h, 'c. ', 0, 0);
+        $this->fpdf->Cell(53, $h, 'EKG', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
         $this->fpdf->MultiCell(0, $h, $PFK_EKG, 0, 1);
 
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(10, 7, '', 0, 0);
-        $this->fpdf->Cell(55, $h, 'd. EMG', 0, 0);
+        $this->fpdf->Cell(10, $h, '', 0, 0);
+        $this->fpdf->Cell(5, $h, 'd. ', 0, 0);
+        $this->fpdf->Cell(53, $h, 'EMG', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
         $this->fpdf->MultiCell(0, $h, $PFK_EMG, 0, 1);
         
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(10, 7, '', 0, 0);
-        $this->fpdf->Cell(55, $h, 'e. Spirometri', 0, 0);
+        $this->fpdf->Cell(10, $h, '', 0, 0);
+        $this->fpdf->Cell(5, $h, 'e. ', 0, 0);
+        $this->fpdf->Cell(53, $h, 'Spirometri', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
         $this->fpdf->MultiCell(0, $h, $PFK_Spirometri, 0, 1);
 
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(10, 7, '', 0, 0);
-        $this->fpdf->Cell(55, $h, 'f. Audiometri', 0, 0);
+        $this->fpdf->Cell(10, $h, '', 0, 0);
+        $this->fpdf->Cell(5, $h, 'f. ', 0, 0);
+        $this->fpdf->Cell(53, $h, 'Audiometri', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
         $this->fpdf->MultiCell(0, $h, $PFK_Audiometri, 0, 1);
 
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(10, 7, '', 0, 0);
-        $this->fpdf->Cell(55, $h, 'g. Treadmill', 0, 0);
+        $this->fpdf->Cell(10, $h, '', 0, 0);
+        $this->fpdf->Cell(5, $h, 'g. ', 0, 0);
+        $this->fpdf->Cell(53, $h, 'Treadmill', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
         $this->fpdf->MultiCell(0, $h, $PFK_Treadmill, 0, 1);
 
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(10, 7, '', 0, 0);
-        $this->fpdf->Cell(55, $h, 'h. Echo', 0, 0);
+        $this->fpdf->Cell(10, $h, '', 0, 0);
+        $this->fpdf->Cell(5, $h, 'h. ', 0, 0);
+        $this->fpdf->Cell(53, $h, 'Echo', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
         $this->fpdf->MultiCell(0, $h, $PFK_Echo, 0, 1);
 
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(10, 7, '', 0, 0);
-        $this->fpdf->Cell(55, $h, 'i. Laboratorium', 0, 0);
+        $this->fpdf->Cell(10, $h, '', 0, 0);
+        $this->fpdf->Cell(5, $h, 'i. ', 0, 0);
+        $this->fpdf->Cell(53, $h, 'Laboratorium', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
         $this->fpdf->MultiCell(0, $h, $PFK_Lab, 0, 1);
         
         $this->fpdf->SetFont('Arial', '', 9);
-        $this->fpdf->Cell(10, 7, '', 0, 0);
-        $this->fpdf->Cell(55, $h, 'j. SDS Test', 0, 0);
+        $this->fpdf->Cell(10, $h, '', 0, 0);
+        $this->fpdf->Cell(5, $h, 'j. ', 0, 0);
+        $this->fpdf->Cell(53, $h, 'SDS Test', 0, 0);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
 
         if ($data['data']['reportsds'] == null){
@@ -3071,27 +2958,27 @@ class PdfHasilMCUController extends Controller
             $this->fpdf->Cell(3, $h, ':', 0, 0);
             $this->fpdf->Cell(35, $h, $data['data']['reportsds']['TP_ResumeHasil'], 0, 1);
             
-            $this->fpdf->Cell(69, $h, '', 0, 0);
+            $this->fpdf->Cell(72, $h, '', 0, 0);
             $this->fpdf->Cell(65, $h, '- Konflik Peran', 0, 0);
             $this->fpdf->Cell(3, $h, ':', 0, 0);
             $this->fpdf->Cell(35, $h, $data['data']['reportsds']['KP_ResumeHasil'], 0, 1);
             
-            $this->fpdf->Cell(69, $h, '', 0, 0);
+            $this->fpdf->Cell(72, $h, '', 0, 0);
             $this->fpdf->Cell(65, $h, '- Beban Kerja Berlebih (Kuantitaif)', 0, 0);
             $this->fpdf->Cell(3, $h, ':', 0, 0);
             $this->fpdf->Cell(35, $h, $data['data']['reportsds']['BBKuan_ResumeHasil'], 0, 1);
             
-            $this->fpdf->Cell(69, $h, '', 0, 0);
+            $this->fpdf->Cell(72, $h, '', 0, 0);
             $this->fpdf->Cell(65, $h, '- Beban Kerja Berlebih (Kualitatif)', 0, 0);
             $this->fpdf->Cell(3, $h, ':', 0, 0);
             $this->fpdf->Cell(35, $h, $data['data']['reportsds']['BBKual_ResumeHasil'], 0, 1);
             
-            $this->fpdf->Cell(69, $h, '', 0, 0);
+            $this->fpdf->Cell(72, $h, '', 0, 0);
             $this->fpdf->Cell(65, $h, '- Pengembangan Karir', 0, 0);
             $this->fpdf->Cell(3, $h, ':', 0, 0);
             $this->fpdf->Cell(35, $h, $data['data']['reportsds']['PK_ResumeHasil'], 0, 1);
             
-            $this->fpdf->Cell(69, $h, '', 0, 0);
+            $this->fpdf->Cell(72, $h, '', 0, 0);
             $this->fpdf->Cell(65, $h, '- Tanggung Jawab Terhadap Orang Lain', 0, 0);
             $this->fpdf->Cell(3, $h, ':', 0, 0);
             $this->fpdf->Cell(35, $h, $data['data']['reportsds']['TJO_ResumeHasil'], 0, 1);
@@ -3099,23 +2986,32 @@ class PdfHasilMCUController extends Controller
 
         $this->fpdf->Cell(0, 4, '', 0, 1);
         $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(6, 7, '', 0, 0);
-        $this->fpdf->Cell(59, $h, '26. Resume', 0, 0);
+        $this->fpdf->Cell(6, $h, '', 0, 0);
+        $this->fpdf->Cell(62, $h, '26. Resume', 0, 0);
         $this->fpdf->SetFont('Arial', '', 9);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
         $this->fpdf->MultiCell(0, $h, $ResumeKelainan, 0, 1);
 
         $this->fpdf->Cell(0, 4, '', 0, 1);
         $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(6, 7, '', 0, 0);
+        $this->fpdf->Cell(6, $h, '', 0, 0);
         $this->fpdf->Cell(59, $h, '27. Diagnosa Kerja', 0, 0);
         $this->fpdf->SetFont('Arial', '', 9);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
-        $this->fpdf->MultiCell(0, $h, $DiagnosaKerja, 0, 1);
+        //$this->fpdf->MultiCell(0, $h, $DiagnosaKerja, 0, 1);
+        $nox = 1;
+        foreach ($data['data']['diagnosa'] as $key){
+            if ($nox <> 1){
+                $this->fpdf->Cell(69, $h, '', 0, 0);
+            }
+            $this->fpdf->Cell(2, $h, '-', 0, 0);
+            $this->fpdf->MultiCell(0, $h, $key['NamaDiagnosaKerja'], 0, 1);
+            $nox++;
+        } 
 
         $this->fpdf->Cell(0, 4, '', 0, 1);
         $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(6, 7, '', 0, 0);
+        $this->fpdf->Cell(6, $h, '', 0, 0);
         $this->fpdf->Cell(59, $h, '28. KATEGORI KESEHATAN', 0, 0);
         $this->fpdf->SetFont('Arial', '', 9);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
@@ -3123,51 +3019,143 @@ class PdfHasilMCUController extends Controller
 
         $this->fpdf->Cell(0, 4, '', 0, 1);
         $this->fpdf->SetFont('Arial', 'B', 10);
-        $this->fpdf->Cell(6, 7, '', 0, 0);
+        $this->fpdf->Cell(6, $h, '', 0, 0);
         $this->fpdf->Cell(59, $h, '29. SARAN', 0, 0);
         $this->fpdf->SetFont('Arial', '', 9);
         $this->fpdf->Cell(4, $h, ': ', 0, 0);
-        $this->fpdf->MultiCell(0, $h, $Saran, 0, 1);
+        $nox = 1;
+        foreach ($data['data']['saran'] as $key){
+            if ($nox <> 1){
+                $this->fpdf->Cell(69, $h, '', 0, 0);
+            }
+            $this->fpdf->Cell(2, $h, '-', 0, 0);
+            $this->fpdf->MultiCell(0, $h, $key['Namatempleat'], 0, 1);
+            $nox++;
+        } 
+        if ($data['data']['saranSpesialis']['saran_tht'] != null){
+            $this->fpdf->Cell(69, $h, '', 0, 0);
+            $this->fpdf->Cell(2, $h, '-', 0, 0);
+            $this->fpdf->MultiCell(0, $h, 'THT: '.$data['data']['saranSpesialis']['saran_tht'], 0, 1);
+        }
+        if ($data['data']['saranSpesialis']['saran_mata'] != null){
+            $this->fpdf->Cell(69, $h, '', 0, 0);
+            $this->fpdf->Cell(2, $h, '-', 0, 0);
+            $this->fpdf->MultiCell(0, $h, 'MATA: '.$data['data']['saranSpesialis']['saran_mata'], 0, 1);
+        }
+        if ($data['data']['saranSpesialis']['saran_obgyn'] != null){
+            $this->fpdf->Cell(69, $h, '', 0, 0);
+            $this->fpdf->Cell(2, $h, '-', 0, 0);
+            $this->fpdf->MultiCell(0, $h, 'OBGYN: '.$data['data']['saranSpesialis']['saran_obgyn'], 0, 1);
+        }
+        if ($data['data']['saranSpesialis']['saran_syaraf'] != null){
+            $this->fpdf->Cell(69, $h, '', 0, 0);
+            $this->fpdf->Cell(2, $h, '-', 0, 0);
+            $this->fpdf->MultiCell(0, $h, 'SYARAF: '.$data['data']['saranSpesialis']['saran_syaraf'], 0, 1);
+        }
+        if ($data['data']['saranSpesialis']['saran_paru'] != null){
+            $this->fpdf->Cell(69, $h, '', 0, 0);
+            $this->fpdf->Cell(2, $h, '-', 0, 0);
+            $this->fpdf->MultiCell(0, $h, 'PARU: '.$data['data']['saranSpesialis']['saran_paru'], 0, 1);
+        }
+        if ($data['data']['saranSpesialis']['saran_jantung'] != null){
+            $this->fpdf->Cell(69, $h, '', 0, 0);
+            $this->fpdf->Cell(2, $h, '-', 0, 0);
+            $this->fpdf->MultiCell(0, $h, 'JANTUNG: '.$data['data']['saranSpesialis']['saran_jantung'], 0, 1);
+        }
+        if ($data['data']['saranSpesialis']['Saran_GigiPerluTambal'] != null){
+            $this->fpdf->Cell(69, $h, '', 0, 0);
+            $this->fpdf->Cell(2, $h, '-', 0, 0);
+            $this->fpdf->MultiCell(0, $h, 'Gigi yang perlu ditambal : '.$data['data']['saranSpesialis']['Saran_GigiPerluTambal'], 0, 1);
+        }
+        if ($data['data']['saranSpesialis']['Saran_GigiPerluCabut'] != null){
+            $this->fpdf->Cell(69, $h, '', 0, 0);
+            $this->fpdf->Cell(2, $h, '-', 0, 0);
+            $this->fpdf->MultiCell(0, $h, 'Gigi yang perlu dicabut : '.$data['data']['saranSpesialis']['Saran_GigiPerluCabut'], 0, 1);
+        }
+        if ($data['data']['saranSpesialis']['Saran_BuatGigiPalsu'] != null){
+            $this->fpdf->Cell(69, $h, '', 0, 0);
+            $this->fpdf->Cell(2, $h, '-', 0, 0);
+            $this->fpdf->MultiCell(0, $h, 'Saran untuk membuat gigi palsu : '.$data['data']['saranSpesialis']['Saran_BuatGigiPalsu'], 0, 1);
+        }
+        if ($data['data']['saranSpesialis']['Saran_BersihkanKarangGigi'] != null){
+            $this->fpdf->Cell(69, $h, '', 0, 0);
+            $this->fpdf->Cell(2, $h, '-', 0, 0);
+            $this->fpdf->MultiCell(0, $h, 'Rutin membersihkan karang gigi : '.$data['data']['saranSpesialis']['Saran_BersihkanKarangGigi'], 0, 1);
+        }
+
+              if ($data['data']['saranSpesialis']['saranFreeText'] != null){
+            $this->fpdf->Cell(69, $h, '', 0, 0);
+            $this->fpdf->Cell(2, $h, '-', 0, 0);
+            $this->fpdf->MultiCell(0, $h, $data['data']['saranSpesialis']['saranFreeText'], 0, 1);
+        }
+        //$this->fpdf->MultiCell(0, $h, $Saran, 0, 1);
+
+        switch (date('m')){
+            case "01":
+                $bulan = 'Januari';
+                break;
+            case "02":
+                $bulan = 'Februari';
+                break;
+            case "03":
+                $bulan = 'Maret';
+                break;
+            case "04":
+                $bulan = 'April';
+                break;
+            case "05":
+                $bulan = 'Mei';
+                break;
+            case "06":
+                $bulan = 'Juni';
+                break;
+            case "07":
+                $bulan = 'Juli';
+                break;
+            case "08":
+                $bulan = 'Agustus';
+                break;
+            case "09":
+                $bulan = 'September';
+                break;
+            case "10":
+                $bulan = 'Oktober';
+                break;
+            case "11":
+                $bulan = 'November';
+                break;
+            case "12":
+                $bulan = 'Desember';
+                break;
+        }
 
         $this->fpdf->Cell(1, $h, '', 0, 1);
         $this->fpdf->SetFont('Arial', '', 10);
-        $this->fpdf->Cell(131, 5, '', 0, 0);
-        $this->fpdf->Cell(14, 0, 'Jakarta, ', 0, 0);
-        $this->fpdf->Cell(1, 0, '', 0, 0);
+        $this->fpdf->Cell(125, 5, '', 0, 0);
+        $this->fpdf->Cell(55, 5, 'Jakarta, '.date('d').' '.$bulan.' '.date('Y'), 0, 1,'C');
         //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, '31 Juli 2023 ', 0, 0);
-        $this->fpdf->Cell(52, 7, '', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
+       // $this->fpdf->Cell(4, 0, date('d').' '.$bulan.' '.date('Y'), 1, 0);
+        // $this->fpdf->Cell(52, 7, '', 0, 0);
+        // $this->fpdf->Cell(45, 0, '', 0, 0);
 
-        $this->fpdf->Cell(0, 5, '', 0, 1);
         $this->fpdf->SetFont('Arial', '', 10);
-        $this->fpdf->Cell(130, 5, '', 0, 0);
-        $this->fpdf->Cell(14, 0, 'RUMAH SAKIT YARSI ', 0, 0);
-        $this->fpdf->Cell(1, 0, '', 0, 0);
+        $this->fpdf->Cell(125, 5, '', 0, 0);
+        $this->fpdf->Cell(55, 5, 'RUMAH SAKIT YARSI ', 0, 1,'C');
         //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, '', 0, 0);
-        $this->fpdf->Cell(52, 7, '', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
 
-        $this->fpdf->Cell(0, 5, '', 0, 1);
         $this->fpdf->SetFont('Arial', '', 10);
-        $this->fpdf->Cell(133, 5, '', 0, 0);
-        $this->fpdf->Cell(14, 0, 'Medical Check Up', 0, 0);
-        $this->fpdf->Cell(1, 0, '', 0, 0);
-        //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
-        $this->fpdf->Cell(4, 0, '', 0, 0);
-        $this->fpdf->Cell(52, 7, '', 0, 0);
-        $this->fpdf->Cell(45, 0, '', 0, 0);
+        $this->fpdf->Cell(125, 5, '', 0, 0);
+        $this->fpdf->Cell(55, 5, 'Medical Check Up', 0, 0,'C');
 
         $isiqrcode = $NoRegistrasi;
         $qrcode= QrCode::format('png')->generate($isiqrcode);
         Storage::disk('local')->put($isiqrcode.'.png', $qrcode);
         $gety = $this->fpdf->getY();
-        $this->fpdf->Image('../storage/app/'.$isiqrcode.'.png', 146, $gety+2, 25, 25, "png");
+        $this->fpdf->Image('../storage/app/'.$isiqrcode.'.png', 150, $gety+5, 25, 25, "png");
         $this->fpdf->Cell(0, 30, '', 0, 1);
         $this->fpdf->SetFont('Arial', '', 10);
-        $this->fpdf->Cell(121, 5, '', 0, 0);
-        $this->fpdf->Cell(14, 0, 'dr. Edi Alpino Rivai S, MKK, Sp.KKLP ', 0, 0);
+        $this->fpdf->Cell(125, 5, '', 0, 0);
+        $this->fpdf->Cell(55, 5, 'dr. Edi Alpino Rivai S, MKK, Sp.KKLP ', 0, 0,'C');
         $this->fpdf->Cell(1, 0, '', 0, 0);
         //$this->Cell(60,0,': '.$GLOBALS['identitas_pasien']['pname'],0,0);
         $this->fpdf->Cell(4, 0, '', 0, 0);

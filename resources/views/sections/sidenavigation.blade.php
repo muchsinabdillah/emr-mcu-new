@@ -15,10 +15,16 @@
                 <li class="has-children">
                     <a href="#"><i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-right arrow"></i></a>
                     <ul class="child-nav">
+                        @if(\App\Http\Controllers\AuthController::can('pdfgen'))
                         <li><a href="/pdflist"><i class="fa fa-bolt"></i> <span>Create PDF MCU</span></a></li> 
+                        @endif
                         <li><a href="/pdfreportlist"><i class="fa fa-bolt"></i> <span>Report PDF MCU</span></a></li> 
+                        @if(\App\Http\Controllers\AuthController::can('sds.report'))
                         <li><a href="/rekapsds"><i class="fa fa-bolt"></i> <span>Rekap Assesment SDS</span></a></li> 
+                        @endif
+                        @if(\App\Http\Controllers\AuthController::can('report.graph'))
                         <li><a href="/rekapgrafik"><i class="fa fa-bolt"></i> <span>Info Grafik</span></a></li> 
+                        @endif
                     </ul>
                 </li> 
             </ul>

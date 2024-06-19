@@ -186,18 +186,55 @@ class PDF extends Fpdf {
     	$datenowx = date('d/m/y      H:i');
         // Position at 1.5 cm from bottom
                         $this->SetTextColor(0,0,0);
-            $this->SetY(-37);
-        $this->SetFont('Arial','U',8);
-        $this->Cell(15,4,'',0,0);
-        $this->Cell(10,4,'                                                                                                                                              Clinical Pathologist :'.$GLOBALS['header']['Validate_by'],0,1);
+            $this->SetY(-40);
+        // $this->SetFont('Arial','U',8);
+        // $this->Cell(15,4,'',0,0);
+        // $this->Cell(10,4,'                                                                                                                                              Clinical Pathologist :'.$GLOBALS['header']['Validate_by'],0,1);
         $this->SetFont('Arial','',8);
-        $this->Cell(15,4,'',0,0);
-        $this->Cell(65,4,'Validated by :'.$GLOBALS['header']['Validate_by'],0,0);
-        $this->Cell(55,4,'*(do not need sign)',0,0);
-        $this->Cell(35,4,$datenowx,0,1);
-        $this->Cell(15,4,'',0,0);
+        // $this->Cell(15,4,'',0,0);
+        // $this->Cell(65,4,'Validated by :'.$GLOBALS['header']['Validate_by'],0,0);
+        // $this->Cell(55,4,'*(do not need sign)',0,0);
+        // $this->Cell(35,4,$datenowx,0,1);
+        // $this->Cell(15,4,'',0,0);
+
+        $validateby = $GLOBALS['footer']['Validate_by'];
+        
+        $dt_order_tgl = date('d/m/y', strtotime($GLOBALS['footer']['DT_Order']));
+        $dt_order_jam = date('H:i', strtotime($GLOBALS['footer']['DT_Order']));
+        $dt_terima_tgl = date('d/m/y', strtotime($GLOBALS['footer']['DT_Terima']));
+        $dt_terima_jam = date('H:i', strtotime($GLOBALS['footer']['DT_Terima']));
+        $dt_validasi_tgl = date('d/m/y', strtotime($GLOBALS['footer']['DT_Validasi']));
+        $dt_validasi_jam = date('H:i', strtotime($GLOBALS['footer']['DT_Validasi']));
+        $dt_cetak_tgl = date('d/m/y', strtotime($GLOBALS['footer']['DT_Cetak']));
+        $dt_cetak_jam = date('H:i', strtotime($GLOBALS['footer']['DT_Cetak']));
+        if ($dt_cetak_tgl == '01/01/70'){
+          $dt_cetak_tgl = date('d/m/y');
+          $dt_cetak_jam = date('H:i');
+      }
+
+        $this->Cell(0,4,'Clinical Pathologists : Dr. Syukrini Bahri SpPK, Dr. Endah Purnamasari SpPK, Dr. Dewi Lesthiowati SpPK(K), DR. Dr. Anggraini Iriani SpPK(K)','B',1);
+        //$this->SetFont('','',8);
+        $this->Cell(10,4,'',0,0);
+        $this->Cell(0,4,'*This document has been electronically validated',0,1);
+        $this->Cell(10,4,'',0,0);
+        $this->Cell(35,4,'Received Time',0,0);
+        $this->Cell(2,4,':',0,0);
+        $this->Cell(0,4,$dt_terima_tgl.'    '.$dt_terima_jam,0,1);
+  
+        $this->Cell(10,4,'',0,0);
+        $this->Cell(35,4,'Validation Time',0,0);
+        $this->Cell(2,4,':',0,0);
+        $this->Cell(25,4,$dt_validasi_tgl.'    '.$dt_validasi_jam,0,0);
+        $this->Cell(62,4,'by '.$validateby,0,1);
+  
+        $this->Cell(10,4,'',0,0);
+        $this->Cell(35,4,'Result Print Time',0,0);
+        $this->Cell(2,4,':',0,0);
+        $this->Cell(25,4,$dt_cetak_tgl.'    '.$dt_cetak_jam,0,0);
+        $this->Cell(62,4,'by '.$validateby,0,1);
+
         $this->Cell(55,4,'002/FRM/LAB/RSY/Rev0/II/2020',0,0);
-        $this->Image('assets/img/footer2.png',175,265,30);
+        $this->Image('assets/img/LogoGabungCert.png',155,260,50);
         $this->Image('assets/img/footer_1.png',1,283,208, 13);
     }
 
@@ -282,26 +319,48 @@ class PdfController extends Controller
 
     public function hasillab($noregistrasi) 
     {
-
+      
         $unitService  = new PdfService();
         $data = $unitService->showviewOrderLabbyNoReg($noregistrasi);
-        
-        
         foreach ($data['data'] as $key) {
           //var_dump($key);exit;
 
         $GLOBALS['header'] = $key;
         
         $dataResult = $unitService->showviewHasilLaboratorium($key['NoLAB']);
+        
+        if ($dataResult['status'] == false){
+          return;
+        }
+        //dd($dataResult);exit;
+        $GLOBALS['footer'] = [
+          'Validate_by' => null ,
+          'DT_Order' => null ,
+          'DT_Order' => null ,
+          'DT_Terima' => null ,
+          'DT_Terima' => null ,
+          'DT_Validasi' => null ,
+          'DT_Validasi' => null ,
+          'DT_Cetak' => null ,
+          'DT_Cetak' => null ,
 
-        $this->fpdf->SetAutoPageBreak(TRUE, 35);
+        ];
+
+
+
+        $this->fpdf->SetAutoPageBreak(TRUE, 45);
         $this->fpdf->AliasNbPages();
         $this->fpdf->AddPage();
         
                      $first = true;
                      $lastitem = '';
                      $ispcr = false;
+                     $no = 1;
                      foreach ($dataResult['data'] as $row) {
+                      if ($no == 1){
+                        $GLOBALS['footer'] = $row;
+                        $no++;
+                      }
                     $contentx = 15;
                     $contentxx = 0;
                     
@@ -414,24 +473,25 @@ class PdfController extends Controller
   
                        
   
-                        $this->fpdf->SetFont('Arial','',10);
-                        $this->fpdf->Cell(15,6,'',0,0);
-                        $this->fpdf->Cell(10,2,'_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _',0,1);
+                        // $this->fpdf->SetFont('Arial','',10);
+                        // $this->fpdf->Cell(15,6,'',0,0);
+                        // $this->fpdf->Cell(10,2,'_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _',0,1);
   
-                          $datenow2 = date('d/m/Y H.i.s');
+                        //   $datenow2 = date('d/m/Y H.i.s');
   
-                        $this->fpdf->SetFont('Arial','I',8);
-                        $this->fpdf->Cell(15,6,'',0,0);
-                        $this->fpdf->Cell(42,6,'Sampling Date :'.date('d/m/y', strtotime($GLOBALS['header']['DT_Terima'])),0,0);
-                        $this->fpdf->Cell(42,6,'Sampling Time :'.date('H:i', strtotime($GLOBALS['header']['DT_Terima'])),0,0);
-                        $this->fpdf->Cell(42,6,'Release Date :'.date('d/m/y', strtotime($GLOBALS['header']['DT_Validasi'])),0,0);
-                        $this->fpdf->Cell(42,6,'Release Time :'.date('H:i', strtotime($GLOBALS['header']['DT_Validasi'])),0,1);
-                        $this->fpdf->Cell(15,6,'',0,0);
-                        $this->fpdf->Cell(50,6,'',0,0);
-                        $this->fpdf->Cell(35,6,'',0,0);
-                        $this->fpdf->Cell(40,6,'Print Date :',0,0,'R');
-                        $this->fpdf->Cell(40,6,'Jakarta '.$datenow2,0,0);
-                      }
+                        // $this->fpdf->SetFont('Arial','I',8);
+                        // $this->fpdf->Cell(15,6,'',0,0);
+                        // $this->fpdf->Cell(42,6,'Sampling Date :'.date('d/m/y', strtotime($GLOBALS['header']['DT_Terima'])),0,0);
+                        // $this->fpdf->Cell(42,6,'Sampling Time :'.date('H:i', strtotime($GLOBALS['header']['DT_Terima'])),0,0);
+                        // $this->fpdf->Cell(42,6,'Release Date :'.date('d/m/y', strtotime($GLOBALS['header']['DT_Validasi'])),0,0);
+                        // $this->fpdf->Cell(42,6,'Release Time :'.date('H:i', strtotime($GLOBALS['header']['DT_Validasi'])),0,1);
+                        // $this->fpdf->Cell(15,6,'',0,0);
+                        // $this->fpdf->Cell(50,6,'',0,0);
+                        // $this->fpdf->Cell(35,6,'',0,0);
+                        // $this->fpdf->Cell(40,6,'Print Date :',0,0,'R');
+                        // $this->fpdf->Cell(40,6,'Jakarta '.$datenow2,0,0);
+                      
+        }
 
                         $rows = array();
                         $pasing['NoRegRI'] = $data['data'][0]['NoRegRI'];   
@@ -445,6 +505,7 @@ class PdfController extends Controller
     }
 
     public function saveHasilLab($noregistrasi){
+      //dd($noregistrasi);
       $data = $this->hasillab($noregistrasi);
       if($data <> null){
         $pathfilename = '../storage/app/LABORATORIUM_'.$data[0]['NoRegRI'].'.pdf';
@@ -456,7 +517,7 @@ class PdfController extends Controller
       }else{
           $response = [
               'status' => false, 
-              'message' => "Generate PDF Surat bebas Narkoba Tidak Berhasi, Data Tidak Ada.", 
+              'message' => "Generate PDF Laboratorium Tidak Berhasi, Data Tidak Ada.", 
           ];
           return response()->json($response, 200);
       }
@@ -471,7 +532,7 @@ class PdfController extends Controller
       }else{
         $response = [
             'status' => false, 
-            'message' => "Generate PDF Surat bebas Narkoba Tidak Berhasi, Data Tidak Ada.", 
+            'message' => "Generate PDF Laboratorium Tidak Berhasi, Data Tidak Ada.", 
         ];
         return response()->json($response, 200);
       }
@@ -538,7 +599,11 @@ class PdfController extends Controller
     public function listDocumentMCUPDFReport(Request $request){
       $unitService  = new PdfService();
       $data = $unitService->listDocumentMCUPDFReport($request);
-      return $data['data'];
+      if ($data['status'] == false){
+        return [];
+      }else{
+        return $data['data'];
+      }
     }
 
 
@@ -573,7 +638,7 @@ class PdfController extends Controller
     public function getRekap(Request $request){
       $unitService  = new PdfService();
       $data = $unitService->getRekap($request);
-      return $data;
+      return $data['data'];
     }
 
     

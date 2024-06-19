@@ -26,6 +26,9 @@ class AuthController extends Controller
               "reports.report", // Report Data Report MCU //
               "sds.report", // Report Data SDS MCU //
               "results.export", // Export Data Pasien MCU //
+
+              "pdfgen",
+              "report.graph",
            ],
         ],
 
@@ -91,27 +94,42 @@ class AuthController extends Controller
           'captcha' => "Captcha is not correct.",
         ])->validate();
 
-        $JsonData =  $this->GuzzleClientRequestPost(
-          env('API_URL_YARSI') . "getLoginSimrs",
-          "POST",
-          json_encode([
-              'username' => $request->username,
-              'password' => $request->password,
-          ])
-        );
+        if ($request->acl == 'mitra'){
+          $JsonData =  $this->GuzzleClientRequestPost(
+            env('API_URL_YARSI') . "getLoginMitraMCU",
+            "POST",
+            json_encode([
+                'username' => $request->username,
+                'password' => $request->password,
+            ])
+          );
+        }else{
+          $JsonData =  $this->GuzzleClientRequestPost(
+            env('API_URL_YARSI') . "getLoginSimrs",
+            "POST",
+            json_encode([
+                'username' => $request->username,
+                'password' => $request->password,
+            ])
+          );
+        }
+
         if($JsonData['status'] == true && count($JsonData['data'])){
             $role = $request->acl;
             $permissions = self::encode($role);
-
             return Redirect('/')
             ->withCookie(cookie('login', 'True',60))
             ->withCookie(cookie('nama', @$JsonData['data']['0']['First Name'],60))
             ->withCookie(cookie('role', $role))
-            ->withCookie(cookie('permissions', $permissions));
+            ->withCookie(cookie('permissions', $permissions))
+            ->withCookie(cookie('id_jaminan', @$JsonData['data']['0']['id_jaminan']))
+            ->withCookie(cookie('group_jaminan', @$JsonData['data']['0']['group_jaminan']));
         }else{
             return redirect('login')
             ->withInput()
-            ->withErrors(['login_gagal' => 'These credentials do not match our records.']);
+            ->withErrors(['login_gagal' => 'These credentials do not match our records.'])
+            ->withCookie(cookie('id_jaminan', null))
+            ->withCookie(cookie('group_jaminan', null));
         }
     }
     public function logout(){

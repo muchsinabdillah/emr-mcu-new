@@ -217,6 +217,9 @@ class PdfService extends Controller
                 json_encode([
                     'tglPeriodeBerobatAwal' => $request->tglAwal,
                     'tglPeriodeBerobatAkhir' => $request->tglAkhir,
+                    'role' => $request->role,
+                    'group_jaminan' => $request->group_jaminan,
+                    'id_jaminan' => $request->id_jaminan,
                 ])
             );
         } catch (\Exception $e) {

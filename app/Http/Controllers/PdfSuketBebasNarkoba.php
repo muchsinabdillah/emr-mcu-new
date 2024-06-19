@@ -134,6 +134,7 @@ class PdfSuketBebasNarkoba extends Controller
     {
         $unitService  = new PdfService();
         $data = $unitService->showHasilSKBBbyNoReg($noregistrasi);
+        //dd($data);
         if($data['status']){
             foreach ($data['data'] as $datareg ) {
                 $GLOBALS['header'] = $datareg;
@@ -307,8 +308,8 @@ class PdfSuketBebasNarkoba extends Controller
             }
     
             $rows = array();
-            $pasing['NOREGISTRASI'] = 'ddd';  
-            $pasing['pname'] = 'fff';  
+            $pasing['NOREGISTRASI'] = $datareg['NoRegistrasi'];  
+            $pasing['pname'] = $datareg['NamaDiperiksa'];  
             $rows[] = $pasing;
             return $rows;
         } 

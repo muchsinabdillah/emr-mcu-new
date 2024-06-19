@@ -25,7 +25,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="name13">No. Register</label>
-                                            <input type="text" class="form-control" id="noregistrasi" name="noregistrasi" required placeholder="No. Registrasi">
+                                            <input type="text" class="form-control" id="noregistrasi" name="noregistrasi" required placeholder="No. Registrasi" readonly>
                                         </div>
                                     </div>
                                     <!-- /.col-md-6 -->

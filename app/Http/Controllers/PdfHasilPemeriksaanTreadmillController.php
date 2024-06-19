@@ -135,6 +135,7 @@ class PdfHasilPemeriksaanTreadmillController extends Controller
 
         $unitService  = new PdfService();
         $data = $unitService->showHasilPemeriksaanTreadmillbyNoReg($noregistrasi);
+        //dd($data);
         if($data['status']){
             foreach ($data['data'] as $datareg ) {
                 $GLOBALS['header'] = $datareg;
@@ -170,7 +171,7 @@ class PdfHasilPemeriksaanTreadmillController extends Controller
                 $this->fpdf->Cell(15,7,'',0,0);
                 $this->fpdf->Cell(60,5,'        Nama Pasien',1,0);
                 $this->fpdf->Cell(5,5,':',1,0,'C');
-                $this->fpdf->Cell(90,5,'$NamaPasien'.' -replacethis',1,1,'L');
+                $this->fpdf->Cell(90,5,$datareg['PatientName'],1,1,'L');
     
                 $this->fpdf->Cell(15,7,'',0,0);
                 $this->fpdf->Cell(60,5,'        Tanggal Lahir (Umur)',1,0);
@@ -339,7 +340,7 @@ class PdfHasilPemeriksaanTreadmillController extends Controller
                 $this->fpdf->Cell(0,4,$datareg['DokterPemeriksa'],0,1,'C');
             }
             $rows = array();
-            $pasing['NOREGISTRASI'] = 'ddd';  
+            $pasing['NOREGISTRASI'] = $datareg['NoRegistrasi'];  
             $pasing['pname'] = 'fff';  
             $rows[] = $pasing;
             return $rows;
@@ -347,13 +348,22 @@ class PdfHasilPemeriksaanTreadmillController extends Controller
     }
 
     public function savePemeriksaanTreadmill($noregistrasi){
+
         $data = $this->hasilpemeriksaantreadmill($noregistrasi);
+        if($data <> null){
         $pathfilename = '../storage/app/TREADMILL_'.$noregistrasi.'.pdf';
         $filename = "TREADMILL_".$noregistrasi.".pdf";
         $this->fpdf->Output('F',$pathfilename,true);
         $unitService  = new PdfService();
         return $unitService->uploaPdfMedicalCheckupbyKodeJenis($filename,$noregistrasi,"5");
         exit;
+        }else{
+            $response = [
+                'status' => false, 
+                'message' => "Generate PDF Treadmil Tidak Berhasi, Data Tidak Ada.", 
+            ];
+            return response()->json($response, 200);
+        }
     }
   
     public function viewHasilTreadmill($noregistrasi){

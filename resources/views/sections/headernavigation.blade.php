@@ -33,13 +33,13 @@
                                     <img src="http://placehold.it/60/c2c2c2?text=User" alt="John Doe" class="img-circle profile-img">
                                     <div class="profile-name">
                                         <h6>{{ \Cookie::get('nama') }}</h6>
-                                        <a href="#">View Profile</a>
+                                        <!-- <a href="#">View Profile</a> -->
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
                             </li>
-                            <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-                            <li><a href="#"><i class="fa fa-sliders"></i> Account Details</a></li>
+                            <!-- <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+                            <li><a href="#"><i class="fa fa-sliders"></i> Account Details</a></li> -->
                             <li role="separator" class="divider"></li>
                             <li><a href="/logout" class="color-danger text-center"><i class="fa fa-sign-out"></i> Logout</a></li>
                         </ul>

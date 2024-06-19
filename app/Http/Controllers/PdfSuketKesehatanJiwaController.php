@@ -286,8 +286,8 @@ class PdfSuketKesehatanJiwaController extends Controller
             }
     
             $rows = array();
-            $pasing['NOREGISTRASI'] = 'ddd';  
-            $pasing['pname'] = 'fff';  
+            $pasing['NOREGISTRASI'] = $datareg['NoRegistrasi'];  
+            $pasing['pname'] = $datareg['NamaDiperiksa'];  
             $rows[] = $pasing;
             return $rows;
         }

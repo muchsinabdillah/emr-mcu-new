@@ -305,7 +305,6 @@ function updateUIgrafik(response){
         }
         }
     });
-    //Chart.destroy();
 }
 
 

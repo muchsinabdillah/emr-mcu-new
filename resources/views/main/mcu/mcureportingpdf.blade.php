@@ -21,6 +21,12 @@
                                 <div class="col-sm-2">
                                     <input class="form-control input-sm" type="date" id="tglAkhir" autocomplete="off" name="tglAkhir" placeholder="ketik Kata Kunci disini">
                                 </div>
+                                <div class="col-sm-2">
+                                    <input class="form-control input-sm" type="hidden" id="role" readonly autocomplete="off" name="role" value="{{ Cookie::get('role') }}">
+                                </div>
+                                <input class="form-control input-sm" type="hidden" id="group_jaminan" readonly autocomplete="off" name="group_jaminan" value="{{ Cookie::get('group_jaminan') }}">
+                                    <input class="form-control input-sm" type="hidden" id="id_jaminan" readonly autocomplete="off" name="id_jaminan" value="{{ Cookie::get('id_jaminan') }}">
+                                </div>
                             </div>
                         </form>
                         <div class="form-group  ">
@@ -35,9 +41,6 @@
                                 <thead>
                                     <tr>
                                         <th style="display:none;">Visit Date</th>
-                                        <th align='center'>
-                                            <font size="1">ID
-                                        </th>
                                         <th align='center'>
                                             <font size="1">No. Eposiode
                                         </th>
