@@ -48,7 +48,7 @@ Route::post('/listDocumentMCUPDFReport', [PdfController::class, 'listDocumentMCU
     Route::post('/getRekapSDSbyPeriode', [PdfController::class, 'getRekapSDSbyPeriode']); 
     Route::get('/pdflist', function () {
       return view('main.mcu.pdfmcu');
-    });
+    })->middleware('acl:user');
     
     Route::get('/merge-pdfs', [PdfMergeController::class,'process']);
     Route::get('/pdfview', [PdfMergeController::class, 'pdfview']); 

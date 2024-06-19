@@ -63,6 +63,15 @@ class AuthController extends Controller
     }
 
     /**
+     * @param string $role
+     * @return bool
+     */
+    public static function is($role)
+    {
+      return \Cookie::get("role") == $role ?? false;
+    }
+
+    /**
      * @param string $permission
      * @return bool
      */
