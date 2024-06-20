@@ -19,7 +19,7 @@
             <div class="p-4 sm:p-7">
                 <div class="text-center">
                     <img class="inline-flex justify-center items-center w-28 h-28" src="{{ URL::asset('logo.png') }}" alt="Rumah Sakit Yarsi">
-                    <h1 class="block text-2xl font-bold text-gray-800 dark:text-white">Sistem Medical Check Up</h1>
+                    <h1 class="block text-2xl font-bold text-gray-800 dark:text-white">System Medical Check Up</h1>
                 </div>
 
                 <div class="mt-5">
