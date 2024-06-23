@@ -68,7 +68,7 @@ class PdfHasilLaboratoriumController extends Controller
       if($data <> null){
         $pathfilename = '../storage/app/LABORATORIUM_'.$data[0]['NoRegRI'].'.pdf';
         $filename = "LABORATORIUM_".$data[0]['NoRegRI'].".pdf";
-        $this->fpdf->Output('F',$pathfilename,true);
+        $data[0]['pdf']->Output('F',$pathfilename,true);
         $unitService  = new PdfService();
         return  $unitService->uploaPdfMedicalCheckupbyKodeJenis($filename,$data[0]['NoRegRI'],"2");
         exit;

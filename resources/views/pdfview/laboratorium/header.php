@@ -228,8 +228,14 @@ class PDF extends FPDF {
   //Cell with horizontal scaling if text is too wide
   function CellFit($w, $h=0, $txt='', $border=0, $ln=0, $align='', $fill=false, $link='', $scale=false, $force=true)
   {
+            //Get string width
+            if ($txt == ''){
+              $str_width=1;
+          }else{
+              $str_width=$this->GetStringWidth($txt);
+          }
       //Get string width
-      $str_width=$this->GetStringWidth($txt);
+      //$str_width=$this->GetStringWidth($txt);
 
       //Calculate ratio to fit cell
       if($w==0)
@@ -348,6 +354,7 @@ $first = true;
                           $hasil = ' ';
                         }else{
                           $hasil = $row['HASIL'];
+                          $hasil = str_replace("\.br\\", "\r\n", $hasil);
                         }
 
                         $count_str = strlen($row['HASIL']);

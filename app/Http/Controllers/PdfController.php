@@ -241,8 +241,14 @@ class PDF extends Fpdf {
     //Cell with horizontal scaling if text is too wide
     function CellFit($w, $h=0, $txt='', $border=0, $ln=0, $align='', $fill=false, $link='', $scale=false, $force=true)
     {
+              //Get string width
+        if ($txt == ''){
+            $str_width=1;
+        }else{
+            $str_width=$this->GetStringWidth($txt);
+        }
         //Get string width
-        $str_width=$this->GetStringWidth($txt);
+        //$str_width=$this->GetStringWidth($txt);
 
         //Calculate ratio to fit cell
         if($w==0)
@@ -507,6 +513,7 @@ class PdfController extends Controller
     public function saveHasilLab($noregistrasi){
       //dd($noregistrasi);
       $data = $this->hasillab($noregistrasi);
+      //dd($data);
       if($data <> null){
         $pathfilename = '../storage/app/LABORATORIUM_'.$data[0]['NoRegRI'].'.pdf';
         $filename = "LABORATORIUM_".$data[0]['NoRegRI'].".pdf";

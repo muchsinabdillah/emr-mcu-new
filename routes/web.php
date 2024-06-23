@@ -41,6 +41,8 @@ Route::get('/pdfreportlist', function () {
 });
 Route::post('/listDocumentMCUPDFReport', [PdfController::class, 'listDocumentMCUPDFReport']);
 
+
+Route::group(["middleware"=>["acl:user"]], function(){
     Route::get('/pdf', function () {
       return view('main.mcu.pdfmcu');
     });
@@ -48,7 +50,7 @@ Route::post('/listDocumentMCUPDFReport', [PdfController::class, 'listDocumentMCU
     Route::post('/getRekapSDSbyPeriode', [PdfController::class, 'getRekapSDSbyPeriode']); 
     Route::get('/pdflist', function () {
       return view('main.mcu.pdfmcu');
-    })->middleware('acl:user');
+    });
     
     Route::get('/merge-pdfs', [PdfMergeController::class,'process']);
     Route::get('/pdfview', [PdfMergeController::class, 'pdfview']); 
@@ -99,3 +101,4 @@ Route::post('/listDocumentMCUPDFReport', [PdfController::class, 'listDocumentMCU
 
     Route::get('/getNamaPenjamin/{idgroupjaminan}', [PdfController::class, 'getNamaPenjamin']); 
     Route::post('/getRekap', [PdfController::class, 'getRekap']); 
+  });

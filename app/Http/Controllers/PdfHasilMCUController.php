@@ -103,7 +103,14 @@ class PDF extends Fpdf
     function CellFit($w, $h = 0, $txt = '', $border = 0, $ln = 0, $align = '', $fill = false, $link = '', $scale = false, $force = true)
     {
         //Get string width
-        $str_width = $this->GetStringWidth($txt);
+        if ($txt == ''){
+            $str_width=1;
+        }else{
+            $str_width=$this->GetStringWidth($txt);
+        }
+
+        //Get string width
+        //$str_width = $this->GetStringWidth($txt);
 
         //Calculate ratio to fit cell
         if ($w == 0)
@@ -2018,7 +2025,7 @@ class PdfHasilMCUController extends Controller
 
         $this->fpdf->SetFont('Arial', 'B', 10);
         $this->fpdf->Cell(56, 4, '', 0, 0);
-        $this->fpdf->SetFont('Arial', 'i', 10);
+        $this->fpdf->SetFont('Arial', '', 10);
         $this->fpdf->Cell(8, 4, $GA18, 1, 0, 'C');
         $this->fpdf->Cell(8, 4, $GA17, 1, 0, 'C');
         $this->fpdf->Cell(8, 4, $GA16, 1, 0, 'C');
@@ -2106,7 +2113,7 @@ class PdfHasilMCUController extends Controller
 
         $this->fpdf->SetFont('Arial', 'B', 10);
         $this->fpdf->Cell(56, 4, '', 0, 0);
-        $this->fpdf->SetFont('Arial', 'i', 10);
+        $this->fpdf->SetFont('Arial', '', 10);
         $this->fpdf->Cell(8, 4, $GB48, 1, 0, 'C');
         $this->fpdf->Cell(8, 4, $GB47, 1, 0, 'C');
         $this->fpdf->Cell(8, 4, $GB46, 1, 0, 'C');
