@@ -12,6 +12,7 @@ use App\Http\Controllers\PdfHasilRadiologiController;
 use App\Http\Controllers\PdfSuketKesehatanJiwaController;
 use App\Http\Controllers\PdfHasilPemeriksaanTreadmillController;
 use App\Http\Controllers\TcpdfController;
+use App\Http\Controllers\SdsController;
 use Illuminate\Support\Facades\Cookie;
 use setasign\Fpdi\TcpdfFpdi;
 
@@ -35,6 +36,11 @@ Route::get('/main', function () {
   return view('main.main');
 });
 Route::get('/login', [AuthController::class,'index']);
+
+Route::get('/sds', [SdsController::class, 'auth'])->name('faq.auth.index');
+Route::post('/sds', [SdsController::class, 'check'])->name('faq.auth.store');
+Route::get('/sds/form', [SdsController::class, 'index'])->name('faq.index');
+Route::post('/sds/form', [SdsController::class, 'store'])->name('faq.store');
 
 Route::get('/pdfreportlist', function () {
   return view('main.mcu.reportpdfmcu');
